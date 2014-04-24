@@ -2,8 +2,8 @@
 /**
  * Adds some functionality to theme galleries
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 
@@ -15,7 +15,7 @@
  * @param $atts
  * @return string
  */
-function effortless_gallery($contents, $attr){
+function influence_gallery($contents, $attr){
 	if(empty($attr['type']) || $attr['type'] != 'slider') return;
 	
 	global $post;
@@ -93,12 +93,12 @@ function effortless_gallery($contents, $attr){
 	$return .= '<ul class="slides">';
 	foreach($attachments as $attachment){
 		$return .= '<li>';
-		$return .= apply_filters('effortless_slide_before', '', $attachment);
+		$return .= apply_filters('influence_slide_before', '', $attachment);
 		$return .= wp_get_attachment_image($attachment->ID, $size, false, array('class' => 'slide-image'));
 		if($attachment->post_excerpt){
 			$return .= '<div class="flex-caption">' . $attachment->post_excerpt . '</div>';
 		}
-		$return .= apply_filters('effortless_slide_after', '', $attachment);
+		$return .= apply_filters('influence_slide_after', '', $attachment);
 		$return .= '</li>';
 	}
 	$return .= '</ul>';
@@ -107,7 +107,7 @@ function effortless_gallery($contents, $attr){
 
 	return $return;
 }
-add_filter('post_gallery', 'effortless_gallery', 10, 2);
+add_filter('post_gallery', 'influence_gallery', 10, 2);
 
 /**
  * Add our fancy slider gallery to the list of gallery types.
@@ -115,13 +115,13 @@ add_filter('post_gallery', 'effortless_gallery', 10, 2);
  * @param $types
  * @return mixed
  * 
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_gallery_types($types){
-	$types['slider'] = __('Slider', 'effortless');
+function influence_gallery_types($types){
+	$types['slider'] = __('Slider', 'influence');
 	return $types;
 }
-add_filter('siteorigin_gallery_types', 'effortless_gallery_types');
+add_filter('siteorigin_gallery_types', 'influence_gallery_types');
 
 /**
  * Set our fancy gallery to the default gallery type.
@@ -129,9 +129,9 @@ add_filter('siteorigin_gallery_types', 'effortless_gallery_types');
  * @param $types
  * @return mixed
  * 
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_gallery_default_type(){
+function influence_gallery_default_type(){
 	return 'slider';
 }
-add_filter('siteorigin_gallery_default_type', 'effortless_gallery_default_type');
+add_filter('siteorigin_gallery_default_type', 'influence_gallery_default_type');

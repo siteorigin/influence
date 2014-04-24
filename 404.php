@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 
@@ -14,25 +14,25 @@ get_header(); ?>
 
 		<article id="post-0" class="post error404 not-found">
 			<header class="entry-header">
-				<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'effortless' ); ?></h1>
+				<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'influence' ); ?></h1>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'effortless' ); ?></p>
+				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'influence' ); ?></p>
 
 				<?php get_search_form(); ?>
 
 				<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 				<div class="widget">
-					<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'effortless' ); ?></h2>
+					<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'influence' ); ?></h2>
 					<ul>
 					<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
 					</ul>
 				</div><!-- .widget -->
 
 				<?php
-				$archive_content = '<p>' . __( 'Try looking in the monthly archives.', 'effortless' ) . '</p>';
+				$archive_content = '<p>' . __( 'Try looking in the monthly archives.', 'influence' ) . '</p>';
 				the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 				?>
 

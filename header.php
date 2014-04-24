@@ -4,8 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 ?><!DOCTYPE html>
@@ -34,7 +34,7 @@
 
 				<h1 class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php effortless_display_logo(); ?>
+						<?php influence_display_logo(); ?>
 					</a>
 				</h1>
 
@@ -46,11 +46,11 @@
 
 			<nav role="navigation" class="site-navigation main-navigation primary">
 
-				<h1 class="assistive-text"><?php _e( 'Menu', 'effortless' ); ?></h1>
+				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
 				<a href="#" id="main-menu-button">
 					<span class="icon"></span>
-					<?php _e('Menu', 'effortless') ?>
+					<?php _e('Menu', 'influence') ?>
 				</a>
 
 				<?php // wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
@@ -60,6 +60,6 @@
 
 	</header><!-- #masthead .site-header -->
 
-	<?php echo apply_filters('effortless_after_header', ''); ?>
+	<?php echo apply_filters('influence_after_header', ''); ?>
 
 	<div id="main" class="site-main">
