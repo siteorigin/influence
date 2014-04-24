@@ -2,8 +2,8 @@
 /**
  * Displays 
  * 
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 ?>
@@ -12,7 +12,7 @@
 
 	<?php if( has_post_thumbnail() ) : ?>
 		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'effortless' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 				<?php the_post_thumbnail() ?>
 			</a>
 		</div>
@@ -21,7 +21,7 @@
 
 	<div class="post-text">
 
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'effortless' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 			<div class="entry-summary">
@@ -30,7 +30,7 @@
 		<?php else : ?>
 			<div class="entry-content">
 				<?php the_content( '' ); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'effortless' ), 'after' => '</div>' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'influence' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 		<?php endif; ?>
 
@@ -39,7 +39,7 @@
 				<div class="continue-reading"><a href="<?php the_permalink() ?>"><?php _e('Continue Reading <span class="meta-nav">&rarr;</span>', 'origami') ?></a></div>
 			<?php endif; ?>
 
-			<div class="posted-on"><?php effortless_posted_on(); ?></div>
+			<div class="posted-on"><?php influence_posted_on(); ?></div>
 		</div><!-- .entry-meta -->
 
 	</div>

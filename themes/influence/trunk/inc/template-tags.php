@@ -2,18 +2,18 @@
 /**
  * Custom template tags for this theme.
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 
-if ( ! function_exists( 'effortless_content_nav' ) ) :
+if ( ! function_exists( 'influence_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  *
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_content_nav( $nav_id ) {
+function influence_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
@@ -35,21 +35,21 @@ function effortless_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'effortless' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'influence' ); ?></h1>
 
 		<?php if ( is_single() ) : // navigation links for single posts ?>
 
-			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'effortless' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'effortless' ) . '</span>' ); ?>
+			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'influence' ) . '</span> %title' ); ?>
+			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'influence' ) . '</span>' ); ?>
 
 		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'effortless' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'influence' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'effortless' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'influence' ) ); ?></div>
 			<?php endif; ?>
 
 		<?php endif; ?>
@@ -57,17 +57,17 @@ function effortless_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
-endif; // effortless_content_nav
+endif; // influence_content_nav
 
-if ( ! function_exists( 'effortless_comment' ) ) :
+if ( ! function_exists( 'influence_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_comment( $comment, $args, $depth ) {
+function influence_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -112,32 +112,32 @@ function effortless_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for effortless_comment()
+endif; // ends check for influence_comment()
 
-if ( ! function_exists( 'effortless_posted_on' ) ) :
+if ( ! function_exists( 'influence_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', 'effortless' ),
+function influence_posted_on() {
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', 'influence' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'effortless' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'influence' ), get_the_author() ) ),
 		get_the_author()
 	);
 }
 endif;
 
-if(!function_exists('effortless_display_logo')):
+if(!function_exists('influence_display_logo')):
 /**
  * Display the logo 
  */
-function effortless_display_logo(){
+function influence_display_logo(){
 	$logo = siteorigin_setting('general_logo');
 
 	if( empty($logo) ) {
@@ -158,11 +158,11 @@ function effortless_display_logo(){
 		}
 
 		// Add all the logo attributes
-		$logo_attributes = apply_filters('effortless_logo_image_attributes', array(
+		$logo_attributes = apply_filters('influence_logo_image_attributes', array(
 			'src' => $src,
 			'width' => round($width),
 			'height' => round($height),
-			'alt' => sprintf( __('%s Logo', 'effortless'), get_bloginfo('name') ),
+			'alt' => sprintf( __('%s Logo', 'influence'), get_bloginfo('name') ),
 		) );
 
 		$logo_attributes_str = array();
@@ -173,7 +173,7 @@ function effortless_display_logo(){
 			}
 		}
 
-		$logo_html = apply_filters('effortless_logo_image', '<img '.implode( ' ', $logo_attributes_str ).' />');
+		$logo_html = apply_filters('influence_logo_image', '<img '.implode( ' ', $logo_attributes_str ).' />');
 		echo $logo_html;
 	}
 }
@@ -182,17 +182,17 @@ endif;
 /**
  * Returns true if a blog has more than 1 category
  *
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_categorized_blog() {
-	if ( false === ( $count = get_transient( 'effortless_categorized_blog_cache_count' ) ) ) {
+function influence_categorized_blog() {
+	if ( false === ( $count = get_transient( 'influence_categorized_blog_cache_count' ) ) ) {
 		// Count the number of non-empty categories
 		$count = count( get_categories( array(
 			'hide_empty' => 1,
 		) ) );
 		
 		// Count the number of categories that are attached to the posts
-		set_transient( 'effortless_categorized_blog_cache_count', $count );
+		set_transient( 'influence_categorized_blog_cache_count', $count );
 	}
 	
 	// Return true if this blog has categories, or else false.
@@ -200,82 +200,82 @@ function effortless_categorized_blog() {
 }
 
 /**
- * Flush out the transients used in effortless_categorized_blog
+ * Flush out the transients used in influence_categorized_blog
  *
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_category_transient_flusher() {
-	delete_transient( 'effortless_categorized_blog_cache_count' );
+function influence_category_transient_flusher() {
+	delete_transient( 'influence_categorized_blog_cache_count' );
 }
-add_action( 'edit_category', 'effortless_category_transient_flusher' );
-add_action( 'save_post', 'effortless_category_transient_flusher' );
+add_action( 'edit_category', 'influence_category_transient_flusher' );
+add_action( 'save_post', 'influence_category_transient_flusher' );
 
 /**
  * Return the archive title depending on which page is being displayed.
  * 
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_get_archive_title(){
+function influence_get_archive_title(){
 	$title = '';
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category Archives: %s', 'effortless' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+		$title = sprintf( __( 'Category Archives: %s', 'influence' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 	}
 	elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag Archives: %s', 'effortless' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+		$title = sprintf( __( 'Tag Archives: %s', 'influence' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 	}
 	elseif ( is_author() ) {
 		the_post();
-		$title = sprintf( __( 'Author Archives: %s', 'effortless' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+		$title = sprintf( __( 'Author Archives: %s', 'influence' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 		rewind_posts();
 
 	}
 	elseif ( is_day() ) {
-		$title = sprintf( __( 'Daily Archives: %s', 'effortless' ), '<span>' . get_the_date() . '</span>' );
+		$title = sprintf( __( 'Daily Archives: %s', 'influence' ), '<span>' . get_the_date() . '</span>' );
 
 	}
 	elseif ( is_month() ) {
-		$title = sprintf( __( 'Monthly Archives: %s', 'effortless' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+		$title = sprintf( __( 'Monthly Archives: %s', 'influence' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 	}
 	elseif ( is_year() ) {
-		$title = sprintf( __( 'Yearly Archives: %s', 'effortless' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+		$title = sprintf( __( 'Yearly Archives: %s', 'influence' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 	}
 	else {
-		$title = __( 'Archives', 'effortless' );
+		$title = __( 'Archives', 'influence' );
 	}
 	
-	return apply_filters('effortless_archive_title', $title);
+	return apply_filters('influence_archive_title', $title);
 }
 
 /**
  * Get the post meta.
  * 
- * @since effortless 1.0
+ * @since influence 1.0
  */
-function effortless_get_post_meta(){
+function influence_get_post_meta(){
 	/* translators: used between list items, there is a space after the comma */
-	$category_list = get_the_category_list( __( ', ', 'effortless' ) );
+	$category_list = get_the_category_list( __( ', ', 'influence' ) );
 
 	/* translators: used between list items, there is a space after the comma */
-	$tag_list = get_the_tag_list( '', __( ', ', 'effortless' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'influence' ) );
 
-	if ( ! effortless_categorized_blog() ) {
+	if ( ! influence_categorized_blog() ) {
 		// This blog only has 1 category so we just need to worry about tags in the meta text
 		if ( '' != $tag_list ) {
-			$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'effortless' );
+			$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'influence' );
 		} else {
-			$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'effortless' );
+			$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'influence' );
 		}
 
 	} else {
 		// But this blog has loads of categories so we should probably display them here
 		if ( '' != $tag_list ) {
-			$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'effortless' );
+			$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'influence' );
 		} else {
-			$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'effortless' );
+			$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'influence' );
 		}
 
 	} // end check for categories on this blog
@@ -288,7 +288,7 @@ function effortless_get_post_meta(){
 		the_title_attribute( 'echo=0' )
 	);
 	
-	return apply_filters('effortless_post_meta', $meta);
+	return apply_filters('influence_post_meta', $meta);
 }
 
 /**
@@ -297,7 +297,7 @@ function effortless_get_post_meta(){
  * @param null $post
  * @return string
  */
-function effortless_next_attachment_url($post = null){
+function influence_next_attachment_url($post = null){
 	if(empty($post)){
 		global $post;
 	}

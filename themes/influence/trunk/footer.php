@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 ?>
@@ -21,8 +21,8 @@
 			</div><!-- #footer-widgets -->
 
 			<div id="site-info">
-				<?php do_action( 'effortless_credits' ); ?>
-				<?php echo apply_filters( 'effortless_credits_siteorigin', sprintf( __( 'Theme by %1$s.', 'effortless' ), '<a href="http://siteorigin.com/" rel="designer">SiteOrigin</a>' ) ); ?>
+				<?php do_action( 'influence_credits' ); ?>
+				<?php echo apply_filters( 'influence_credits_siteorigin', sprintf( __( 'Theme by %1$s.', 'influence' ), '<a href="http://siteorigin.com/" rel="designer">SiteOrigin</a>' ) ); ?>
 			</div><!-- .site-info -->
 
 		</div>
@@ -32,7 +32,7 @@
 
 <div id="main-menu">
 
-	<a href="#" class="main-menu-close"><?php _e('Close', 'effortless') ?></a>
+	<a href="#" class="main-menu-close"><?php _e('Close', 'influence') ?></a>
 
 	<div class="menu">
 		<?php wp_nav_menu(array('theme_location' => 'primary')) ?>

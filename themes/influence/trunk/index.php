@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 
@@ -27,7 +27,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php effortless_content_nav( 'nav-below' ); ?>
+			<?php influence_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 

@@ -1,6 +1,6 @@
 <?php
 
-function effortless_display_slider($code){
+function influence_display_slider($code){
 	if( !is_front_page() ) return $code;
 
 	ob_start();
@@ -19,4 +19,4 @@ function effortless_display_slider($code){
 
 	return ob_get_clean();
 }
-add_filter('effortless_after_header', 'effortless_display_slider');
+add_filter('influence_after_header', 'influence_display_slider');

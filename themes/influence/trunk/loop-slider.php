@@ -2,8 +2,8 @@
 /**
  * Just displays a slider loop. Intended to be included in child themes using get_template_part('loop', 'slider'). Also works with SiteOrigin page builder loop widget.
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 ?>
@@ -16,7 +16,7 @@
 			<?php while ( have_posts() ) : the_post(); if( has_post_thumbnail() ) : ?>
 				<li class="slide">
 					<a href="<?php the_permalink() ?>">
-						<?php the_post_thumbnail('effortless-slide'); ?>
+						<?php the_post_thumbnail('influence-slide'); ?>
 						<div class="flex-caption">
 							<h3><?php the_title() ?></h3>
 						</div>

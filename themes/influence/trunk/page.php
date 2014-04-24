@@ -7,8 +7,8 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 

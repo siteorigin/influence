@@ -4,8 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package effortless
- * @since effortless 1.0
+ * @package influence
+ * @since influence 1.0
  * @license GPL 2.0
  */
 
@@ -17,20 +17,20 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 
 		<header class="page-header">
-			<h1 class="page-title"><?php echo effortless_get_archive_title() ?></h1>
+			<h1 class="page-title"><?php echo influence_get_archive_title() ?></h1>
 			<?php
 				if ( is_category() ) {
 					// show an optional category description
 					$category_description = category_description();
 					if ( ! empty( $category_description ) )
-						echo apply_filters( 'effortless_category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+						echo apply_filters( 'influence_category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
 
 				}
 				elseif ( is_tag() ) {
 					// show an optional tag description
 					$tag_description = tag_description();
 					if ( ! empty( $tag_description ) )
-						echo apply_filters( 'effortless_tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
+						echo apply_filters( 'influence_tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
 				}
 			?>
 		</header><!-- .page-header -->
@@ -42,7 +42,7 @@ get_header(); ?>
 				
 		<?php endwhile; ?>
 
-		<?php effortless_content_nav( 'nav-below' ); ?>
+		<?php influence_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 
