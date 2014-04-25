@@ -45,6 +45,7 @@ function influence_theme_settings(){
 
 	siteorigin_settings_add_field( 'home', 'displays', 'select', __('Home Displays', 'influence'), array(
 		'options' => array(
+			'' => __('None', 'influence'),
 			'demo' => __('Demo Slider', 'influence'),
 			'slider' => __('Home Slider', 'influence'),
 			'shortcode' => __('Home Shortcode', 'influence'),
@@ -93,7 +94,9 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['general_ajax_comments'] = false;
 	$defaults['general_site_description'] = false;
 
+	$defaults['home_displays'] = 'demo';
 	$defaults['home_slider'] = false;
+	$defaults['home_slider_shortcode'] = false;
 
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_responsive_menu'] = true;

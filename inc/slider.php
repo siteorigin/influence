@@ -1,15 +1,12 @@
 <?php
 
 function influence_display_slider($code){
-	if( !is_front_page() ) return $code;
+	if( !is_front_page() || siteorigin_setting('home_displays') != 'slider' ) return $code;
 
 	ob_start();
 
 	$slider = siteorigin_setting('home_slider');
-	if( empty($slider) || !class_exists('SiteOrigin_Widget_Slider_Widget') ) {
-		get_template_part('demo/slider');
-	}
-	elseif( !empty($slider['frames']) ) {
+	if( !empty($slider['frames']) ) {
 		the_widget('SiteOrigin_Widget_Slider_Widget', $slider);
 	}
 

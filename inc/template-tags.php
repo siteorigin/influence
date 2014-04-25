@@ -357,6 +357,17 @@ function influence_site_header_sentinel(){
 
 			</div>
 
+			<div role="navigation" class="site-navigation main-navigation primary">
+
+				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
+
+				<a href="#" class="main-menu-button">
+					<span class="icon"></span>
+					<?php _e('Menu', 'influence') ?>
+				</a>
+
+			</div><!-- .site-navigation .main-navigation -->
+
 		</div>
 
 	</div><!-- #masthead .site-header -->

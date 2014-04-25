@@ -5,7 +5,7 @@ jQuery(function($){
 
     // The menu button
     var menuShown = false;
-    $('a#main-menu-button').click(function(e){
+    $('#masthead a.main-menu-button').click(function(e){
         e.preventDefault();
         $('body').toggleClass('display-main-menu');
 
@@ -28,7 +28,7 @@ jQuery(function($){
 
     $('#main-menu .main-menu-close').click(function(e){
         e.preventDefault();
-        $('a#main-menu-button').click();
+        $('#masthead a.main-menu-button').click();
     });
 
     // This handles resizing the logo image if there is one when we scroll down
@@ -51,18 +51,6 @@ jQuery(function($){
         }).scroll();
     }
 
-    // Add a top margin to images in a SiteOrigin slider widget slides
-    $('#under-masthead-slider .sow-slider-base ul.sow-slider-images img').each(function(){
-        $(this).css('padding-top', $('#masthead').outerHeight() );
-    });
-
-    // Reposition the arrows in the slider for SO slider widget
-    $('#under-masthead-slider .sow-slider-base .sow-slide-nav').each(function(){
-        var $$ = $(this);
-        $$.css('margin-top', -$$.height()/2 + $('#masthead').outerHeight());
-    });
-
-
     if(typeof siteoriginSlider != 'undefined') {
 
         var positionSliderNav = function(el, speed){
@@ -83,7 +71,13 @@ jQuery(function($){
         // Reposition the navigation arrows in the slider
         $(window).resize(function(){
             positionSliderNav($('#under-masthead-slider .cycle-slide-active'), 0);
-        });
+
+            // Add a top margin to images in a SiteOrigin slider widget slides
+            $('#under-masthead-slider .sow-slider-base ul.sow-slider-images img').each(function(){
+                $(this).css('padding-top', $('#masthead').outerHeight() );
+            });
+
+        }).resize();
 
     }
 
