@@ -88,5 +88,5 @@ jQuery(function($){
     }
 
     /* Setup fitvids for entry content and panels */
-    $('.entry-content, .entry-content .panel' ).fitVids();
+    $('.entry-content, .entry-content .panel, .post-video' ).fitVids();
 });

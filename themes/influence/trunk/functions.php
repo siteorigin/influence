@@ -23,7 +23,7 @@ include get_template_directory() . '/inc/panels.php';
 include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
-include get_template_directory() . '/inc/gallery.php';
+include get_template_directory() . '/inc/formats.php';
 
 // Let users know about the supporters pack upgrade
 include get_template_directory() . '/upgrade/upgrade.php';
