@@ -10,7 +10,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
 
-	<?php if( has_post_thumbnail() ) : ?>
+	<?php if( influence_get_video() ) : ?>
+		<div class="post-video">
+			<?php echo influence_get_video() ?>
+		</div>
+	<?php elseif( has_post_thumbnail() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 				<?php the_post_thumbnail() ?>
@@ -29,7 +33,12 @@
 			</div><!-- .entry-summary -->
 		<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( '' ); ?>
+				<?php
+				// Display the content, but remove any videos
+				add_filter( 'the_content', 'influence_filter_video' );
+				the_content( '' );
+				remove_filter( 'the_content', 'influence_filter_video' );
+				?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'influence' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 		<?php endif; ?>

@@ -799,12 +799,12 @@ article.sticky {
 .entry-content .alignleft {
   /* This is also styled on a global level */
 
-  margin: 0 0 1.5em 1.5em;
+  margin: 0 1.5em 1.5em 0;
 }
 .entry-content .alignright {
   /* This is also styled on a global level */
 
-  margin: 0 1.5em 1.5em 0;
+  margin: 0 0 1.5em 1.5em;
 }
 .entry-content img.wp-smiley {
   border: none;
@@ -1158,7 +1158,7 @@ article.entry .post-text .entry-title a {
   }
 }
 article.entry .entry-content {
-  color: #787774;
+  color: #716f6c;
   font-size: 16px;
   line-height: 1.75em;
 }
@@ -1168,7 +1168,7 @@ article.entry .entry-content h3,
 article.entry .entry-content h4,
 article.entry .entry-content h5,
 article.entry .entry-content h6 {
-  color: #545252;
+  color: #585754;
 }
 article.entry .entry-meta {
   color: #5e5d5a;
