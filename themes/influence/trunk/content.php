@@ -24,7 +24,7 @@
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-			<div class="entry-summary">
+			<div class="entry-content">
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->
 		<?php else : ?>

@@ -44,8 +44,6 @@
 			</div><!-- #single-comments-wrapper -->
 		<?php endif; ?>
 
-		<?php influence_content_nav( 'nav-below' ); ?>
-
 	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->
