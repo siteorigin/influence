@@ -47,12 +47,10 @@
 
 				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
-				<a href="#" id="main-menu-button">
+				<a href="#" class="main-menu-button">
 					<span class="icon"></span>
 					<?php _e('Menu', 'influence') ?>
 				</a>
-
-				<?php // wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 
 			</nav><!-- .site-navigation .main-navigation -->
 		</div>

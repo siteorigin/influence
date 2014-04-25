@@ -503,6 +503,8 @@ body {
   float: left;
 }
 .site-header .site-title img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 .site-header.has-shadow {
@@ -539,10 +541,25 @@ body.admin-bar #masthead {
   margin-top: -0.5em;
   z-index: 10;
 }
-.main-navigation a#main-menu-button {
+.main-navigation a.main-menu-button {
   color: #333230;
   font-weight: 500;
   text-decoration: none;
+}
+@media screen and (max-width: 480px) {
+  .site-header .site-title a {
+    text-align: center;
+    float: none;
+  }
+  .site-header .site-title a img {
+    display: inline-block;
+  }
+  .main-navigation {
+    position: static;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+  }
 }
 #main-menu {
   position: fixed;
