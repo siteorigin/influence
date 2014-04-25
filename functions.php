@@ -15,6 +15,7 @@ include get_template_directory() . '/extras/settings/settings.php';
 include get_template_directory() . '/extras/adminbar/adminbar.php';
 include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
 include get_template_directory() . '/extras/premium/premium.php';
+include get_template_directory() . '/extras/webfonts/webfonts.php';
 
 // Load the theme specific files
 include get_template_directory() . '/inc/slider.php';
@@ -61,13 +62,21 @@ function influence_setup() {
 	// Enable support for Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
-	set_post_thumbnail_size(1000, 480, true);
-	add_image_size('influence-slide', 960, 480, true);
+	set_post_thumbnail_size( 1000, 1000, false );
+	add_image_size( 'thumbnail-retina', 1000, 1000, false);
 
 	if( !defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels') ){
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/extras/panels-lite/panels-lite.php';
 	}
+
+	add_theme_support('siteorigin-premium-teaser', array(
+		'customizer' => true,
+		'settings' => true,
+	));
+
+	// Lets add the default webfont
+	siteorigin_webfonts_add_font('Montserrat');
 }
 endif; // influence_setup
 add_action( 'after_setup_theme', 'influence_setup' );
@@ -126,9 +135,10 @@ add_action( 'wp_enqueue_scripts', 'influence_register_scripts' , 5);
  * Enqueue scripts and styles
  */
 function influence_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	
+	wp_enqueue_style( 'influence-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'influence-main' , get_template_directory_uri().'/js/jquery.theme-main.js' , array('jquery', 'influence-fitvids'), SITEORIGIN_THEME_VERSION );
+
+	wp_enqueue_style('influence-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.0.3');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -153,6 +163,9 @@ function influence_body_class($classes){
 }
 add_filter('body_class', 'influence_body_class');
 
+/**
+ * Add scripts for some backwards compatibility with IE
+ */
 function influence_wp_head(){
 	?>
 	<!--[if lt IE 9]>
@@ -165,8 +178,38 @@ function influence_wp_head(){
 }
 add_action('wp_head', 'influence_wp_head');
 
+/**
+ * Remove the label from the comment form text field
+ *
+ * @param $form
+ *
+ * @return mixed
+ */
 function influence_filter_comment_form($form){
 	$form['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true"></textarea></p>' ;
 	return $form;
 }
 add_filter( 'comment_form_defaults', 'influence_filter_comment_form' );
+
+/**
+ * Add the viewport header for mobile devices
+ */
+function influence_viewport_header(){
+	if( siteorigin_setting( 'layout_responsive' ) ) {
+		?><meta name="viewport" content="width=device-width, user-scalable=no" /><?php
+	}
+	else {
+		?><meta name="viewport" content="width=1200app, initial-scale=1" /><?php
+	}
+}
+add_action('wp_head', 'influence_viewport_header');
+
+/**
+ * Change the name of Influence Premium.
+ *
+ * @return string|void
+ */
+function influence_premium_version_name() {
+	return __('Influence Plus', 'influence');
+}
+add_filter( 'siteorigin_premium_theme_name', 'influence_premium_version_name' );

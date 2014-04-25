@@ -26,22 +26,44 @@ function influence_theme_settings(){
 		'update' => __('Set Logo', 'influence'),
 	) );
 
+	siteorigin_settings_add_teaser( 'general', 'retina_logo', __('Retina Logo', 'influence'), array(
+		'choose' => __('Choose Image', 'influence'),
+		'update' => __('Set Logo', 'influence'),
+	) );
+
 	siteorigin_settings_add_field( 'general', 'site_description', 'checkbox', __('Site Description', 'influence'), array(
 		'description' => __('Display your site description under your logo.', 'influence')
 	) );
-	
-	siteorigin_settings_add_teaser( 'general', 'ajax_comments', __('Ajax Comments', 'influence'), array(
-		'description' => __('Keep your conversations flowing with ajax comments.', 'influence')
-	) );
 
+	siteorigin_settings_add_teaser( 'general', 'attribution', __('Attribution Link', 'influence'), array(
+		'description' => __('Remove the "Theme By SiteOrigin" text from your footer.', 'influence'),
+	) );
+	
 	/**
 	 * Home Page
 	 */
 
-	siteorigin_settings_add_field( 'home', 'slider', 'widget', __('Home Page Slider', 'influence'), array(
+	siteorigin_settings_add_field( 'home', 'displays', 'select', __('Home Displays', 'influence'), array(
+		'options' => array(
+			'demo' => __('Demo Slider', 'influence'),
+			'slider' => __('Home Slider', 'influence'),
+			'shortcode' => __('Home Shortcode', 'influence'),
+		),
+		'default' => 'demo',
+	) );
+
+	siteorigin_settings_add_field( 'home', 'slider', 'widget', __('Home Slider', 'influence'), array(
 		'widget_class' => 'SiteOrigin_Widget_Slider_Widget',
 		'plugin' => 'so-slider-widget',
 		'plugin_name' => __('SiteOrigin Slider Widget', 'influence'),
+	) );
+
+	siteorigin_settings_add_teaser( 'home', 'slider_shortcode', __('Home Shortcode', 'influence'), array(
+		'description' => sprintf(
+			__('Use a shortcode for your home page slider. Allows you to use alternative sliders like <a href="%s" target="_blank">MetaSlider</a> or <a href="%s" target="_blank">Slider Revolution</a>.', 'influence'),
+			'http://wordpress.org/plugins/ml-slider/',
+			'http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=SiteOrigin'
+		),
 	) );
 
 	/**
@@ -52,9 +74,6 @@ function influence_theme_settings(){
 		'description' => __('Scale your layout for small screen devices.', 'influence')
 	));
 	
-	siteorigin_settings_add_teaser('layout', 'responsive_menu', __('Responsive Menu', 'influence'), array(
-		'description' => __('Use a special responsive menu for small screen devices.', 'influence')
-	));
 }
 add_action('admin_init', 'influence_theme_settings');
 

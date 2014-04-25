@@ -204,12 +204,14 @@ input[type="submit"] {
 	line-height: 1;
 	padding: 1em 1.75em;
 }
+
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 
 }
+
 button:focus,
 html input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -336,6 +338,11 @@ body {
 	.box-sizing(border-box);
 }
 
+#main{
+	padding: 0 20px;
+	max-width: 1040px;
+}
+
 /* =Responsive Layout
 ----------------------------------------------- */
 
@@ -356,11 +363,12 @@ body {
 
 /* =Masthead
 ----------------------------------------------- */
-#masthead {
+.site-header {
 	position: fixed;
 	right: 0;
 	top: 0;
-	background: rgba(255,255,255,0.9);
+	background: rgb(255,255,255);
+	background: rgba(255,255,255,0.86);
 	padding: 25px 0;
 	width: 100%;
 	z-index: 1000;
@@ -386,16 +394,21 @@ body {
 			color: inherit;
 			display: block;
 			float: left;
+		}
 
-			img {
-				display: block;
-			}
+		img {
+			display: block;
 		}
 	}
 
 	&.has-shadow {
 		.box-shadow(~"0 2px 0 rgba(0,0,0,0.15)");
 	}
+}
+
+.site-header.site-header-sentinel {
+	visibility: hidden;
+	position: static;
 }
 
 body.admin-bar #masthead {
@@ -405,6 +418,13 @@ body.admin-bar #masthead {
 @media screen and (max-width: 782px) {
 	body.admin-bar #masthead {
 		top: 46px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body.admin-bar #masthead {
+		position: absolute;
+		top: 0;
 	}
 }
 
@@ -433,10 +453,11 @@ body.admin-bar #masthead {
 	top: 0;
 	right: -280px;
 	width: 280px;
+	max-width: 100%;
 	.box-sizing(border-box);
-	padding: 40px 30px 30px 30px;
+	padding: 45px 30px 30px 30px;
 	background: #22211f;
-	z-index: 1001;
+	z-index: 100000;
 	height: 100%;
 
 	overflow: auto;
@@ -468,7 +489,6 @@ body.admin-bar #masthead {
 
 		aside.widget {
 			.box-sizing(border-box);
-			float: right;
 			margin-bottom:40px;
 
 			color: #bab9b5;
@@ -480,6 +500,31 @@ body.admin-bar #masthead {
 
 			&:last-child {
 				margin-bottom: 0;
+			}
+
+			a {
+				color: #c8c6c3;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			ul, ol {
+				list-style: none;
+				margin: 0;
+
+				ul, ol {
+					margin-left: 1em;
+				}
+			}
+
+			#searchform #s {
+				width: 100%;
+				padding: 5px 8px;
+				font-size: 13px;
+				.rounded(0px);
 			}
 		}
 	}
@@ -524,12 +569,23 @@ body.display-main-menu {
 	}
 }
 
-.admin-bar #main-menu {
-	top: 32px;
-}
-
 /* =Archives
 ----------------------------------------------- */
+
+header.page-header {
+	margin-top: 40px;
+
+	h1 {
+		color: #373435;
+		font-size: 24px;
+	}
+
+	@media screen and (max-width: 480px) {
+		h1 {
+			font-size: 20px;
+		}
+	}
+}
 
 article.sticky{
 /* Style a sticky post */
@@ -575,7 +631,7 @@ article.sticky{
 		margin-left: 1.5em;
 
 		cite{
-			font-family: "Droid Sans", sans-serif;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: bold;
 		}
 
@@ -662,17 +718,21 @@ article.sticky{
 		.box-sizing(border-box);
 
 		text-align: center;
+
+		img {
+			display: block;
+		}
+
+		.wp-caption-text {
+			margin: 8px 0 0 0;
+			font-size: 0.85em;
+			line-height: 1.4em;
+		}
 	}
 
 	.wp-caption:first-child{
 		margin-top: 25px;
 	}
-
-	.wp-caption p.wp-caption-text{
-		margin: 0;
-		font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	}
-
 	.alignleft {
 	/* This is also styled on a global level */
 		margin: 0 0 1.5em 1.5em;
@@ -779,10 +839,18 @@ article.sticky{
 			margin-top: 40px;
 			overflow: hidden;
 			line-height: 1em;
+			color: #666666;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
 		}
 
 		&.post-navigation {
-
+			a {
+				font-weight: 500;
+			}
 		}
 
 		&.paging-navigation {
@@ -790,12 +858,7 @@ article.sticky{
 			padding: 20px 40px;
 			background: #FFFFFF;
 			margin-bottom: 40px;
-			color: #666666;
 
-			a {
-				color: inherit;
-				text-decoration: none;
-			}
 		}
 	}
 
@@ -807,8 +870,15 @@ article.sticky{
 
 #comments-title, #reply-title {
 	font-size: 20px;
-	margin-bottom: 20px;
 	line-height: 1em;
+}
+
+#comments-title {
+	margin-bottom: 40px;
+}
+
+#reply-title {
+	margin-bottom: 20px;
 }
 
 #comments {
@@ -820,13 +890,11 @@ article.sticky{
 
 		.children {
 			list-style: none;
-			margin-left: 95px;
+			margin-left: 75px;
 		}
 
 		article {
-			padding: 20px;
-			margin-bottom: 30px;
-			background: #F9F9F9;
+			margin-bottom: 40px;
 
 			.avatar {
 				float: left;
@@ -838,7 +906,7 @@ article.sticky{
 
 			.comment-author{
 				color: #666;
-				font-size: 14px;
+				font-size: 0.9em;
 				font-weight: bold;
 				line-height: 1em;
 				margin-bottom: 5px;
@@ -854,7 +922,7 @@ article.sticky{
 			}
 
 			.comment-meta {
-				font-size: 13px;
+				font-size: 0.875em;
 				color: #999;
 				line-height: 1em;
 				margin-bottom: 10px;
@@ -874,16 +942,28 @@ article.sticky{
 				display: block;
 				margin-bottom: 10px;
 			}
+
+			.entry-content {
+				font-size: 0.95em
+			}
+		}
+
+		> li {
+			border-bottom: 1px solid #EEEEEE;
+			margin-bottom: 40px;
 		}
 
 		.bypostauthor{
 			/* Change the comment by the post author */
 		}
+
+		#commentform {
+			margin-bottom: 40px;
+		}
 	}
 }
 
 #commentform{
-	margin-bottom: 30px;
 
 	label {
 		margin-top: 9px;
@@ -995,6 +1075,24 @@ article.sticky{
 		.widget-title {
 			margin-bottom: 20px;
 			color: #ebe9e5;
+		}
+
+		a {
+			color: #c8c6c3;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		ul, ol {
+			list-style: none;
+			margin: 0;
+
+			ul, ol {
+				margin-left: 1em;
+			}
 		}
 	}
 }

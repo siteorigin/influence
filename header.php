@@ -12,7 +12,6 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -60,6 +59,13 @@
 
 	</header><!-- #masthead .site-header -->
 
-	<?php echo apply_filters('influence_after_header', ''); ?>
+	<?php
+	$after_header = apply_filters('influence_after_header', '');
+	echo $after_header;
+	if(empty($after_header)) {
+		// We'll use a sentinel to take up space
+		influence_site_header_sentinel();
+	}
+	?>
 
 	<div id="main" class="site-main">

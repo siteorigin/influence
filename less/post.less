@@ -15,7 +15,7 @@ article.entry {
 	}
 
 	.post-text {
-		padding: 50px;
+		padding: 50px 5%;
 
 		.entry-title {
 			color: #373435;
@@ -31,8 +31,19 @@ article.entry {
 		}
 	}
 
+	@media (max-width:480px) {
+
+		.post-text .entry-title {
+			font-size: 24px;
+		}
+
+		.post-text {
+			padding: 50px 20px;
+		}
+	}
+
 	.entry-content {
-		color: #797677;
+		color: #787774;
 		font-size: 16px;
 		line-height: 1.75em;
 
@@ -42,8 +53,8 @@ article.entry {
 	}
 
 	.entry-meta {
-		color: #666666;
-		font-size: 15px;
+		color: #5e5d5a;
+		font-size: 14px;
 		line-height: 1.75em;
 		margin-top: 40px;
 		.clearfix();
@@ -60,12 +71,37 @@ article.entry {
 		}
 
 		.posted-on {
+			margin-left: 2em;
 			float: right;
-
 		}
 
 		.continue-reading {
 			float: left;
+		}
+
+		.taxonomy {
+			float: left;
+
+			> div {
+				display: inline-block;
+				margin-right: 2em;
+
+				> span.fa {
+					display: inline-block;
+					font-size: 15px;
+					margin-right: 0.5em;
+					margin-bottom: -4px;
+					.transition(0.35s);
+				}
+
+				&:hover > span.fa {
+					color: #3c3b38;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 }

@@ -4,8 +4,8 @@ function influence_supporters_upgrade_content($content){
 	$content['premium_title'] = __('Upgrade To influence Premium', 'influence');
 	$content['premium_summary'] = __("If you've enjoyed using influence, you're going to love influence Premium. It's a robust upgrade to influence that gives you some useful features. You choose the price, so you can decide what it's worth to give your site a professional edge.", 'influence');
 
-	// This is just a supporters pack
-	$content['supporters'] = true;
+	// We're offering the premium version as a free download.
+	$content['free_download'] = true;
 
 	$content['buy_url'] = 'http://siteorigin.localhost/?attachment_id=4&action=popup';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';

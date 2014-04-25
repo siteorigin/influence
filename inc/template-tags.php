@@ -338,3 +338,27 @@ function influence_next_attachment_url($post = null){
 	
 	return $next_attachment_url;
 }
+
+function influence_site_header_sentinel(){
+	?>
+	<div class="site-header has-shadow site-header-sentinel">
+
+		<div class="container">
+
+			<div class="hgroup">
+
+				<h1 class="site-title">
+					<?php influence_display_logo(); ?>
+				</h1>
+
+				<?php if(siteorigin_setting('general_site_description')) : ?>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php endif ?>
+
+			</div>
+
+		</div>
+
+	</div><!-- #masthead .site-header -->
+	<?php
+}
