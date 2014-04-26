@@ -67,6 +67,8 @@ jQuery(function($){
     if(typeof siteoriginSlider != 'undefined') {
 
         var positionSliderNav = function(el, speed){
+            if( !$('body').hasClass('menu-overlap') ) return;
+            
             var $$ = $(el);
             if(!$$.length) return;
 
