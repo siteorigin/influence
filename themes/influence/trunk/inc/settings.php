@@ -93,6 +93,7 @@ function influence_theme_setting_defaults($defaults){
 	);
 	$defaults['general_ajax_comments'] = false;
 	$defaults['general_site_description'] = false;
+	$defaults['general_attribution'] = true;
 
 	$defaults['home_displays'] = 'demo';
 	$defaults['home_slider'] = false;

@@ -1255,6 +1255,12 @@ article.entry .entry-meta .taxonomy > div:hover > span.fa {
 article.entry .entry-meta .taxonomy > div:last-child {
   margin-right: 0;
 }
+/* =The Slider
+----------------------------------------------- */
+#under-masthead-slider > p {
+  line-height: 1em;
+  margin-bottom: 0;
+}
 /* =Widgets
 ----------------------------------------------- */
 .widget {
