@@ -798,7 +798,26 @@ article.sticky {
   padding-left: 0 !important;
 }
 .entry-content table {
+  border-bottom: 1px solid #ededed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 2;
+  margin: 0 0 20px;
   width: 100%;
+}
+.entry-content table th,
+.entry-content table td {
+  font-weight: normal;
+  text-align: left;
+}
+.entry-content table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.entry-content table td {
+  border-top: 1px solid #ededed;
+  padding: 6px 10px 6px 0;
 }
 .entry-content img {
   max-width: 100%;
@@ -1254,6 +1273,15 @@ article.entry .entry-meta .taxonomy > div:hover > span.fa {
 }
 article.entry .entry-meta .taxonomy > div:last-child {
   margin-right: 0;
+}
+@media screen and (max-width: 640px) {
+  article.entry .entry-meta .posted-on,
+  article.entry .entry-meta .continue-reading,
+  article.entry .entry-meta .taxonomy {
+    margin: 0 0 0.5em 0;
+    text-align: center;
+    float: none;
+  }
 }
 /* =The Slider
 ----------------------------------------------- */
