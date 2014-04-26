@@ -30,19 +30,7 @@
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
 
-<div id="main-menu">
-
-	<a href="#" class="main-menu-close"><?php _e('Close', 'influence') ?></a>
-
-	<div class="menu">
-		<?php wp_nav_menu(array('theme_location' => 'primary')) ?>
-	</div>
-
-	<div class="widgets">
-		<?php dynamic_sidebar( 'sidebar-main' ) ?>
-	</div>
-
-</div>
+<?php get_sidebar() ?>
 
 <?php wp_footer(); ?>
 

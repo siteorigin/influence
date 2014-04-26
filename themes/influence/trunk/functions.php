@@ -158,7 +158,8 @@ add_action( 'wp_enqueue_scripts', 'influence_scripts' );
  * @since 1.0
  */
 function influence_body_class($classes){
-	if(siteorigin_setting('layout_responsive')) $classes[] = 'responsive';
+	if( siteorigin_setting('layout_responsive') ) $classes[] = 'responsive';
+	if( wp_is_mobile() ) $classes[] = 'mobile-device';
 	return $classes;
 }
 add_filter('body_class', 'influence_body_class');

@@ -35,36 +35,53 @@ jQuery(function($){
     var siteLogo = $('#masthead .site-title img');
     if(siteLogo.length) {
         var siteLogoSize = {
-            'width' : Number(siteLogo.attr('width')),
-            'height' : Number(siteLogo.attr('height'))
+            'width' : Number( siteLogo.attr('width') ),
+            'height' : Number( siteLogo.attr('height') )
         };
         siteLogoSize.ratio = siteLogoSize.width / siteLogoSize.height;
 
-        $(window).scroll(function(){
-            var top = $(window).scrollTop();
-            var multiplier = 1 - Math.min(0.5, top / siteLogoSize.height / 8);
+        var resizeSiteLogo = function(){
 
-            siteLogo.css({
-                'height' : siteLogoSize.height * multiplier,
-                'width' : siteLogoSize.height * multiplier * siteLogoSize.ratio
-            });
-        }).scroll();
+            if( $(window).width() >  480 ) {
+                var top = $(window).scrollTop();
+                var multiplier = 1 - Math.min(0.5, top / siteLogoSize.height / 8);
+
+                siteLogo.css({
+                    'height' : siteLogoSize.height * multiplier,
+                    'width' : siteLogoSize.height * multiplier * siteLogoSize.ratio
+                });
+            }
+            else {
+                // Resize the site logo to the original size
+                siteLogo.css( {
+                    'height' : siteLogoSize.height,
+                    'width' : siteLogoSize.width
+                } );
+            }
+        }
+        setTimeout(resizeSiteLogo, 250);
+        resizeSiteLogo();
+        $(window).scroll(resizeSiteLogo).resize(resizeSiteLogo);
     }
 
     if(typeof siteoriginSlider != 'undefined') {
 
         var positionSliderNav = function(el, speed){
             var $$ = $(el);
-            var $n = $$.closest('.sow-slider-base').find('.sow-slide-nav');
+            if(!$$.length) return;
 
-            $n.animate({'top': ( $$.outerHeight() - $('#masthead').outerHeight() ) / 2 }, speed );
+            var $n = $$.closest('.sow-slider-base').find('.sow-slide-nav');
+            var mh = $('#masthead').outerHeight();
+
+            $n.animate({'top': ( ( $$.outerHeight() - mh ) / 2 ) + mh }, speed );
         };
+
         $('#under-masthead-slider').on({
             'cycle-before': function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag){
-                positionSliderNav(incomingSlideEl, optionHash.speed);
+                positionSliderNav( incomingSlideEl, optionHash.speed );
             },
             'cycle-initialized': function(event, optionHash){
-                positionSliderNav(optionHash.slides[0], 0);
+                positionSliderNav( optionHash.slides[0], 0 );
             }
         }, '.sow-slider-images');
 
@@ -79,6 +96,24 @@ jQuery(function($){
 
         }).resize();
 
+    }
+
+    // Substitute any retina images
+    var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1;
+    if( pixelRatio > 1 ) {
+        $('img[data-retina-image]').each(function(){
+            var $$ = $(this);
+            $$.attr('src', $$.data('retina-image'));
+
+            // If the width attribute isn't set, then lets scale to 50%
+            if( typeof $$.attr('width') == 'undefined' ) {
+                $$.load( function(){
+                    var size = [$$.width(), $$.height()];
+                    $$.width(size[0]/2);
+                    $$.height(size[1]/2);
+                } );
+            }
+        })
     }
 
     /* Setup fitvids for entry content and panels */

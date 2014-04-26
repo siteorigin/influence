@@ -425,6 +425,10 @@ body.admin-bar #masthead {
 
 @media screen and (max-width: 600px) {
 	body.admin-bar #masthead {
+		top: 0;
+	}
+
+	#masthead {
 		position: absolute;
 		top: 0;
 	}
@@ -560,18 +564,27 @@ body.admin-bar #masthead {
 		top: 25px;
 		right: 30px;
 		z-index: 10;
-		width: 22px;
-		height: 22px;
+		width: 21px;
+		height: 21px;
 		background: url(./images/sprites/menu-close.png) no-repeat;
 		text-indent: -999px;
 		overflow: hidden;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			background: url(./images/retina/menu-close.png) no-repeat;
+			background-size: cover;
+		}
 	}
 }
 
 /* All the transitions we need for the animated menu */
 
-#main-menu, #page, #masthead {
-	.transition(0.5s);
+#page, #masthead {
+	.transition(0.5s, padding-right);
+}
+
+#main-menu {
+	.transition(0.5s, right);
 }
 
 body.display-main-menu {
