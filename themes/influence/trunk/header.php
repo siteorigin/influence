@@ -59,10 +59,14 @@
 
 	<?php
 	$after_header = apply_filters('influence_after_header', '');
-	echo $after_header;
-	if(empty($after_header)) {
+
+	if( empty($after_header) || !siteorigin_setting('home_menu_overlaps') ) {
 		// We'll use a sentinel to take up space
 		influence_site_header_sentinel();
+		echo $after_header;
+	}
+	else {
+		echo $after_header;
 	}
 	?>
 

@@ -53,6 +53,10 @@ function influence_theme_settings(){
 		'default' => 'demo',
 	) );
 
+	siteorigin_settings_add_field( 'home', 'menu_overlaps', 'checkbox', __('Menu Overlaps Slider', 'influence'), array(
+		'description' => __('Should the menu overlap the home page slider.', 'influence')
+	) );
+
 	siteorigin_settings_add_field( 'home', 'slider', 'widget', __('Home Slider', 'influence'), array(
 		'widget_class' => 'SiteOrigin_Widget_Slider_Widget',
 		'plugin' => 'so-slider-widget',
@@ -96,6 +100,7 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['general_attribution'] = true;
 
 	$defaults['home_displays'] = 'demo';
+	$defaults['home_menu_overlaps'] = true;
 	$defaults['home_slider'] = false;
 	$defaults['home_slider_shortcode'] = false;
 

@@ -87,10 +87,13 @@ jQuery(function($){
 
         // Reposition the navigation arrows in the slider
         $(window).resize(function(){
-            // Add a top margin to images in a SiteOrigin slider widget slides
-            $('#under-masthead-slider .sow-slider-base ul.sow-slider-images img').each(function(){
-                $(this).css('padding-top', $('#masthead').outerHeight() );
-            });
+
+            if( $('body').hasClass('menu-overlap') ) {
+                // Add a top margin to images in a SiteOrigin slider widget slides
+                $('#under-masthead-slider .sow-slider-base ul.sow-slider-images img').each(function () {
+                    $(this).css('padding-top', $('#masthead').outerHeight());
+                });
+            }
 
             positionSliderNav($('#under-masthead-slider .cycle-slide-active'), 0);
 
