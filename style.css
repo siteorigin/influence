@@ -482,7 +482,7 @@ body {
 }
 .site-header .site-title {
   zoom: 1;
-  font-size: 18px;
+  font-size: 24px;
   color: #444444;
   font-weight: 400;
   line-height: 1em;
@@ -1186,7 +1186,7 @@ article.entry .post-thumbnail img {
   height: auto;
 }
 article.entry .post-text {
-  padding: 50px 5%;
+  padding: 40px 5%;
 }
 article.entry .post-text .entry-title {
   color: #373435;
@@ -1200,11 +1200,16 @@ article.entry .post-text .entry-title a {
   text-decoration: none;
 }
 @media (max-width: 480px) {
+  article.entry .post-text {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   article.entry .post-text .entry-title {
     font-size: 24px;
+    margin-bottom: 30px;
   }
   article.entry .post-text {
-    padding: 50px 20px;
+    padding: 40px 20px;
   }
 }
 article.entry .entry-content {
