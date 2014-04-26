@@ -160,6 +160,7 @@ add_action( 'wp_enqueue_scripts', 'influence_scripts' );
 function influence_body_class($classes){
 	if( siteorigin_setting('layout_responsive') ) $classes[] = 'responsive';
 	if( wp_is_mobile() ) $classes[] = 'mobile-device';
+	if( is_front_page() && siteorigin_setting('home_menu_overlaps') ) $classes[] = 'menu-overlap';
 	return $classes;
 }
 add_filter('body_class', 'influence_body_class');

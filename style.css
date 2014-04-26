@@ -1212,6 +1212,10 @@ article.entry .entry-content {
   font-size: 16px;
   line-height: 1.75em;
 }
+article.entry .entry-content strong {
+  color: #646360;
+  font-weight: 500;
+}
 article.entry .entry-content h1,
 article.entry .entry-content h2,
 article.entry .entry-content h3,
