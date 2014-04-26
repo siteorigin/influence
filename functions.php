@@ -197,10 +197,10 @@ add_filter( 'comment_form_defaults', 'influence_filter_comment_form' );
  */
 function influence_viewport_header(){
 	if( siteorigin_setting( 'layout_responsive' ) ) {
-		?><meta name="viewport" content="width=device-width, user-scalable=no" /><?php
+		?><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /><?php
 	}
 	else {
-		?><meta name="viewport" content="width=1200app, initial-scale=1" /><?php
+		?><meta name="viewport" content="width=1200px" /><?php
 	}
 }
 add_action('wp_head', 'influence_viewport_header');
