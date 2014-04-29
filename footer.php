@@ -20,10 +20,16 @@
 				<?php dynamic_sidebar( 'sidebar-footer' ) ?>
 			</div><!-- #footer-widgets -->
 
-			<div id="site-info">
-				<?php do_action( 'influence_credits' ); ?>
-				<?php echo apply_filters( 'influence_credits_siteorigin', sprintf( __( 'Theme by %1$s.', 'influence' ), '<a href="http://siteorigin.com/" rel="designer">SiteOrigin</a>' ) ); ?>
-			</div><!-- .site-info -->
+			<?php $credits = apply_filters( 'influence_credits_siteorigin', sprintf( __( 'Theme by %1$s.', 'influence' ), '<a href="http://siteorigin.com/" rel="designer">SiteOrigin</a>' ) ); ?>
+
+			<?php if( !empty($credits) ) : ?>
+				<div id="site-info">
+					<?php
+					do_action( 'influence_credits' );
+					echo $credits;
+					?>
+				</div><!-- .site-info -->
+			<?php endif; ?>
 
 		</div>
 
