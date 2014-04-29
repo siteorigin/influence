@@ -163,7 +163,7 @@ textarea {
 }
 /* Links */
 a {
-  color: #3467ff;
+  color: #2f5faa;
 }
 /* Headings */
 h1,
@@ -557,6 +557,9 @@ body.admin-bar #masthead {
   .site-header .site-title a img {
     display: inline-block;
   }
+  .site-header .site-description {
+    text-align: center;
+  }
   .main-navigation {
     position: static;
     margin-top: 25px;
@@ -608,6 +611,7 @@ body.admin-bar #masthead {
   color: #bab9b5;
 }
 #main-menu .widgets aside.widget .widget-title {
+  font-size: 1.4em;
   margin-bottom: 20px;
   color: #ebe9e5;
 }
@@ -1152,6 +1156,7 @@ article.sticky {
   color: #bab9b5;
 }
 #footer-widgets aside.widget .widget-title {
+  font-size: 1.5em;
   margin-bottom: 20px;
   color: #ebe9e5;
 }
@@ -1179,6 +1184,9 @@ article.entry {
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
   box-shadow: 0 1px 3px rgba(0,0,0,0.175);
+}
+article.entry .post-thumbnail {
+  background: #F7F7F7;
 }
 article.entry .post-thumbnail img {
   display: block;
@@ -1252,7 +1260,7 @@ article.entry .entry-meta a {
 }
 article.entry .entry-meta a:hover {
   text-decoration: underline;
-  color: #3467ff;
+  color: #2f5faa;
 }
 article.entry .entry-meta .posted-on {
   margin-left: 2em;

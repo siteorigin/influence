@@ -49,7 +49,7 @@
 
 				<a href="#" class="main-menu-button">
 					<span class="icon"></span>
-					<?php _e('Menu', 'influence') ?>
+					<?php echo siteorigin_setting('general_menu_text') ?>
 				</a>
 
 			</nav><!-- .site-navigation .main-navigation -->

@@ -68,7 +68,7 @@ jQuery(function($){
 
         var positionSliderNav = function(el, speed){
             if( !$('body').hasClass('menu-overlap') ) return;
-            
+
             var $$ = $(el);
             if(!$$.length) return;
 
