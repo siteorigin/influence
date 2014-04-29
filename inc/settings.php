@@ -38,12 +38,16 @@ function influence_theme_settings(){
 	siteorigin_settings_add_teaser( 'general', 'attribution', __('Attribution Link', 'influence'), array(
 		'description' => __('Remove the "Theme By SiteOrigin" text from your footer.', 'influence'),
 	) );
+
+	siteorigin_settings_add_field( 'general', 'menu_text', 'text', __('Menu Text', 'influence'), array(
+		'description' => __('The text displayed as your menu button.', 'influence')
+	) );
 	
 	/**
 	 * Home Page
 	 */
 
-	siteorigin_settings_add_field( 'home', 'displays', 'select', __('Home Displays', 'influence'), array(
+	siteorigin_settings_add_field( 'home', 'displays', 'select', __('Home Slider Area', 'influence'), array(
 		'options' => array(
 			'' => __('None', 'influence'),
 			'demo' => __('Demo Slider', 'influence'),
@@ -51,6 +55,7 @@ function influence_theme_settings(){
 			'shortcode' => __('Home Shortcode', 'influence'),
 		),
 		'default' => 'demo',
+		'description' => __('Choose what your home slider area displays.', 'influence'),
 	) );
 
 	siteorigin_settings_add_field( 'home', 'menu_overlaps', 'checkbox', __('Menu Overlaps Slider', 'influence'), array(
@@ -98,6 +103,7 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['general_ajax_comments'] = false;
 	$defaults['general_site_description'] = false;
 	$defaults['general_attribution'] = true;
+	$defaults['general_menu_text'] = __('Menu', 'influence');
 
 	$defaults['home_displays'] = 'demo';
 	$defaults['home_menu_overlaps'] = true;

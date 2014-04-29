@@ -21,7 +21,9 @@
 
 	<div class="post-text">
 
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<?php if( get_the_title() ) : ?>
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<?php endif; ?>
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 			<div class="entry-content">
@@ -35,7 +37,7 @@
 		<?php endif; ?>
 
 		<div class="entry-meta">
-			<?php if((!is_singular() && preg_match( '/<!--more(.*?)?-->/', $post->post_content )) || empty($post->post_title)) : ?>
+			<?php if( !is_singular() && ( preg_match( '/<!--more(.*?)?-->/', $post->post_content ) || empty($post->post_title) ) ) : ?>
 				<div class="continue-reading"><a href="<?php the_permalink() ?>"><?php _e('Continue Reading <span class="meta-nav">&rarr;</span>', 'influence') ?></a></div>
 			<?php else : ?>
 				<div class="taxonomy">
