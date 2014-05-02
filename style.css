@@ -468,7 +468,7 @@ body {
   background: rgba(255, 255, 255, 0.86);
   padding: 25px 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 490;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -506,6 +506,9 @@ body {
   max-width: 100%;
   height: auto;
   display: block;
+}
+.site-header .site-description {
+  color: #333333;
 }
 .site-header.has-shadow {
   -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.15);
@@ -611,7 +614,7 @@ body.admin-bar #masthead {
   color: #bab9b5;
 }
 #main-menu .widgets aside.widget .widget-title {
-  font-size: 1.4em;
+  font-size: 1.25em;
   margin-bottom: 20px;
   color: #ebe9e5;
 }
@@ -951,7 +954,7 @@ article.sticky {
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
   box-shadow: 0 1px 3px rgba(0,0,0,0.175);
-  padding: 20px 40px;
+  padding: 20px 5%;
   background: #FFFFFF;
   margin-bottom: 40px;
 }
@@ -1156,7 +1159,7 @@ article.sticky {
   color: #bab9b5;
 }
 #footer-widgets aside.widget .widget-title {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-bottom: 20px;
   color: #ebe9e5;
 }

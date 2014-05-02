@@ -37,7 +37,7 @@
 					</a>
 				</h1>
 
-				<?php if(siteorigin_setting('general_site_description')) : ?>
+				<?php if(siteorigin_setting('logo_site_description')) : ?>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				<?php endif ?>
 
