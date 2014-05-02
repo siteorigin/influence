@@ -13,27 +13,36 @@
  * @since influence 1.0
  */
 function influence_theme_settings(){
+	siteorigin_settings_add_section( 'logo', __('Logo', 'influence') );
 	siteorigin_settings_add_section( 'general', __('General', 'influence') );
 	siteorigin_settings_add_section( 'home', __('Home Page', 'influence') );
 	siteorigin_settings_add_section( 'layout', __('Layout', 'influence') );
 
 	/**
-	 * General Settings
+	 * Logo Settings
 	 */
 	
-	siteorigin_settings_add_field( 'general', 'logo', 'media', __('Logo', 'influence'), array(
+	siteorigin_settings_add_field( 'logo', 'logo', 'media', __('Logo', 'influence'), array(
 		'choose' => __('Choose Image', 'influence'),
 		'update' => __('Set Logo', 'influence'),
 	) );
 
-	siteorigin_settings_add_teaser( 'general', 'retina_logo', __('Retina Logo', 'influence'), array(
+	siteorigin_settings_add_teaser( 'logo', 'retina_logo', __('Retina Logo', 'influence'), array(
 		'choose' => __('Choose Image', 'influence'),
 		'update' => __('Set Logo', 'influence'),
 	) );
 
-	siteorigin_settings_add_field( 'general', 'site_description', 'checkbox', __('Site Description', 'influence'), array(
+	siteorigin_settings_add_field( 'logo', 'scale', 'checkbox', __('Scale Logo on Scroll', 'influence'), array(
+		'description' => __('Scale down the logo when scrolling down the screen.', 'influence'),
+	) );
+
+	siteorigin_settings_add_field( 'logo', 'site_description', 'checkbox', __('Site Description', 'influence'), array(
 		'description' => __('Display your site description under your logo.', 'influence')
 	) );
+
+	/**
+	 * General settings
+	 */
 
 	siteorigin_settings_add_teaser( 'general', 'attribution', __('Attribution Link', 'influence'), array(
 		'description' => __('Remove the "Theme By SiteOrigin" text from your footer.', 'influence'),
@@ -51,8 +60,8 @@ function influence_theme_settings(){
 		'options' => array(
 			'' => __('None', 'influence'),
 			'demo' => __('Demo Slider', 'influence'),
-			'slider' => __('Home Slider', 'influence'),
-			'shortcode' => __('Home Shortcode', 'influence'),
+			'slider' => __('Slider', 'influence'),
+			'shortcode' => __('Shortcode', 'influence'),
 		),
 		'default' => 'demo',
 		'description' => __('Choose what your home slider area displays.', 'influence'),
@@ -95,13 +104,14 @@ add_action('admin_init', 'influence_theme_settings');
  * @since influence 1.0
  */
 function influence_theme_setting_defaults($defaults){
-	$defaults['general_logo'] = array(
+	$defaults['logo_logo'] = array(
 		get_template_directory_uri().'/demo/logo.png',
 		35,
 		192,
 	);
-	$defaults['general_ajax_comments'] = false;
-	$defaults['general_site_description'] = false;
+	$defaults['logo_scale'] = true;
+	$defaults['logo_site_description'] = false;
+
 	$defaults['general_attribution'] = true;
 	$defaults['general_menu_text'] = __('Menu', 'influence');
 
