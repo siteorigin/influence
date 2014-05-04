@@ -517,9 +517,7 @@ body.has-main-sidebar #secondary {
   box-sizing: border-box;
 }
 .site-header .container {
-  padding: 0;
   position: relative;
-  max-width: 1050px;
   padding: 0 25px;
 }
 .site-header .site-title {
@@ -1138,6 +1136,9 @@ article.sticky {
   margin-top: 40px;
   padding: 40px 0;
 }
+#colophon .container {
+  padding: 0 25px;
+}
 #colophon #site-info {
   margin-top: 40px;
   font-size: 13px;
@@ -1217,6 +1218,16 @@ article.sticky {
 #footer-widgets aside.widget ul ol,
 #footer-widgets aside.widget ol ol {
   margin-left: 1em;
+}
+@media screen and (max-width: 480px) {
+  #footer-widgets aside.widget {
+    float: none;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  #footer-widgets aside.widget:last-child {
+    margin-bottom: 0;
+  }
 }
 article.entry {
   background: #fbfbfb;
