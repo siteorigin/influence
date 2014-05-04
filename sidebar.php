@@ -8,16 +8,14 @@
  */
 ?>
 
-<div id="main-menu">
+<?php if( is_active_sidebar('sidebar-main') ) : ?>
 
-	<a href="#" class="main-menu-close"><?php _e('Close', 'influence') ?></a>
+	<div id="secondary">
 
-	<div class="menu">
-		<?php wp_nav_menu(array('theme_location' => 'primary')) ?>
+		<div class="widgets">
+			<?php dynamic_sidebar( 'sidebar-main' ) ?>
+		</div>
+
 	</div>
 
-	<div class="widgets">
-		<?php dynamic_sidebar( 'sidebar-main' ) ?>
-	</div>
-
-</div>
+<?php endif; ?>

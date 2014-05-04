@@ -138,7 +138,7 @@ if(!function_exists('influence_display_logo')):
  * Display the logo 
  */
 function influence_display_logo(){
-	$logo = siteorigin_setting('general_logo');
+	$logo = siteorigin_setting('logo_logo');
 
 	if( empty($logo) ) {
 		// Just display the site title

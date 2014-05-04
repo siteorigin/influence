@@ -341,6 +341,44 @@ body {
 #main{
 	padding: 0 20px;
 	max-width: 1040px;
+	.clearfix();
+}
+
+/* =Handle having a sidebar
+----------------------------------------------- */
+
+body.has-main-sidebar {
+	#main ,
+	.container{
+		max-width: 1200px;
+	}
+
+	#primary {
+		float: left;
+		width: 70%;
+	}
+
+	#secondary {
+		float: right;
+		width: 27%;
+		.box-sizing(border-box);
+	}
+
+	@media (max-width:800px) {
+		#primary, #secondary {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	&.display-main-menu {
+		@media (max-width:1200px) {
+			#primary, #secondary {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
 }
 
 /* =Responsive Layout
@@ -415,6 +453,7 @@ body {
 .site-header.site-header-sentinel {
 	visibility: hidden;
 	position: static;
+	margin-bottom: 40px;
 }
 
 body.admin-bar #masthead {
@@ -623,7 +662,6 @@ body.display-main-menu {
 ----------------------------------------------- */
 
 header.page-header {
-	margin-top: 40px;
 
 	h1 {
 		color: #373435;
@@ -1099,6 +1137,32 @@ article.sticky{
 
 	.required {
 		color: #A40802;
+	}
+}
+
+/* =The Main, Visible Sidebar
+----------------------------------------------- */
+
+#secondary {
+	background: #fbfbfb;
+	.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
+	padding: 25px;
+
+	.widget {
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.widget-title {
+			font-size: 18px;
+			margin-bottom: 1em;
+		}
+
+		#s {
+			width: 100%;
+		}
 	}
 }
 
