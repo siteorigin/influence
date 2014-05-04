@@ -36,7 +36,7 @@
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
 
-<?php get_sidebar() ?>
+<?php get_sidebar('menu') ?>
 
 <?php wp_footer(); ?>
 

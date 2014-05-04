@@ -10,12 +10,12 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<section id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
 		<div class="entry-content">
 			<?php if(function_exists('siteorigin_panels_render')) echo siteorigin_panels_render('home'); ?>
 		</div>
 	</div><!-- #content .site-content -->
-</div><!-- #primary .content-area -->
+</section><!-- #primary .content-area -->
 
 <?php get_footer(); ?>

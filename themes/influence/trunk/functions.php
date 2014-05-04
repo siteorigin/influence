@@ -113,6 +113,15 @@ function influence_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name' => __( 'Menu Sidebar', 'influence' ),
+		'id' => 'sidebar-menu',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name' => __( 'Footer', 'influence' ),
 		'id' => 'sidebar-footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -161,6 +170,10 @@ function influence_body_class($classes){
 	if( siteorigin_setting('layout_responsive') ) $classes[] = 'responsive';
 	if( wp_is_mobile() ) $classes[] = 'mobile-device';
 	if( is_front_page() && siteorigin_setting('home_menu_overlaps') ) $classes[] = 'menu-overlap';
+
+	if( is_active_sidebar('sidebar-main') ) $classes[] = 'has-main-sidebar';
+
+
 	return $classes;
 }
 add_filter('body_class', 'influence_body_class');
