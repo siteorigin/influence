@@ -413,9 +413,7 @@ body.has-main-sidebar {
 	.box-sizing(border-box);
 
 	.container {
-		padding: 0;
 		position: relative;
-		max-width: 1050px;
 		padding: 0 25px;
 	}
 
@@ -1131,6 +1129,10 @@ article.sticky{
 	margin-top: 40px;
 	padding: 40px 0;
 
+	.container {
+		padding: 0 25px;
+	}
+
 	#site-info {
 		margin-top: 40px;
 		font-size: 13px;
@@ -1207,6 +1209,18 @@ article.sticky{
 
 			ul, ol {
 				margin-left: 1em;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			&{
+				float: none;
+				width: 100%;
+				margin-bottom: 40px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
