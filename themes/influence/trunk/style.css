@@ -671,25 +671,6 @@ body.admin-bar #masthead {
 #main-menu .widgets aside.widget a:hover {
   text-decoration: underline;
 }
-#main-menu .widgets aside.widget ul,
-#main-menu .widgets aside.widget ol {
-  list-style: none;
-  margin: 0;
-}
-#main-menu .widgets aside.widget ul ul,
-#main-menu .widgets aside.widget ol ul,
-#main-menu .widgets aside.widget ul ol,
-#main-menu .widgets aside.widget ol ol {
-  margin-left: 1em;
-}
-#main-menu .widgets aside.widget #searchform #s {
-  width: 100%;
-  padding: 5px 8px;
-  font-size: 13px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-}
 #main-menu .main-menu-close {
   position: absolute;
   top: 25px;
@@ -996,7 +977,6 @@ article.sticky {
   box-shadow: 0 1px 3px rgba(0,0,0,0.175);
   padding: 20px 5%;
   background: #FFFFFF;
-  margin-bottom: 40px;
 }
 /* =Comments
 ----------------------------------------------- */
@@ -1151,33 +1131,11 @@ article.sticky {
 #commentform .required {
   color: #A40802;
 }
-/* =The Main, Visible Sidebar
------------------------------------------------ */
-#secondary {
-  background: #fbfbfb;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.175);
-  padding: 25px;
-}
-#secondary .widget {
-  margin-bottom: 40px;
-}
-#secondary .widget:last-child {
-  margin-bottom: 0;
-}
-#secondary .widget .widget-title {
-  font-size: 18px;
-  margin-bottom: 1em;
-}
-#secondary .widget #s {
-  width: 100%;
-}
 /* =The Footer
 ----------------------------------------------- */
 #colophon {
   background: #2d2c2c;
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 40px 0;
 }
 #colophon #site-info {
@@ -1196,6 +1154,23 @@ article.sticky {
 }
 /* =Sidebars and Asides
 ----------------------------------------------- */
+#secondary {
+  background: #fbfbfb;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.175);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.175);
+  padding: 25px;
+}
+#secondary .widget {
+  margin-bottom: 40px;
+}
+#secondary .widget:last-child {
+  margin-bottom: 0;
+}
+#secondary .widget .widget-title {
+  font-size: 18px;
+  margin-bottom: 1em;
+}
 #footer-widgets {
   zoom: 1;
   margin: 0 -15px;
@@ -1446,6 +1421,25 @@ article.entry .entry-meta .taxonomy > div:last-child {
 .widget .button-container.align-full .button {
   display: block;
   text-align: center;
+}
+.widget > div ul,
+.widget > div ol {
+  list-style: none;
+  margin: 0;
+}
+.widget > div ul ul,
+.widget > div ol ul,
+.widget > div ul ol,
+.widget > div ol ol {
+  margin-left: 1em;
+}
+.widget #s {
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 13px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 .widget_call-to-action {
   position: relative;

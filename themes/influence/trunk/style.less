@@ -591,21 +591,6 @@ body.admin-bar #masthead {
 				}
 			}
 
-			ul, ol {
-				list-style: none;
-				margin: 0;
-
-				ul, ol {
-					margin-left: 1em;
-				}
-			}
-
-			#searchform #s {
-				width: 100%;
-				padding: 5px 8px;
-				font-size: 13px;
-				.rounded(0px);
-			}
 		}
 	}
 	
@@ -968,8 +953,6 @@ article.sticky{
 			.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
 			padding: 20px 5%;
 			background: #FFFFFF;
-			margin-bottom: 40px;
-
 		}
 	}
 
@@ -1140,38 +1123,12 @@ article.sticky{
 	}
 }
 
-/* =The Main, Visible Sidebar
------------------------------------------------ */
-
-#secondary {
-	background: #fbfbfb;
-	.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
-	padding: 25px;
-
-	.widget {
-		margin-bottom: 40px;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		.widget-title {
-			font-size: 18px;
-			margin-bottom: 1em;
-		}
-
-		#s {
-			width: 100%;
-		}
-	}
-}
-
 /* =The Footer
 ----------------------------------------------- */
 
 #colophon {
 	background: #2d2c2c;
-	margin-top: 50px;
+	margin-top: 40px;
 	padding: 40px 0;
 
 	#site-info {
@@ -1194,6 +1151,26 @@ article.sticky{
 
 /* =Sidebars and Asides
 ----------------------------------------------- */
+
+#secondary {
+	background: #fbfbfb;
+	.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
+	padding: 25px;
+
+	.widget {
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.widget-title {
+			font-size: 18px;
+			margin-bottom: 1em;
+		}
+
+	}
+}
 
 #footer-widgets {
 	.clearfix();
