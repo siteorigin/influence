@@ -214,7 +214,7 @@ function influence_viewport_header(){
 		?><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /><?php
 	}
 	else {
-		?><meta name="viewport" content="width=1200px" /><?php
+		?><meta name="viewport" content="width=1240px" /><?php
 	}
 }
 add_action('wp_head', 'influence_viewport_header');
