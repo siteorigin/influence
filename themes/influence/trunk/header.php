@@ -43,6 +43,8 @@
 
 			</div>
 
+			<?php if( siteorigin_setting('general_menu_text') ) : ?>
+
 			<nav role="navigation" class="site-navigation main-navigation primary">
 
 				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
@@ -53,6 +55,9 @@
 				</a>
 
 			</nav><!-- .site-navigation .main-navigation -->
+
+			<?php endif; ?>
+
 		</div>
 
 	</header><!-- #masthead .site-header -->

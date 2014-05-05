@@ -361,16 +361,20 @@ function influence_site_header_sentinel(){
 
 			</div>
 
-			<div role="navigation" class="site-navigation main-navigation primary">
+			<?php if( siteorigin_setting('general_menu_text') ) : ?>
 
-				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
+				<div role="navigation" class="site-navigation main-navigation primary">
 
-				<a href="#" class="main-menu-button">
-					<i class="fa fa-th-list"></i>
-					<?php _e('Menu', 'influence') ?>
-				</a>
+					<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
-			</div><!-- .site-navigation .main-navigation -->
+					<a href="#" class="main-menu-button">
+						<i class="fa fa-th-list"></i>
+						<?php _e('Menu', 'influence') ?>
+					</a>
+
+				</div><!-- .site-navigation .main-navigation -->
+
+			<?php endif; ?>
 
 		</div>
 
