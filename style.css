@@ -434,16 +434,16 @@ body {
 }
 #main,
 .container {
+  position: relative;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 #main {
-  padding: 0 20px;
-  max-width: 1040px;
   zoom: 1;
 }
 #main:before {
@@ -479,6 +479,9 @@ body.has-main-sidebar #secondary {
     float: none;
     width: 100%;
   }
+  body.has-main-sidebar #secondary {
+    margin-top: 40px;
+  }
 }
 @media (max-width: 1200px) {
   body.has-main-sidebar.display-main-menu #primary,
@@ -486,18 +489,8 @@ body.has-main-sidebar #secondary {
     float: none;
     width: 100%;
   }
-}
-/* =Responsive Layout
------------------------------------------------ */
-/* We consider 680px to be mobile resolution */
-@media (max-width: 680px) {
-  body.responsive #footer-widgets .widget {
-    display: block;
-    margin-bottom: 25px;
-    float: none;
-  }
-  body.responsive #footer-widgets .widget:last-child {
-    margin-bottom: 0;
+  body.has-main-sidebar.display-main-menu #secondary {
+    margin-top: 40px;
   }
 }
 /* =Masthead
@@ -515,10 +508,6 @@ body.has-main-sidebar #secondary {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-.site-header .container {
-  position: relative;
-  padding: 0 25px;
 }
 .site-header .site-title {
   zoom: 1;
@@ -592,6 +581,10 @@ body.admin-bar #masthead {
   color: #333230;
   font-weight: 500;
   text-decoration: none;
+}
+.main-navigation a.main-menu-button .fa {
+  display: inline-block;
+  margin-right: 3px;
 }
 @media screen and (max-width: 480px) {
   .site-header .site-title a {
@@ -1137,7 +1130,7 @@ article.sticky {
   padding: 40px 0;
 }
 #colophon .container {
-  padding: 0 25px;
+  padding: 0 20px;
 }
 #colophon #site-info {
   margin-top: 40px;
@@ -1239,6 +1232,9 @@ article.entry {
 article.entry:first-child {
   margin-top: 0;
 }
+article.entry:last-child {
+  margin-bottom: 0;
+}
 article.entry .post-thumbnail {
   background: #F7F7F7;
 }
@@ -1248,7 +1244,7 @@ article.entry .post-thumbnail img {
   height: auto;
 }
 article.entry .post-text {
-  padding: 40px 5%;
+  padding: 40px;
 }
 article.entry .post-text .entry-title {
   color: #373435;
@@ -1353,6 +1349,13 @@ article.entry .entry-meta .taxonomy > div:last-child {
     text-align: center;
     float: none;
   }
+}
+/* =Page Templates
+----------------------------------------------- */
+body.page-template-templatestemplate-full-php #primary,
+body.page-template-templatestemplate-full-no-title-php #primary {
+  float: none;
+  width: 100%;
 }
 /* =The Slider
 ----------------------------------------------- */

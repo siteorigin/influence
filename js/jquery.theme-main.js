@@ -31,9 +31,9 @@ jQuery(function($){
         $('#masthead a.main-menu-button').click();
     });
 
-    // This handles resizing the logo image if there is one when we scroll down
+    // This handles scaling the logo image if there is one when we scroll down
     var siteLogo = $('#masthead .site-title img');
-    if(siteLogo.length) {
+    if(siteLogo.length && siteLogo.eq(0).data('scale') != null) {
         var siteLogoSize = {
             'width' : Number( siteLogo.attr('width') ),
             'height' : Number( siteLogo.attr('height') )

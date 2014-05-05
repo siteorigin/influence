@@ -89,9 +89,13 @@ function influence_theme_settings(){
 	 * Layout Settings
 	 */
 
-	siteorigin_settings_add_field('layout', 'responsive', 'checkbox', __('Responsive Layout', 'influence'), array(
+	siteorigin_settings_add_field( 'layout', 'responsive', 'checkbox', __('Responsive Layout', 'influence'), array(
 		'description' => __('Scale your layout for small screen devices.', 'influence')
-	));
+	) );
+
+	siteorigin_settings_add_field( 'layout', 'viewport', 'checkbox', __('Mobile Viewport Size', 'influence'), array(
+		'description' => __('Choose the width of the viewport for mobile devices when responsive is disabled.', 'influence')
+	) );
 	
 }
 add_action('admin_init', 'influence_theme_settings');

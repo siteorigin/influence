@@ -34,10 +34,6 @@
 			</div><!-- .entry-content -->
 		<?php endif; ?>
 
-		<div class="entry-meta">
-			<div class="posted-on"><?php influence_posted_on(); ?></div>
-		</div><!-- .entry-meta -->
-
 		<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
 			<div id="single-comments-wrapper">
 				<?php comments_template( '', true ); ?>
