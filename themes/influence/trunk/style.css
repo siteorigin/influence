@@ -467,7 +467,7 @@ body.has-main-sidebar #primary {
 }
 body.has-main-sidebar #secondary {
   float: right;
-  width: 27%;
+  width: 26.5%;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -680,18 +680,20 @@ body.admin-bar #masthead {
   }
 }
 /* All the transitions we need for the animated menu */
-#page,
-#masthead {
-  -webkit-transition: padding-right 0.5s ease;
-  -moz-transition: padding-right 0.5s ease;
-  -o-transition: padding-right 0.5s ease;
-  transition: padding-right 0.5s ease;
-}
 #main-menu {
   -webkit-transition: right 0.5s ease;
   -moz-transition: right 0.5s ease;
   -o-transition: right 0.5s ease;
   transition: right 0.5s ease;
+}
+#page,
+#page > div,
+#page > section,
+#page > header {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 body.display-main-menu #main-menu {
   right: 0px;
@@ -705,6 +707,15 @@ body.display-main-menu #masthead {
   body.display-main-menu #page,
   body.display-main-menu #masthead {
     padding-right: 0px;
+  }
+  body.display-main-menu #page > div,
+  body.display-main-menu #page > section,
+  body.display-main-menu #page > header {
+    -webkit-transform: translateX(-280px);
+    -moz-transform: translateX(-280px);
+    -o-transform: translateX(-280px);
+    -ms-transform: translateX(-280px);
+    transform: translateX(-280px);
   }
 }
 /* =Archives
