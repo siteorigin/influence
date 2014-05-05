@@ -7,6 +7,10 @@ article.entry {
 		margin-top: 0;
 	}
 
+	&:last-child {
+		margin-bottom: 0;
+	}
+
 	.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
 
 	.post-thumbnail {
@@ -21,7 +25,7 @@ article.entry {
 	}
 
 	.post-text {
-		padding: 40px 5%;
+		padding: 40px;
 
 		.entry-title {
 			color: #373435;
@@ -127,5 +131,16 @@ article.entry {
 				float: none;
 			}
 		}
+	}
+}
+
+/* =Page Templates
+----------------------------------------------- */
+
+body.page-template-templatestemplate-full-php,
+body.page-template-templatestemplate-full-no-title-php{
+	#primary {
+		float: none;
+		width: 100%;
 	}
 }

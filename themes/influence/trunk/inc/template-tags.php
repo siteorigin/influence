@@ -158,12 +158,16 @@ function influence_display_logo(){
 		}
 
 		// Add all the logo attributes
-		$logo_attributes = apply_filters('influence_logo_image_attributes', array(
+		$logo_attributes = array(
 			'src' => $src,
 			'width' => round($width),
 			'height' => round($height),
 			'alt' => sprintf( __('%s Logo', 'influence'), get_bloginfo('name') ),
-		) );
+		);
+
+		if( siteorigin_setting('logo_scale') ) $logo_attributes['data-scale'] = '1';
+
+		$logo_attributes = apply_filters('influence_logo_image_attributes', $logo_attributes );
 
 		$logo_attributes_str = array();
 		if( !empty( $logo_attributes ) ) {
@@ -362,7 +366,7 @@ function influence_site_header_sentinel(){
 				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
 				<a href="#" class="main-menu-button">
-					<span class="icon"></span>
+					<i class="fa fa-th-list"></i>
 					<?php _e('Menu', 'influence') ?>
 				</a>
 

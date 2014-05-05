@@ -333,14 +333,14 @@ body {
 
 #main ,
 .container{
+	position: relative;
 	max-width: 1000px;
 	margin: 0 auto;
+	padding: 0 20px;
 	.box-sizing(border-box);
 }
 
 #main{
-	padding: 0 20px;
-	max-width: 1040px;
 	.clearfix();
 }
 
@@ -369,6 +369,10 @@ body.has-main-sidebar {
 			float: none;
 			width: 100%;
 		}
+
+		#secondary {
+			margin-top: 40px;
+		}
 	}
 
 	&.display-main-menu {
@@ -377,24 +381,10 @@ body.has-main-sidebar {
 				float: none;
 				width: 100%;
 			}
-		}
-	}
-}
 
-/* =Responsive Layout
------------------------------------------------ */
-
-/* We consider 680px to be mobile resolution */
-@media (max-width:680px) {
-	body.responsive {
-		#footer-widgets .widget {
-			display: block;
-			margin-bottom: 25px;
-			float:none;
-		}
-
-		#footer-widgets .widget:last-child{
-			margin-bottom:0;
+			#secondary {
+				margin-top: 40px;
+			}
 		}
 	}
 }
@@ -411,11 +401,6 @@ body.has-main-sidebar {
 	width: 100%;
 	z-index: 490;
 	.box-sizing(border-box);
-
-	.container {
-		position: relative;
-		padding: 0 25px;
-	}
 
 	.site-title {
 		.clearfix();
@@ -491,6 +476,11 @@ body.admin-bar #masthead {
 	z-index: 10;
 
 	a.main-menu-button {
+		.fa {
+			display: inline-block;
+			margin-right: 3px;
+		}
+
 		color: #333230;
 		font-weight: 500;
 		text-decoration: none;
@@ -1130,7 +1120,7 @@ article.sticky{
 	padding: 40px 0;
 
 	.container {
-		padding: 0 25px;
+		padding: 0 20px;
 	}
 
 	#site-info {
