@@ -69,123 +69,51 @@
 		text-align: center;
 	}
 
+	#s {
+		width: 100%;
+		padding: 9px 12px 9px 32px;
+		.rounded(0px);
+	}
 
-	> div {
+	#searchform {
+		position: relative;
+
+		&:before {
+			font-family: 'fontawesome';
+
+			content: "\f002";
+			display: block;
+			margin-top: -7px;
+			width: 14px;
+			height: 14px;
+			font-size: 14px;
+			line-height: 14px;
+			position: absolute;
+			top: 50%;
+			left: 10px;
+
+			color: #BBBBBB;
+		}
+
+	}
+
+	&.widget_nav_menu, &.widget_pages {
+		a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
 		ul, ol {
 			list-style: none;
 			margin: 0;
 
 			ul, ol {
-				margin-left: 1em;
+				margin-left: 1.5em;
 			}
 		}
 	}
 
-	#s {
-		width: 100%;
-		padding: 5px 8px;
-		font-size: 13px;
-		.rounded(0px);
-	}
-}
-
-.widget_call-to-action {
-	position: relative;
-	padding: 25px 30px 23px 30px;
-
-	h2.cta-headline{
-		margin:0 0 0.35em 0;
-		color: #333;
-	}
-
-	p.cta-sub-text{
-		margin:0;
-		color: #666;
-	}
-
-	a.button {
-		position: absolute;
-		top: 50%;
-		right: 30px;
-		margin-top: -20px; /* This should be half the height of the button */
-	}
-}
-
-/* Responsive styles for the call to action widget */
-@media (max-width:680px) {
-	body.responsive .widget_call-to-action {
-		a.button {
-			position: static;
-			margin-top: 25px;
-			display:block;
-			text-align:center;
-		}
-	}
-}
-
-.widget_siteorigin-list {
-	ul {
-
-		li {
-			margin-bottom: 0.4em;
-		}
-
-		li:last-child {
-			margin-bottom: 0;
-		}
-	}
-}
-
-.widget_headline {
-
-	.widget-title{
-		margin-bottom: 0;
-		padding: 30px 0;
-		border: solid #E6E6E6;
-		border-width: 1px 0;
-
-		span {
-			display: block;
-			line-height: 1.3em;
-		}
-
-		.size-medium {
-			font-size: 130%;
-		}
-
-		.size-large {
-			font-size: 160%;
-		}
-
-		.size-extra-large {
-			font-size: 190%;
-		}
-		
-		.align-left{
-			text-align: left;
-		}
-
-		.align-center{
-			text-align: center;
-		}
-
-		.align-right{
-			text-align: right;
-		}
-	}
-	
-}
-
-.widget_icon-text {
-	font-size: 0.95em;
-	text-align:center;
-
-	.feature-icon {
-		display: inline-block;
-		line-height: 0;
-	}
-
-	.widget-title {
-		margin: 15px 0;
-	}
 }

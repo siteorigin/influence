@@ -1447,96 +1447,52 @@ body.page-template-templatestemplate-full-no-title-php #primary {
   display: block;
   text-align: center;
 }
-.widget > div ul,
-.widget > div ol {
-  list-style: none;
-  margin: 0;
-}
-.widget > div ul ul,
-.widget > div ol ul,
-.widget > div ul ol,
-.widget > div ol ol {
-  margin-left: 1em;
-}
 .widget #s {
   width: 100%;
-  padding: 5px 8px;
-  font-size: 13px;
+  padding: 9px 12px 9px 32px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
-.widget_call-to-action {
+.widget #searchform {
   position: relative;
-  padding: 25px 30px 23px 30px;
 }
-.widget_call-to-action h2.cta-headline {
-  margin: 0 0 0.35em 0;
-  color: #333;
-}
-.widget_call-to-action p.cta-sub-text {
-  margin: 0;
-  color: #666;
-}
-.widget_call-to-action a.button {
+.widget #searchform:before {
+  font-family: 'fontawesome';
+  content: "\f002";
+  display: block;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  line-height: 14px;
   position: absolute;
   top: 50%;
-  right: 30px;
-  margin-top: -20px;
-  /* This should be half the height of the button */
-
+  left: 10px;
+  color: #BBBBBB;
 }
-/* Responsive styles for the call to action widget */
-@media (max-width: 680px) {
-  body.responsive .widget_call-to-action a.button {
-    position: static;
-    margin-top: 25px;
-    display: block;
-    text-align: center;
-  }
+.widget.widget_nav_menu a,
+.widget.widget_pages a {
+  text-decoration: none;
 }
-.widget_siteorigin-list ul li {
-  margin-bottom: 0.4em;
+.widget.widget_nav_menu a:hover,
+.widget.widget_pages a:hover {
+  text-decoration: underline;
 }
-.widget_siteorigin-list ul li:last-child {
-  margin-bottom: 0;
+.widget.widget_nav_menu ul,
+.widget.widget_pages ul,
+.widget.widget_nav_menu ol,
+.widget.widget_pages ol {
+  list-style: none;
+  margin: 0;
 }
-.widget_headline .widget-title {
-  margin-bottom: 0;
-  padding: 30px 0;
-  border: solid #E6E6E6;
-  border-width: 1px 0;
-}
-.widget_headline .widget-title span {
-  display: block;
-  line-height: 1.3em;
-}
-.widget_headline .widget-title .size-medium {
-  font-size: 130%;
-}
-.widget_headline .widget-title .size-large {
-  font-size: 160%;
-}
-.widget_headline .widget-title .size-extra-large {
-  font-size: 190%;
-}
-.widget_headline .widget-title .align-left {
-  text-align: left;
-}
-.widget_headline .widget-title .align-center {
-  text-align: center;
-}
-.widget_headline .widget-title .align-right {
-  text-align: right;
-}
-.widget_icon-text {
-  font-size: 0.95em;
-  text-align: center;
-}
-.widget_icon-text .feature-icon {
-  display: inline-block;
-  line-height: 0;
-}
-.widget_icon-text .widget-title {
-  margin: 15px 0;
+.widget.widget_nav_menu ul ul,
+.widget.widget_pages ul ul,
+.widget.widget_nav_menu ol ul,
+.widget.widget_pages ol ul,
+.widget.widget_nav_menu ul ol,
+.widget.widget_pages ul ol,
+.widget.widget_nav_menu ol ol,
+.widget.widget_pages ol ol {
+  margin-left: 1.5em;
 }
