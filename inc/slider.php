@@ -32,6 +32,9 @@ function influence_display_slider_demo($code) {
 }
 add_filter('influence_after_header', 'influence_display_slider_demo');
 
+/**
+ * Enqueue scripts and styles for the demo slider if we're using it.
+ */
 function influence_enqueue_slider_demo_scripts(){
 	if( !is_front_page() || siteorigin_setting('home_displays') != 'demo' ) return;
 

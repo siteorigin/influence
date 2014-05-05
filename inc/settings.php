@@ -93,7 +93,7 @@ function influence_theme_settings(){
 		'description' => __('Scale your layout for small screen devices.', 'influence')
 	) );
 
-	siteorigin_settings_add_field( 'layout', 'viewport', 'checkbox', __('Mobile Viewport Size', 'influence'), array(
+	siteorigin_settings_add_field( 'layout', 'viewport', 'number', __('Mobile Viewport Size', 'influence'), array(
 		'description' => __('Choose the width of the viewport for mobile devices when responsive is disabled.', 'influence')
 	) );
 	
@@ -125,7 +125,7 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['home_slider_shortcode'] = false;
 
 	$defaults['layout_responsive'] = true;
-	$defaults['layout_responsive_menu'] = true;
+	$defaults['layout_viewport'] = 1200;
 
 	return $defaults;
 }

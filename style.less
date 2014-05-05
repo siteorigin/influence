@@ -360,7 +360,7 @@ body.has-main-sidebar {
 
 	#secondary {
 		float: right;
-		width: 27%;
+		width: 26.5%;
 		.box-sizing(border-box);
 	}
 
@@ -602,12 +602,14 @@ body.admin-bar #masthead {
 
 /* All the transitions we need for the animated menu */
 
-#page, #masthead {
-	.transition(0.5s, padding-right);
-}
-
 #main-menu {
 	.transition(0.5s, right);
+}
+
+#page {
+	&, > div, > section, > header {
+		.transition(0.5s);
+	}
 }
 
 body.display-main-menu {
@@ -624,11 +626,21 @@ body.display-main-menu {
 
 /* We don't want to squash the content on mobile */
 @media screen and (max-width: 782px) {
+
 	body.display-main-menu {
+
 		#page, #masthead {
 			padding-right: 0px;
 		}
+
+		#page {
+			> div, > section, > header {
+				.transform(~"translateX(-280px)");
+			}
+		}
+
 	}
+
 }
 
 /* =Archives
