@@ -1055,6 +1055,20 @@ article.sticky {
   border-bottom: 1px solid #EEEEEE;
   margin-bottom: 40px;
 }
+#comments .commentlist > li.pingback {
+  margin-top: -28px;
+}
+#comments .commentlist > li.pingback > p {
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  color: #53524f;
+}
+#comments .commentlist > li.pingback > p a {
+  text-decoration: none;
+}
+#comments .commentlist > li.pingback:first-child {
+  margin-top: 0px;
+}
 #comments .commentlist .bypostauthor {
   /* Change the comment by the post author */
 
