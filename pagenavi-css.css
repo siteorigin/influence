@@ -1,0 +1,28 @@
+.wp-pagenavi {
+  clear: both;
+  text-align: right;
+  font-size: 0.9em;
+}
+.wp-pagenavi a,
+.wp-pagenavi span {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 8px;
+  color: #6c6a67;
+}
+.wp-pagenavi a,
+.wp-pagenavi span.current {
+  float: left;
+}
+.wp-pagenavi span.current {
+  color: #53524f;
+  font-weight: bold;
+}
+.wp-pagenavi span.pages {
+  float: right;
+  color: #92908d;
+  margin-right: 0;
+}
+.wp-pagenavi > *:nth-of-type(1) {
+  margin-left: 0;
+}
