@@ -20,5 +20,10 @@ Bundled Resources
 Change Log
 ---------------
 
+**1.0.1**
+Integrated with more plugins.
+Improved styling.
+Added Influence Plus information.
+
 **1.0**
 Initial release.
