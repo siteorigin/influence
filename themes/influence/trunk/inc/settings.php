@@ -30,6 +30,7 @@ function influence_theme_settings(){
 	siteorigin_settings_add_teaser( 'logo', 'retina_logo', __('Retina Logo', 'influence'), array(
 		'choose' => __('Choose Image', 'influence'),
 		'update' => __('Set Logo', 'influence'),
+		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
 	) );
 
 	siteorigin_settings_add_field( 'logo', 'scale', 'checkbox', __('Scale Logo on Scroll', 'influence'), array(
@@ -46,6 +47,7 @@ function influence_theme_settings(){
 
 	siteorigin_settings_add_teaser( 'general', 'attribution', __('Attribution Link', 'influence'), array(
 		'description' => __('Remove the "Theme By SiteOrigin" text from your footer.', 'influence'),
+		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
 	) );
 
 	siteorigin_settings_add_field( 'general', 'menu_text', 'text', __('Menu Text', 'influence'), array(
@@ -79,9 +81,8 @@ function influence_theme_settings(){
 
 	siteorigin_settings_add_teaser( 'home', 'slider_shortcode', __('Home Shortcode', 'influence'), array(
 		'description' => sprintf(
-			__('Use a shortcode for your home page slider. Allows you to use alternative sliders like <a href="%s" target="_blank">MetaSlider</a> or <a href="%s" target="_blank">Slider Revolution</a>.', 'influence'),
-			'http://wordpress.org/plugins/ml-slider/',
-			'http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=SiteOrigin'
+			__('Use a shortcode for your home page slider. Allows you to use alternative sliders like <a href="%s" target="_blank">MetaSlider</a>.', 'influence'),
+			'http://wordpress.org/plugins/ml-slider/'
 		),
 	) );
 
@@ -110,8 +111,8 @@ add_action('admin_init', 'influence_theme_settings');
 function influence_theme_setting_defaults($defaults){
 	$defaults['logo_logo'] = array(
 		get_template_directory_uri().'/demo/logo.png',
-		35,
-		192,
+		36,
+		194,
 	);
 	$defaults['logo_scale'] = true;
 	$defaults['logo_site_description'] = false;

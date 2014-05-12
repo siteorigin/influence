@@ -6,7 +6,7 @@ function influence_display_slider($code){
 	ob_start();
 
 	$slider = siteorigin_setting('home_slider');
-	if( !empty($slider['frames']) ) {
+	if( !empty( $slider['frames'] ) && class_exists( 'SiteOrigin_Widget_Slider_Widget' ) ) {
 		the_widget('SiteOrigin_Widget_Slider_Widget', $slider);
 	}
 	else {

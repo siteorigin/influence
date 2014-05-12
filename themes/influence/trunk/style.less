@@ -164,13 +164,13 @@ button,
 input,
 select,
 textarea {
-/* Corrects font size not being inherited in all browsers */
+	/* Corrects font size not being inherited in all browsers */
 	font-size: 100%;
 
-/* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	/* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	margin: 0;
 
-/* Improves appearance and consistency in all browsers */
+	/* Improves appearance and consistency in all browsers */
 	vertical-align: baseline;
 	*vertical-align: middle;
 	.box-sizing(border-box);
@@ -254,23 +254,33 @@ input[type=text],
 input[type=email],
 input[type=password],
 textarea {
-	.box-sizing(border-box);
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-}
+	padding: 10px;
+	color: #888888;
+	border: none;
+	font-size: 14px;
+	outline: none;
 
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-textarea:focus {
-	color: #111;
+	.gradient(#F5F5F5, #F5F5F5, #F7F7F7);
+
+	border: 1px solid #E0E0E0;
+
+	.box-shadow(~"0 1px 2px rgba(0,0,0,0.05)");
+
+	&:focus {
+		color: #666666;
+		background: #F4F4F4;
+		border: 1px solid #D0D0D0;
+		.box-shadow(~"0 1px 2px rgba(0,0,0,0.1)");
+	}
+
+	.rounded(1px);
 }
 
 input[type=text],
 input[type=email],
-input[type=password] {
-	padding: 3px;
+input[type=password]{
+	width: 100%;
+	max-width: 300px;
 }
 
 textarea {
@@ -1085,33 +1095,17 @@ article.sticky{
 		padding-left: 20px;
 		font-size: 13px;
 		color: #777777;
+		text-align: left;
 	}
 
 	input[type="text"] {
 		float: left;
 		width: 70%;
+		max-width: 100%;
 	}
 
 	textarea {
 		width: 100%;
-	}
-
-	input[type="text"],
-	textarea {
-		color: #888888;
-		border: none;
-		padding: 12px;
-		font-size: 14px;
-		background: #F5F5F5;
-		outline: none;
-
-		.box-shadow(~"0 1px 1px rgba(0,0,0,0.1)");
-
-		&:focus {
-			color: #666666;
-			background: #F0F0F0;
-			.box-shadow(~"0 1px 1px rgba(0,0,0,0.125)");
-		}
 	}
 
 	p {
@@ -1247,8 +1241,13 @@ article.sticky{
 	}
 }
 
-/* =Pagenavi Styles
+/* =Contact Form 7
 ----------------------------------------------- */
+
+textarea.wpcf7-textarea {
+	width: 100%;
+}
+
 
 @import "less/post";
 @import "less/slider";

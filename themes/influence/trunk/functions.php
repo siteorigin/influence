@@ -26,7 +26,9 @@ include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
 
 // Let users know about the supporters pack upgrade
-include get_template_directory() . '/upgrade/upgrade.php';
+if( !defined('SITEORIGIN_IS_PREMIUM') ) {
+	include get_template_directory() . '/upgrade/upgrade.php';
+}
 
 if ( ! function_exists( 'influence_setup' ) ) :
 /**
@@ -158,6 +160,11 @@ function influence_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'influence_scripts' );
+
+function influence_gravity_forms_enqueue(){
+	wp_enqueue_style( 'influence-gravity', get_template_directory_uri() . '/css/gravity.css', array( ), SITEORIGIN_THEME_VERSION );
+}
+add_action('gform_register_init_scripts', 'influence_gravity_forms_enqueue');
 
 /**
  * Add custom body classes.

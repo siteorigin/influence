@@ -366,24 +366,41 @@ input[type=text],
 input[type=email],
 input[type=password],
 textarea {
-  -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  padding: 10px;
+  color: #888888;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  background: #f5f5f5;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f5f5f5), color-stop(1, #f7f7f7));
+  background: -ms-linear-gradient(bottom, #f5f5f5, #f7f7f7);
+  background: -moz-linear-gradient(center bottom, #f5f5f5 0%, #f7f7f7 100%);
+  background: -o-linear-gradient(#f7f7f7, #f5f5f5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f5f5f5', GradientType=0);
+  border: 1px solid #E0E0E0;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
 }
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
 textarea:focus {
-  color: #111;
+  color: #666666;
+  background: #F4F4F4;
+  border: 1px solid #D0D0D0;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 input[type=text],
 input[type=email],
 input[type=password] {
-  padding: 3px;
+  width: 100%;
+  max-width: 300px;
 }
 textarea {
   /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -1088,33 +1105,15 @@ article.sticky {
   padding-left: 20px;
   font-size: 13px;
   color: #777777;
+  text-align: left;
 }
 #commentform input[type="text"] {
   float: left;
   width: 70%;
+  max-width: 100%;
 }
 #commentform textarea {
   width: 100%;
-}
-#commentform input[type="text"],
-#commentform textarea {
-  color: #888888;
-  border: none;
-  padding: 12px;
-  font-size: 14px;
-  background: #F5F5F5;
-  outline: none;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-}
-#commentform input[type="text"]:focus,
-#commentform textarea:focus {
-  color: #666666;
-  background: #F0F0F0;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.125);
-  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.125);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.125);
 }
 #commentform p {
   zoom: 1;
@@ -1249,8 +1248,11 @@ article.sticky {
     margin-bottom: 0;
   }
 }
-/* =Pagenavi Styles
+/* =Contact Form 7
 ----------------------------------------------- */
+textarea.wpcf7-textarea {
+  width: 100%;
+}
 article.entry {
   background: #fbfbfb;
   margin: 40px 0;
