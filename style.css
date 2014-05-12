@@ -461,6 +461,7 @@ body {
   box-sizing: border-box;
 }
 #main {
+  margin-top: 40px;
   zoom: 1;
 }
 #main:before {
@@ -564,7 +565,6 @@ body.has-main-sidebar #secondary {
 .site-header.site-header-sentinel {
   visibility: hidden;
   position: static;
-  margin-bottom: 40px;
 }
 body.admin-bar #masthead {
   top: 32px;
@@ -1390,9 +1390,6 @@ body.page-template-templatestemplate-full-no-title-php #primary {
 }
 /* =The Slider
 ----------------------------------------------- */
-#under-masthead-slider {
-  margin-bottom: 40px;
-}
 #under-masthead-slider .widget {
   margin-bottom: 0;
 }
