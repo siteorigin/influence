@@ -30,6 +30,7 @@ function influence_theme_settings(){
 	siteorigin_settings_add_teaser( 'logo', 'retina_logo', __('Retina Logo', 'influence'), array(
 		'choose' => __('Choose Image', 'influence'),
 		'update' => __('Set Logo', 'influence'),
+		'description' => __('A double sized logo used on retina devices.', 'influence'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
 	) );
 
@@ -46,7 +47,7 @@ function influence_theme_settings(){
 	 */
 
 	siteorigin_settings_add_teaser( 'general', 'attribution', __('Attribution Link', 'influence'), array(
-		'description' => __('Remove the "Theme By SiteOrigin" text from your footer.', 'influence'),
+		'description' => __('Remove the SiteOrigin link from your footer.', 'influence'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
 	) );
 
