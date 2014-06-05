@@ -42,8 +42,8 @@
 			<?php else : ?>
 				<div class="taxonomy">
 					<?php
-					the_tags( '<div class="tags"><span class="fa fa-tag"></span>', ', ', '</div>' );
-					if( influence_categorized_blog() ) the_terms( get_the_ID(), 'category', '<div class="categories"><span class="fa fa-folder-open"></span>', ', ', '</div>' );
+					the_tags( '<div class="tags"><span class="influence-icon-ribbon"></span>', ', ', '</div>' );
+					if( influence_categorized_blog() ) the_terms( get_the_ID(), 'category', '<div class="categories"><span class="influence-icon-layers"></span>', ', ', '</div>' );
 					?>
 				</div>
 			<?php endif; ?>

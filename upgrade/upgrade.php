@@ -29,7 +29,7 @@ function influence_supporters_upgrade_content($content){
 
 	$content['features'][] = array(
 		'heading' => __('Customizer Integration', 'influence'),
-		'content' => __("Make Vantage your own with customizer integration. Change fonts, colors and more all using the live-updating WordPress customizer.", 'influence'),
+		'content' => __("Make Influence your own with customizer integration. Change fonts, colors and more all using the live-updating WordPress customizer.", 'influence'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/customizer.png',
 	);
 

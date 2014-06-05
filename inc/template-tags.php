@@ -37,12 +37,12 @@ function influence_content_nav( $nav_id ) {
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', 'influence' ); ?></h1>
 
-		<?php if ( function_exists( 'wp_pagenavi' ) ) : wp_pagenavi( ); ?>
-
-		<?php elseif ( is_single() ) : // navigation links for single posts ?>
+		<?php if ( is_single() ) : // navigation links for single posts ?>
 
 			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'influence' ) . '</span> %title' ); ?>
 			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'influence' ) . '</span>' ); ?>
+
+		<?php elseif ( function_exists( 'wp_pagenavi' ) ) : wp_pagenavi( ); ?>
 
 		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -370,7 +370,7 @@ function influence_site_header_sentinel(){
 					<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
 					<a href="#" class="main-menu-button">
-						<i class="fa fa-th-list"></i>
+						<i class="influence-icon-menu-icon"></i>
 						<?php _e('Menu', 'influence') ?>
 					</a>
 

@@ -15,7 +15,8 @@
   color: #2f5faa;
 }
 .wp-pagenavi a,
-.wp-pagenavi span.current {
+.wp-pagenavi span.current,
+.wp-pagenavi span.extend {
   float: left;
 }
 .wp-pagenavi span.current {

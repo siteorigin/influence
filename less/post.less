@@ -69,7 +69,7 @@ article.entry {
 		}
 
 		h1,h2,h3,h4,h5,h6 {
-			color: #585754;
+			color: #545252;
 		}
 	}
 
@@ -107,14 +107,16 @@ article.entry {
 				display: inline-block;
 				margin-right: 2em;
 
-				> span.fa {
-					display: inline-block;
-					font-size: 15px;
+				> span[class^="influence-icon-"] {
+					display: block;
+					float: left;
+					font-size: 18px;
 					margin-right: 0.5em;
+					margin-top: 3px;
 					.transition(0.35s);
 				}
 
-				&:hover > span.fa {
+				&:hover > span[class^="influence-icon-"]{
 					color: #3c3b38;
 				}
 
@@ -138,6 +140,7 @@ article.entry {
 ----------------------------------------------- */
 
 body.page-template-templatestemplate-full-php,
+body.siteorigin-panels-home,
 body.page-template-templatestemplate-full-no-title-php{
 	#primary {
 		float: none;

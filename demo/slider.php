@@ -32,7 +32,16 @@
 		<li><a href="#" data-goto="1">2</a></li>
 	</ol>
 
-	<div class="sow-slide-nav sow-slide-nav-next"><a href="#" data-goto="next" data-action="next"><?php _e('Next', 'influence') ?></a></div>
-	<div class="sow-slide-nav sow-slide-nav-prev"><a href="#" data-goto="previous" data-action="prev"><?php _e('Previous', 'influence') ?></a></div>
+	<div class="sow-slide-nav sow-slide-nav-next">
+		<a href="#" data-goto="next" data-action="next">
+			<em class="icon-thin-right"></em>
+		</a>
+	</div>
+
+	<div class="sow-slide-nav sow-slide-nav-prev">
+		<a href="#" data-goto="previous" data-action="prev">
+			<em class="icon-thin-left"></em>
+		</a>
+	</div>
 
 </div>

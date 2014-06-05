@@ -76,15 +76,19 @@ function influence_theme_settings(){
 
 	siteorigin_settings_add_field( 'home', 'slider', 'widget', __('Home Slider', 'influence'), array(
 		'widget_class' => 'SiteOrigin_Widget_Slider_Widget',
-		'plugin' => 'so-slider-widget',
-		'plugin_name' => __('SiteOrigin Slider Widget', 'influence'),
+		'plugin' => 'so-widgets-bundle',
+		'plugin_name' => __('SiteOrigin Widgets Bundle', 'influence'),
 	) );
 
 	siteorigin_settings_add_teaser( 'home', 'slider_shortcode', __('Home Shortcode', 'influence'), array(
 		'description' => sprintf(
-			__('Use a shortcode for your home page slider. Allows you to use alternative sliders like <a href="%s" target="_blank">MetaSlider</a>.', 'influence'),
+			__('Use a shortcode for your home page slider. Allows you to use alternative sliders.', 'influence'),
 			'http://wordpress.org/plugins/ml-slider/'
 		),
+	) );
+
+	siteorigin_settings_add_field( 'home', 'slider_margin', 'checkbox', __( 'Slider Margin', 'influence' ), array(
+
 	) );
 
 	/**
@@ -125,6 +129,7 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['home_menu_overlaps'] = true;
 	$defaults['home_slider'] = false;
 	$defaults['home_slider_shortcode'] = false;
+	$defaults['home_slider_margin'] = false;
 
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_viewport'] = 1200;
