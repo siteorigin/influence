@@ -1,0 +1,33 @@
+.wp-pagenavi {
+  clear: both;
+  text-align: right;
+}
+.wp-pagenavi a,
+.wp-pagenavi span {
+  font-size: 0.9em;
+  line-height: 0.9em;
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 8px;
+  color: #6c6a67;
+}
+.wp-pagenavi a:hover {
+  color: #2f5faa;
+}
+.wp-pagenavi a,
+.wp-pagenavi span.current,
+.wp-pagenavi span.extend {
+  float: left;
+}
+.wp-pagenavi span.current {
+  color: #53524f;
+  font-weight: bold;
+}
+.wp-pagenavi span.pages {
+  float: right;
+  color: #92908d;
+  margin-right: 0;
+}
+.wp-pagenavi > *:nth-child(2) {
+  margin-left: 0;
+}
