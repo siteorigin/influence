@@ -16,6 +16,7 @@ This theme is originally based on Underscores (_s) starter theme http://undersco
 Bundled Resources
 ---------------
 * The font influence-icons contains icons from the Feather icon set. Copyright Cole Bemis, licensed under MIT - http://colebemis.com/feather/
+* Non Feather icons in influence-icons are by Greg Priday and licensed under the same MIT license for consistency.
 
 Change Log
 ---------------
