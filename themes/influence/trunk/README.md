@@ -1,7 +1,6 @@
-SiteOrigin Starter Theme
+Infleunce Theme
 ---------------
-This is a starter theme, based on _s with integration into SiteOrigin's extras framework.
-
+We created Influence with the single goal of building a platform for you to influence the world with your content.
 
 License
 ---------------
