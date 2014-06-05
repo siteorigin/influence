@@ -14,7 +14,7 @@ function influence_display_slider($code){
 	}
 
 	$ob_value = ob_get_clean();
-	if(!empty($ob_value)) $ob_value = '<div id="under-masthead-slider">'.$ob_value.'</div>';
+	if(!empty($ob_value)) $ob_value = '<div id="under-masthead-slider" ' . ( siteorigin_setting('home_slider_margin') ? '' : 'class="remove-bottom-margin"' ) . '>'.$ob_value.'</div>';
 
 	return $ob_value;
 }
@@ -26,7 +26,7 @@ function influence_display_slider_demo($code) {
 	ob_start();
 	get_template_part('demo/slider');
 	$ob_value = ob_get_clean();
-	if(!empty($ob_value)) $ob_value = '<div id="under-masthead-slider">'.$ob_value.'</div>';
+	if(!empty($ob_value)) $ob_value = '<div id="under-masthead-slider" ' . ( siteorigin_setting('home_slider_margin') ? '' : 'class="remove-bottom-margin"' ) . '>'.$ob_value.'</div>';
 
 	return $ob_value;
 }

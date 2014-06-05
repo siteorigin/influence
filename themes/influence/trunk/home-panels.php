@@ -10,12 +10,25 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area">
+<div id="primary" class="content-area">
+
 	<div id="content" class="site-content" role="main">
-		<div class="entry-content">
-			<?php if(function_exists('siteorigin_panels_render')) echo siteorigin_panels_render('home'); ?>
-		</div>
+
+		<article id="post-home" class="entry">
+
+
+			<div class="post-text">
+
+				<div class="entry-content">
+					<?php if(function_exists('siteorigin_panels_render')) echo siteorigin_panels_render('home'); ?>
+				</div>
+
+			</div>
+
+		</article>
+
 	</div><!-- #content .site-content -->
-</section><!-- #primary .content-area -->
+
+</div><!-- #primary .content-area -->
 
 <?php get_footer(); ?>

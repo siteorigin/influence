@@ -9,13 +9,13 @@ This theme, like WordPress, is licensed under the GPL 2.0. Use it to make someth
 
 All Javascript is located in /js/ with license headers where appropriate.
 
-All photographs have been sourced from Pixabay and are licensed under the public domain.
+All demo photographs have been sourced from Pixabay and are licensed under the public domain. Demo videos are by Greg Priday and licensed under public domain.
 
 This theme is originally based on Underscores (_s) starter theme http://underscores.me/
 
 Bundled Resources
 ---------------
-* FontAwesome by Dave Gandy licensed under SIL OFL 1.1 <http://scripts.sil.org/OFL>
+* The font influence-icons contains icons from the Feather icon set. Copyright Cole Bemis, licensed under MIT - http://colebemis.com/feather/
 
 Change Log
 ---------------

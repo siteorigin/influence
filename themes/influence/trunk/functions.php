@@ -72,10 +72,10 @@ function influence_setup() {
 		include get_template_directory() . '/extras/panels-lite/panels-lite.php';
 	}
 
-	add_theme_support('siteorigin-premium-teaser', array(
+	add_theme_support( 'siteorigin-premium-teaser', array(
 		'customizer' => true,
 		'settings' => true,
-	));
+	) );
 
 	// Lets add the default webfont
 	siteorigin_webfonts_add_font('Montserrat');
@@ -91,7 +91,7 @@ add_action( 'after_setup_theme', 'influence_setup' );
 function influence_register_custom_background() {
 	$args = array(
 		'default-image' => get_template_directory_uri().'/images/background.png' ,
-		'default-color' => 'ffffff',
+		'default-color' => 'f2f2f2',
 	);
 
 	$args = apply_filters( 'influence_custom_background_args', $args );
@@ -148,8 +148,6 @@ add_action( 'wp_enqueue_scripts', 'influence_register_scripts' , 5);
 function influence_scripts() {
 	wp_enqueue_style( 'influence-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'influence-main' , get_template_directory_uri().'/js/jquery.theme-main.js' , array('jquery', 'influence-fitvids'), SITEORIGIN_THEME_VERSION );
-
-	wp_enqueue_style('influence-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.0.3');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

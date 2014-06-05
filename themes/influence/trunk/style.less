@@ -14,12 +14,12 @@ spritemapper.output_css = style.sprites.css
 
 @import "less/mixins";
 @import "less/reset";
+@import "less/fonts";
 
 /* =Global
 ----------------------------------------------- */
 
 /* Consistent fonts across all elements */
-
 body,
 button,
 input,
@@ -486,9 +486,12 @@ body.admin-bar #masthead {
 	z-index: 10;
 
 	a.main-menu-button {
-		.fa {
-			display: inline-block;
-			margin-right: 3px;
+		*[class^="influence-icon"] {
+			font-size: 16px;
+			display: block;
+			margin-right: 0.5em;
+			float: left;
+			margin-top: -1px;
 		}
 
 		color: #333230;

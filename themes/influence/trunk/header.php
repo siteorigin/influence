@@ -50,7 +50,7 @@
 				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
 				<a href="#" class="main-menu-button">
-					<i class="fa fa-th-list"></i>
+					<i class="influence-icon-menu-icon"></i>
 					<?php echo siteorigin_setting('general_menu_text') ?>
 				</a>
 
