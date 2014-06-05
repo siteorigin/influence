@@ -76,6 +76,7 @@ function influence_theme_settings(){
 
 	siteorigin_settings_add_field( 'home', 'slider', 'widget', __('Home Slider', 'influence'), array(
 		'widget_class' => 'SiteOrigin_Widget_Slider_Widget',
+		'bundle_widget' => 'so-slider-widget',
 		'plugin' => 'so-widgets-bundle',
 		'plugin_name' => __('SiteOrigin Widgets Bundle', 'influence'),
 	) );
