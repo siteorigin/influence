@@ -333,8 +333,6 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   background: #262626;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   border: none;
   color: #f5f5f5;
@@ -389,13 +387,10 @@ textarea {
   background: -ms-linear-gradient(bottom, #f5f5f5, #f7f7f7);
   background: -moz-linear-gradient(center bottom, #f5f5f5 0%, #f7f7f7 100%);
   background: -o-linear-gradient(#f7f7f7, #f5f5f5);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f5f5f5', GradientType=0);
   border: 1px solid #E0E0E0;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
   border-radius: 1px;
 }
 input[type=text]:focus,
@@ -1444,8 +1439,6 @@ body.page-template-templatestemplate-full-no-title-php #primary {
 .widget a.button {
   display: inline-block;
   padding: 9px 26px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
   font-size: 0.875em;
   text-decoration: none;
@@ -1459,7 +1452,6 @@ body.page-template-templatestemplate-full-no-title-php #primary {
   background: -ms-linear-gradient(bottom, lumdarken(#107fc9, 3.5), lumlighten(#107fc9, 3.5));
   background: -moz-linear-gradient(center bottom, lumdarken(#107fc9, 3.5) 0%, lumlighten(#107fc9, 3.5) 100%);
   background: -o-linear-gradient(lumlighten(#107fc9, 3.5), lumdarken(#107fc9, 3.5));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lumlighten(#107fc9, 3.5)', endColorstr='lumdarken(#107fc9, 3.5)', GradientType=0);
   border-top: solid 1px lumlighten(lumdarken(#107fc9, 18), 4);
   border-left: solid 1px lumdarken(#107fc9, 18);
   border-right: solid 1px lumdarken(#107fc9, 18);
@@ -1481,8 +1473,6 @@ body.page-template-templatestemplate-full-no-title-php #primary {
 .widget #s {
   width: 100%;
   padding: 9px 12px 9px 32px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
   border-radius: 0px;
 }
 .widget #searchform {
