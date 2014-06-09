@@ -16,7 +16,7 @@
 
 		</li>
 
-		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url(<?php echo get_template_directory_uri() ?>/demo/assets/coffee-shop.jpg);">
+		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url(<?php echo get_template_directory_uri() ?>/demo/assets/slide-2.jpg);">
 
 			<div class="sow-slider-image-container">
 				<div class="sow-slider-image-wrapper" style="max-width: 700px;">
