@@ -130,7 +130,7 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['home_menu_overlaps'] = true;
 	$defaults['home_slider'] = false;
 	$defaults['home_slider_shortcode'] = false;
-	$defaults['home_slider_margin'] = false;
+	$defaults['home_slider_margin'] = true;
 
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_viewport'] = 1200;

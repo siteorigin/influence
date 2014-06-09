@@ -4,11 +4,11 @@ We created Influence with the single goal of building a platform for you to infl
 
 License
 ---------------
-This theme, like WordPress, is licensed under the GPL 2.0. Use it to make something cool, have fun, and share what you've learned with others. The premium version of this theme is also licensed under the same GPL 2.0 license.
+This theme, like WordPress, is licensed under the GPL 2.0. Use it to make something cool, have fun, and share what you've learned with others. Influence Plus, the addon plugin, is also licensed under GPL.
 
 All Javascript is located in /js/ with license headers where appropriate.
 
-All demo photographs have been sourced from Pixabay and are licensed under the public domain. Demo videos are by Greg Priday and licensed under public domain.
+All demo photograph is copyright Kathy Priday and licensed under GPL with permission from the author. Demo video was created by Greg Priday and licensed under public domain.
 
 This theme is originally based on Underscores (_s) starter theme http://underscores.me/
 
