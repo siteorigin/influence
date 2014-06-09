@@ -1,0 +1,42 @@
+.wp-pagenavi {
+	clear: both;
+	text-align: right;
+
+	a, span {
+		font-size: 0.9em;
+		line-height: 0.9em;
+
+		display: inline-block;
+		text-decoration: none;
+		margin: 0 8px;
+		color: #6c6a67;
+	}
+
+	a:hover {
+		color: #2f5faa;
+	}
+
+	a, span.current, span.extend {
+		float: left;
+	}
+
+	a:hover, span.current {
+
+	}
+
+	span.current {
+		color: #53524f;
+		font-weight: bold;
+	}
+
+	span.pages {
+		float: right;
+		color: #92908d;
+		margin-right: 0;
+	}
+
+	> *:nth-child(2) {
+		margin-left: 0;
+	}
+
+}
