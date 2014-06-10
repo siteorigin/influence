@@ -39,19 +39,19 @@ function influence_content_nav( $nav_id ) {
 
 		<?php if ( is_single() ) : // navigation links for single posts ?>
 
-			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'influence' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'influence' ) . '</span>' ); ?>
+			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav influence-icon-arrow-left"></span> %title' ); ?>
+			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav influence-icon-arrow-right"></span>' ); ?>
 
 		<?php elseif ( function_exists( 'wp_pagenavi' ) ) : wp_pagenavi( ); ?>
 
 		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'influence' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav influence-icon-arrow-left"></span> Older posts', 'influence' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'influence' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav influence-icon-arrow-right"></span>', 'influence' ) ); ?></div>
 			<?php endif; ?>
 
 		<?php endif; ?>

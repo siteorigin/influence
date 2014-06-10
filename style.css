@@ -172,11 +172,14 @@ a img {
 .influence-icon-search:before {
   content: "\e036";
 }
+.influence-icon-arrow-left:before {
+  content: "\e094";
+}
+.influence-icon-arrow-right:before {
+  content: "\e095";
+}
 .influence-icon-cross:before {
   content: "\e117";
-}
-.influence-icon-ellipsis:before {
-  content: "\e129";
 }
 /* =Global
 ----------------------------------------------- */
@@ -984,6 +987,10 @@ article.sticky {
 }
 /* =Navigation
 ----------------------------------------------- */
+.site-content .site-navigation {
+  font-size: 0.9em;
+  font-weight: 500;
+}
 .site-content .site-navigation .nav-previous {
   float: left;
   width: 50%;
@@ -992,6 +999,18 @@ article.sticky {
   float: right;
   text-align: right;
   width: 50%;
+}
+.site-content .site-navigation .meta-nav {
+  display: inline-block;
+  font-size: 0.85em;
+  line-height: 1.1em;
+  vertical-align: bottom;
+}
+.site-content .site-navigation .nav-previous .meta-nav {
+  margin-right: 0.2em;
+}
+.site-content .site-navigation .nav-next .meta-nav {
+  margin-left: 0.2em;
 }
 .site-content .site-navigation.post-navigation,
 .site-content .site-navigation.paging-navigation {
