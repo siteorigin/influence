@@ -45,16 +45,16 @@
 
 			<?php if( siteorigin_setting('general_menu_text') ) : ?>
 
-			<nav role="navigation" class="site-navigation main-navigation primary">
+				<nav role="navigation" class="site-navigation main-navigation primary">
 
-				<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
+					<h1 class="assistive-text"><?php _e( 'Menu', 'influence' ); ?></h1>
 
-				<a href="#" class="main-menu-button">
-					<i class="influence-icon-menu-icon"></i>
-					<?php echo siteorigin_setting('general_menu_text') ?>
-				</a>
+					<a href="#" class="main-menu-button">
+						<i class="influence-icon-menu-icon"></i>
+						<?php echo siteorigin_setting('general_menu_text') ?>
+					</a>
 
-			</nav><!-- .site-navigation .main-navigation -->
+				</nav><!-- .site-navigation .main-navigation -->
 
 			<?php endif; ?>
 

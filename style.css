@@ -7,9 +7,6 @@ Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
-
-spritemapper.sprite_dirs = images/sprites
-spritemapper.output_css = style.sprites.css
 */
 /* =Reset
 -------------------------------------------------------------- */
@@ -171,6 +168,15 @@ a img {
 }
 .influence-icon-layers:before {
   content: "\e031";
+}
+.influence-icon-search:before {
+  content: "\e036";
+}
+.influence-icon-cross:before {
+  content: "\e117";
+}
+.influence-icon-ellipsis:before {
+  content: "\e129";
 }
 /* =Global
 ----------------------------------------------- */
@@ -594,7 +600,7 @@ body.admin-bar #masthead {
   position: absolute;
   top: 50%;
   right: 25px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1em;
   margin-top: -0.5em;
   z-index: 10;
@@ -605,11 +611,12 @@ body.admin-bar #masthead {
   text-decoration: none;
 }
 .main-navigation a.main-menu-button *[class^="influence-icon"] {
-  font-size: 16px;
-  display: block;
-  margin-right: 0.5em;
-  float: left;
-  margin-top: -1px;
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 0.55em;
+  color: #43423f;
+  line-height: 15px;
+  vertical-align: bottom;
 }
 @media screen and (max-width: 480px) {
   .site-header .site-title a {
@@ -627,6 +634,11 @@ body.admin-bar #masthead {
     margin-top: 25px;
     text-align: center;
     font-size: 18px;
+  }
+  .main-navigation a.main-menu-button *[class^="influence-icon"] {
+    display: inline-block;
+    line-height: 20px;
+    font-size: 22px;
   }
 }
 #main-menu {
@@ -689,20 +701,22 @@ body.admin-bar #masthead {
 }
 #main-menu .main-menu-close {
   position: absolute;
-  top: 25px;
-  right: 30px;
+  top: 15px;
+  right: 20px;
   z-index: 10;
-  width: 21px;
-  height: 21px;
-  background: url(images/sprites/menu-close.png) no-repeat;
-  text-indent: -999px;
+  width: 1em;
+  height: 1em;
+  font-size: 28px;
+  line-height: 1em;
   overflow: hidden;
+  text-decoration: none;
+  color: #bab9b5;
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  #main-menu .main-menu-close {
-    background: url(images/retina/menu-close.png) no-repeat;
-    background-size: cover;
-  }
+#main-menu .main-menu-close:before {
+  content: "\e117";
+}
+#main-menu .main-menu-close:hover {
+  color: #FFFFFF;
 }
 /* All the transitions we need for the animated menu */
 #main-menu {
@@ -1472,15 +1486,15 @@ body.page-template-templatestemplate-full-no-title-php #primary {
 }
 .widget #s {
   width: 100%;
-  padding: 9px 12px 9px 32px;
+  padding: 9px 12px 9px 36px;
   border-radius: 0px;
 }
 .widget #searchform {
   position: relative;
 }
 .widget #searchform:before {
-  font-family: 'fontawesome';
-  content: "\f002";
+  font-family: 'influence-icons';
+  content: "\e036";
   display: block;
   margin-top: -7px;
   width: 14px;
@@ -1489,7 +1503,7 @@ body.page-template-templatestemplate-full-no-title-php #primary {
   line-height: 14px;
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 12px;
   color: #BBBBBB;
 }
 .widget.widget_nav_menu a,
