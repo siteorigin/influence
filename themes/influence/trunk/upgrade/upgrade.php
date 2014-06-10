@@ -9,7 +9,7 @@ function influence_supporters_upgrade_content($content){
 	// We're offering the premium version as a free download.
 	$content['free_download'] = true;
 
-	$content['buy_url'] = 'http://siteorigin.localhost/?attachment_id=4&action=popup';
+	$content['buy_url'] = 'http://siteorigin.com/?attachment_id=2629&action=popup';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
 	// $content['premium_video_id'] = '74123479';
 
@@ -23,7 +23,7 @@ function influence_supporters_upgrade_content($content){
 
 	$content['features'][] = array(
 		'heading' => __("Retina Logo", 'influence'),
-		'content' => __("No one wants a fuzzy logo. Influence Plus lets you upload a second, double-size logo that's only displayed to users with retina screens.", 'influence'),
+		'content' => __("Make sure your logo is sharp on retina devices. Influence Plus lets you upload a second, double-size logo that's only displayed to users with retina screens.", 'influence'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
 	);
 
