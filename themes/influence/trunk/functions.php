@@ -25,7 +25,7 @@ include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
 
-// Let users know about the supporters pack upgrade
+// Let users know about influence plus
 if( !defined('SITEORIGIN_IS_PREMIUM') ) {
 	include get_template_directory() . '/upgrade/upgrade.php';
 }
