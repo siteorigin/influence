@@ -79,6 +79,7 @@ function influence_theme_settings(){
 		'bundle_widget' => 'so-slider-widget',
 		'plugin' => 'so-widgets-bundle',
 		'plugin_name' => __('SiteOrigin Widgets Bundle', 'influence'),
+		'description' => __('Build a slider from your own images and videos.', 'influence'),
 	) );
 
 	siteorigin_settings_add_teaser( 'home', 'slider_shortcode', __('Home Shortcode', 'influence'), array(
