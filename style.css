@@ -1014,10 +1014,21 @@ article.sticky {
 }
 .site-content .site-navigation.post-navigation,
 .site-content .site-navigation.paging-navigation {
+  zoom: 1;
   margin-top: 40px;
-  overflow: hidden;
   line-height: 1em;
   color: #666666;
+}
+.site-content .site-navigation.post-navigation:before,
+.site-content .site-navigation.paging-navigation:before {
+  content: '';
+  display: block;
+}
+.site-content .site-navigation.post-navigation:after,
+.site-content .site-navigation.paging-navigation:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 .site-content .site-navigation.post-navigation a,
 .site-content .site-navigation.paging-navigation a {
