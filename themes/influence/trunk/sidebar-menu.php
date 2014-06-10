@@ -10,7 +10,7 @@
 
 <div id="main-menu">
 
-	<a href="#" class="main-menu-close"><?php _e('Close', 'influence') ?></a>
+	<a href="#" class="influence-icon influence-icon-cross main-menu-close"></a>
 
 	<div class="menu">
 		<?php wp_nav_menu( array('theme_location' => 'primary') ) ?>

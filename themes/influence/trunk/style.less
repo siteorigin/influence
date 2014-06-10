@@ -7,9 +7,6 @@ Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
-
-spritemapper.sprite_dirs = images/sprites
-spritemapper.output_css = style.sprites.css
 */
 
 @import "less/mixins";
@@ -480,18 +477,20 @@ body.admin-bar #masthead {
 	top: 50%;
 	right: 25px;
 
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1em;
 	margin-top: -0.5em;
 	z-index: 10;
 
 	a.main-menu-button {
 		*[class^="influence-icon"] {
-			font-size: 16px;
-			display: block;
-			margin-right: 0.5em;
-			float: left;
-			margin-top: -1px;
+			font-size: 18px;
+			display: inline-block;
+			margin-right: 0.55em;
+			color: #43423f;
+
+			line-height: 15px;
+			vertical-align: bottom;
 		}
 
 		color: #333230;
@@ -524,6 +523,14 @@ body.admin-bar #masthead {
 		margin-top: 25px;
 		text-align: center;
 		font-size: 18px;
+
+		a.main-menu-button {
+			*[class^="influence-icon"] {
+				display: inline-block;
+				line-height: 20px;
+				font-size: 22px;
+			}
+		}
 	}
 
 }
@@ -597,18 +604,23 @@ body.admin-bar #masthead {
 	
 	.main-menu-close {
 		position: absolute;
-		top: 25px;
-		right: 30px;
+		top: 15px;
+		right: 20px;
 		z-index: 10;
-		width: 21px;
-		height: 21px;
-		background: url(./images/sprites/menu-close.png) no-repeat;
-		text-indent: -999px;
+		width: 1em;
+		height: 1em;
+		font-size: 28px;
+		line-height: 1em;
 		overflow: hidden;
+		text-decoration: none;
+		color: #bab9b5;
 
-		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-			background: url(./images/retina/menu-close.png) no-repeat;
-			background-size: cover;
+		&:before {
+			content: "\e117";
+		}
+
+		&:hover {
+			color: #FFFFFF;
 		}
 	}
 }
