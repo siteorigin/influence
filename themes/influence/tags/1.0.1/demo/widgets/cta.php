@@ -1,1 +1,0 @@
-The CTA widget will go here ;)
