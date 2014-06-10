@@ -1,0 +1,67 @@
+.gform_wrapper {
+
+	h3.gform_title {
+		width: auto;
+		margin: 0 0 1em 0;
+	}
+
+	span.gform_description {
+		display: block;
+		font-size: 0.9em;
+	}
+
+	.gform_heading {
+		width: auto;
+	}
+
+	ul.gform_fields {
+		> li {
+			margin-bottom: 1.5em;
+
+			> .gfield_label {
+				display: block;
+				font-weight: 500;
+				margin: 0 0 0.5em 0;
+				color: #585754;
+			}
+		}
+	}
+
+	ul.gfield_checkbox, ul.gfield_radio {
+		li {
+			margin: 0 0 0 5px;
+
+			input {
+				margin-left: 2px;
+			}
+		}
+	}
+
+	select {
+		font-size: 0.9em;
+
+		&[multiple="multiple"] {
+			padding: 7px;
+			color: #585754;
+			border: 1px solid #ccc;
+		}
+	}
+
+	.top_label {
+		input.large, select.large, textarea.textarea {
+			width: auto;
+		}
+
+		textarea.textarea {
+			width: 100%;
+		}
+	}
+
+	.gfield_description {
+		width: auto;
+		padding-top: 7px;
+		font-size: 0.85em;
+		color: #8a8985;
+	}
+
+}
