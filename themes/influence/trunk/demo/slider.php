@@ -1,11 +1,21 @@
 <div class="sow-slider-base" style="display: none">
 
-	<ul class="sow-slider-images" data-settings="{&quot;pagination&quot;:true,&quot;speed&quot;:850,&quot;timeout&quot;:12000}">
-		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url();">
+	<ul class="sow-slider-images" data-settings="{&quot;pagination&quot;:true,&quot;speed&quot;:850,&quot;timeout&quot;:5000}">
+		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url(<?php echo get_template_directory_uri() ?>/demo/assets/slide-2.jpg);">
 
 			<div class="sow-slider-image-container">
 				<div class="sow-slider-image-wrapper" style="max-width: 720px;">
 					<img width="720" height="500" src="<?php echo get_template_directory_uri() ?>/demo/assets/slider-badge.png" class="attachment-full" alt="slider-badge">
+				</div>
+			</div>
+
+		</li>
+
+		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url();">
+
+			<div class="sow-slider-image-container">
+				<div class="sow-slider-image-wrapper" style="max-width: 700px;">
+					<img width="700" height="500" src="<?php echo get_template_directory_uri() ?>/demo/assets/slider-badge-2.png" class="attachment-full" alt="slider-badge-2">
 				</div>
 			</div>
 
@@ -16,15 +26,6 @@
 
 		</li>
 
-		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url(<?php echo get_template_directory_uri() ?>/demo/assets/slide-2.jpg);">
-
-			<div class="sow-slider-image-container">
-				<div class="sow-slider-image-wrapper" style="max-width: 700px;">
-					<img width="700" height="500" src="<?php echo get_template_directory_uri() ?>/demo/assets/slider-badge-2.png" class="attachment-full" alt="slider-badge-2">
-				</div>
-			</div>
-
-		</li>
 	</ul>
 
 	<ol class="sow-slider-pagination">
