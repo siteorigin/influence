@@ -8,7 +8,7 @@ This theme, like WordPress, is licensed under the GPL 2.0. Use it to make someth
 
 All Javascript is located in /js/ with license headers where appropriate.
 
-All demo photograph is copyright Kathy Priday and licensed under GPL with permission from the author. Demo video was created by Greg Priday and licensed under public domain.
+All demo photographs are copyright Kathy Priday and licensed under GPL with permission from the author. Demo video was created by Greg Priday and licensed under public domain.
 
 This theme is originally based on Underscores (_s) starter theme http://underscores.me/
 
