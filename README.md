@@ -12,10 +12,13 @@ All demo photograph is copyright Kathy Priday and licensed under GPL with permis
 
 This theme is originally based on Underscores (_s) starter theme http://underscores.me/
 
-Bundled Resources
+Icon Font
 ---------------
-* The font influence-icons contains icons from the Feather icon set. Copyright Cole Bemis, licensed under MIT - http://colebemis.com/feather/
-* The menu icon in influence-icons is by Greg Priday and licensed under the same MIT license for consistency.
+The font influence-icons contains icons from the Feather icon set. Copyright Cole Bemis, licensed under MIT - http://colebemis.com/feather/
+
+The menu icon in influence-icons is by Greg Priday and licensed under the same MIT license for consistency.
+
+Font created using Icomoon - http://icomoon.io
 
 Change Log
 ---------------
