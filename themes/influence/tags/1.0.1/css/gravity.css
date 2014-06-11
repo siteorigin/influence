@@ -1,0 +1,50 @@
+.gform_wrapper h3.gform_title {
+  width: auto;
+  margin: 0 0 1em 0;
+}
+.gform_wrapper span.gform_description {
+  display: block;
+  font-size: 0.9em;
+}
+.gform_wrapper .gform_heading {
+  width: auto;
+}
+.gform_wrapper ul.gform_fields > li {
+  margin-bottom: 1.5em;
+}
+.gform_wrapper ul.gform_fields > li > .gfield_label {
+  display: block;
+  font-weight: 500;
+  margin: 0 0 0.5em 0;
+  color: #585754;
+}
+.gform_wrapper ul.gfield_checkbox li,
+.gform_wrapper ul.gfield_radio li {
+  margin: 0 0 0 5px;
+}
+.gform_wrapper ul.gfield_checkbox li input,
+.gform_wrapper ul.gfield_radio li input {
+  margin-left: 2px;
+}
+.gform_wrapper select {
+  font-size: 0.9em;
+}
+.gform_wrapper select[multiple="multiple"] {
+  padding: 7px;
+  color: #585754;
+  border: 1px solid #ccc;
+}
+.gform_wrapper .top_label input.large,
+.gform_wrapper .top_label select.large,
+.gform_wrapper .top_label textarea.textarea {
+  width: auto;
+}
+.gform_wrapper .top_label textarea.textarea {
+  width: 100%;
+}
+.gform_wrapper .gfield_description {
+  width: auto;
+  padding-top: 7px;
+  font-size: 0.85em;
+  color: #8a8985;
+}
