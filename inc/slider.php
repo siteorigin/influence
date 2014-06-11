@@ -39,7 +39,7 @@ function influence_enqueue_slider_demo_scripts(){
 	if( !is_front_page() || siteorigin_setting('home_displays') != 'demo' ) return;
 
 	if( wp_script_is('sow-slider-slider', 'registered') ) {
-		// Use teh default scripts from the slider widget plugin
+		// Use the default scripts from the slider widget plugin
 		wp_enqueue_style('sow-slider-slider');
 		wp_enqueue_script('sow-slider-slider-cycle2');
 		if( wp_is_mobile() ) wp_enqueue_script('sow-slider-slider-cycle2-swipe');
