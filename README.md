@@ -25,7 +25,8 @@ Change Log
 
 **1.0.2**
 * Updated Page Builder support.
-* 
+* Removed default logo.
+* Added more Influence Plus information.
 
 **1.0.1**
 * Integrated with more plugins.
