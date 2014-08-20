@@ -53,7 +53,7 @@ function influence_add_page_meta_boxes(){
 	// If the user is using Influence Plus, then that will handle this metabox instead.
 	add_meta_box(
 		'influence-slider',
-		__('Page Slider', 'influence'),
+		__('Influence Page Slider', 'influence'),
 		'influence_display_page_slider_meta_box',
 		'page',
 		'side'
