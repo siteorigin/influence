@@ -61,6 +61,11 @@ function influence_setup() {
 		'primary' => __( 'Primary Menu', 'influence' ),
 	) );
 
+	add_theme_support( 'siteorigin-panels', array(
+		'home-page' => true,
+		'home-template' => 'templates/template-full-no-title.php',
+	) );
+
 	// Enable support for Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
