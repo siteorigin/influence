@@ -8,7 +8,7 @@ This theme, like WordPress, is licensed under the GPL 2.0. Use it to make someth
 
 All Javascript is located in /js/ with license headers where appropriate.
 
-All demo photographs are copyright Kathy Priday and licensed under GPL with permission from the author. Demo video was created by Greg Priday and licensed under public domain.
+All demo and screenshot photographs are copyright Kathy Priday and licensed under GPL with permission from the author. Demo video was created by Greg Priday and licensed under public domain.
 
 This theme is originally based on Underscores (_s) starter theme http://underscores.me/
 
@@ -23,10 +23,14 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+**1.0.2**
+* Updated Page Builder support.
+* 
+
 **1.0.1**
-Integrated with more plugins.
-Improved styling.
-Added Influence Plus information.
+* Integrated with more plugins.
+* Improved styling.
+* Added Influence Plus information.
 
 **1.0**
-Initial release.
+* Initial release.

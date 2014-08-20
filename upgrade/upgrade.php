@@ -1,6 +1,6 @@
 <?php
 
-function influence_supporters_upgrade_content($content){
+function influence_upgrade_content($content){
 	$content['premium_title'] = __('Upgrade To Influence Plus', 'influence');
 	$content['premium_summary'] = __("If you've enjoyed using Influence, you're going to love Influence Plus. It's a robust upgrade to Influence that gives you some useful features. It's a free upgrade, so don't miss out.", 'influence');
 
@@ -9,9 +9,9 @@ function influence_supporters_upgrade_content($content){
 	// We're offering the premium version as a free download.
 	$content['free_download'] = true;
 
-	$content['buy_url'] = 'http://siteorigin.com/?attachment_id=2629&action=popup';
+	$content['buy_url'] = 'http://siteorigin.com/theme/influence/?action=plus';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
-	// $content['premium_video_id'] = '74123479';
+	$content['premium_video_id'] = '102844186';
 
 	$content['features'] = array();
 
@@ -34,10 +34,46 @@ function influence_supporters_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
+		'heading' => __('Page Sliders', 'influence'),
+		'content' => __("Add big, beautiful sliders to all your pages in the same way you use them on your home page.", 'influence'),
+	);
+
+	$content['features'][] = array(
 		'heading' => __('Newsletter Updates', 'influence'),
 		'content' => __("All you need to do to receive Influence Plus is sign up to our newsletter. We use this to announce all our new free theme and plugin releases, so it's a double win.", 'influence'),
 	);
 
 	return $content;
 }
-add_filter('siteorigin_premium_content', 'influence_supporters_upgrade_content');
+add_filter('siteorigin_premium_content', 'influence_upgrade_content');
+
+function influence_add_page_meta_boxes(){
+	if( defined('SITEORIGIN_IS_PREMIUM') ) return;
+
+	// If the user is using Influence Plus, then that will handle this metabox instead.
+	add_meta_box(
+		'influence-slider',
+		__('Page Slider', 'influence'),
+		'influence_display_page_slider_meta_box',
+		'page',
+		'side'
+	);
+}
+add_action('add_meta_boxes', 'influence_add_page_meta_boxes');
+
+function influence_display_page_slider_meta_box(){
+	?>
+	<p>
+		<?php
+		printf(
+			__('Available in %sInfluence Plus%s', 'influence'),
+			'<a href="' . admin_url('themes.php?page=premium_upgrade') . '" style="padding: 2px 6px; background: #4F6920; border-radius: 2px; color: white; text-decoration: none">',
+			'</a>'
+		)
+		?>
+		<small class="description" style="display: block">
+			<?php _e('Display a slider on your pages like you do on the home page.', 'influence') ?>
+		</small>
+	</p>
+	<?php
+}

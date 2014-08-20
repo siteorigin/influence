@@ -90,7 +90,7 @@ function influence_theme_settings(){
 	) );
 
 	siteorigin_settings_add_field( 'home', 'slider_margin', 'checkbox', __( 'Slider Margin', 'influence' ), array(
-
+		'description' => __('Add a margin below the home page slider', 'influence'),
 	) );
 
 	/**
@@ -116,11 +116,7 @@ add_action('admin_init', 'influence_theme_settings');
  * @since influence 1.0
  */
 function influence_theme_setting_defaults($defaults){
-	$defaults['logo_logo'] = array(
-		get_template_directory_uri().'/demo/logo.png',
-		36,
-		194,
-	);
+	$defaults['logo_logo'] = false;
 	$defaults['logo_scale'] = true;
 	$defaults['logo_site_description'] = false;
 
