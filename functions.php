@@ -164,6 +164,9 @@ function influence_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'influence_scripts' );
 
+/**
+ * Enqueue the gravity forms specific CSS.
+ */
 function influence_gravity_forms_enqueue(){
 	wp_enqueue_style( 'influence-gravity', get_template_directory_uri() . '/css/gravity.css', array( ), SITEORIGIN_THEME_VERSION );
 }
@@ -171,8 +174,10 @@ add_action('gform_register_init_scripts', 'influence_gravity_forms_enqueue');
 
 /**
  * Add custom body classes.
- * 
+ *
  * @param $classes
+ *
+ * @return array
  * @package influence
  * @since 1.0
  */
