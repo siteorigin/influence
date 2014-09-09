@@ -237,7 +237,7 @@ add_action('wp_head', 'influence_viewport_header');
 /**
  * Change the name of Influence Premium.
  *
- * @return string|void
+ * @return string
  */
 function influence_premium_version_name() {
 	return __('Influence Plus', 'influence');

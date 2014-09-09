@@ -52,6 +52,9 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+**1.0.4**
+* Fixed iconic font
+
 **1.0.3**
 * Changed name of iconic fonts
 * Description and theme URI updated.
