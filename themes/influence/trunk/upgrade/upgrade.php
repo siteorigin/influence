@@ -8,7 +8,6 @@ function influence_upgrade_content($content){
 
 	// We're offering the premium version as a free download.
 	$content['free_download'] = true;
-
 	$content['buy_url'] = 'http://siteorigin.com/theme/influence/?action=plus';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
 	$content['premium_video_id'] = '102844186';
@@ -41,6 +40,14 @@ function influence_upgrade_content($content){
 	$content['features'][] = array(
 		'heading' => __('Newsletter Updates', 'influence'),
 		'content' => __("All you need to do to receive Influence Plus is sign up to our newsletter. We use this to announce all our new free theme and plugin releases, so it's a double win.", 'influence'),
+	);
+
+	$content['testimonials'] = array(
+		array(
+			'gravatar' => '2e885cf9dcd4d9d9559deb0405b2c76f',
+			'name' => 'Devin Walker',
+			'content' => __("Great attention to detail, especially on the navigation.", 'influence'),
+		),
 	);
 
 	return $content;
