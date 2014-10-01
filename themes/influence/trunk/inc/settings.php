@@ -135,3 +135,8 @@ function influence_theme_setting_defaults($defaults){
 	return $defaults;
 }
 add_filter('siteorigin_theme_default_settings', 'influence_theme_setting_defaults');
+
+function influence_siteorigin_settings_page_icon($icon){
+	return get_template_directory_uri().'/images/settings-icon.png';
+}
+add_filter('siteorigin_settings_page_icon', 'influence_siteorigin_settings_page_icon');
