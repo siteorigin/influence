@@ -52,6 +52,10 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+**1.0.5**
+* Updated framework to fix theme settings.
+* Added prebuilt layouts for Page Builder.
+
 **1.0.4**
 * Fixed iconic font
 
