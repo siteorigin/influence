@@ -13,44 +13,177 @@
  * @param $layouts
  */
 function influence_prebuilt_page_layouts($layouts){
+	$layouts['basic-home'] = array (
+		'name' => __('Basic Home Page', 'influence'),
+		'widgets' =>
+			array (
+				0 =>
+					array (
+						'features' =>
+							array (
+								0 =>
+									array (
+										'container_color' => '',
+										'icon' => 'fontawesome-bullhorn',
+										'icon_color' => '',
+										'icon_image' => '',
+										'title' => 'Lorem Ipsum Dolor',
+										'text' => 'Curabitur fermentum arcu et elit lacinia rutrum. Mauris viverra mi sit amet nisi laoreet, nec luctus nulla scelerisque. Curabitur bibendum nec lacus at mattis. Ut vitae egestas tortor. Vivamus ex augue, tincidunt eu mauris in, semper molestie massa.',
+										'more_text' => '',
+										'more_url' => '',
+									),
+								1 =>
+									array (
+										'container_color' => '',
+										'icon' => 'fontawesome-user',
+										'icon_color' => '',
+										'icon_image' => '',
+										'title' => 'Lorem Ipsum Dolor',
+										'text' => 'Curabitur fermentum arcu et elit lacinia rutrum. Mauris viverra mi sit amet nisi laoreet, nec luctus nulla scelerisque. Curabitur bibendum nec lacus at mattis. Ut vitae egestas tortor. Vivamus ex augue, tincidunt eu mauris in, semper molestie massa.',
+										'more_text' => '',
+										'more_url' => '',
+									),
+								2 =>
+									array (
+										'container_color' => '',
+										'icon' => 'fontawesome-anchor',
+										'icon_color' => '',
+										'icon_image' => '',
+										'title' => 'Lorem Ipsum Dolor',
+										'text' => 'Curabitur fermentum arcu et elit lacinia rutrum. Mauris viverra mi sit amet nisi laoreet, nec luctus nulla scelerisque. Curabitur bibendum nec lacus at mattis. Ut vitae egestas tortor. Vivamus ex augue, tincidunt eu mauris in, semper molestie massa.',
+										'more_text' => '',
+										'more_url' => '',
+									),
+							),
+						'container_shape' => 'rounded-hex',
+						'container_size' => '84',
+						'icon_size' => '24',
+						'per_row' => '3',
+						'responsive' => '1',
+						'title_link' => '',
+						'icon_link' => '',
+						'new_window' => '',
+						'info' =>
+							array (
+								'grid' => '0',
+								'cell' => '0',
+								'id' => '0',
+								'class' => 'SiteOrigin_Widget_Features_Widget',
+							),
+					),
+				1 =>
+					array (
+						'title' => 'Curabitur Bibendum Nec Lacus ',
+						'sub_title' => 'Vivamus ex augue, tincidunt eu mauris in, semper molestie massa.',
+						'design' =>
+							array (
+								'background_color' => '',
+								'border_color' => '',
+							),
+						'button' =>
+							array (
+								'text' => 'More Info',
+								'url' => '#',
+								'button_icon' =>
+									array (
+										'icon_selected' => '',
+										'icon_color' => '',
+										'icon' => '',
+									),
+								'design' =>
+									array (
+										'align' => 'center',
+										'theme' => 'atom',
+										'button_color' => '',
+										'text_color' => '',
+										'hover' => '1',
+										'font_size' => '1',
+										'rounding' => '0.25',
+										'padding' => '1',
+									),
+								'attributes' =>
+									array (
+										'id' => '',
+										'title' => '',
+										'onclick' => '',
+									),
+								'new_window' => '',
+							),
+						'info' =>
+							array (
+								'grid' => '0',
+								'cell' => '0',
+								'id' => '1',
+								'class' => 'SiteOrigin_Widget_Cta_Widget',
+							),
+					),
+				2 =>
+					array (
+						'title' => '',
+						'text' => 'Cras et iaculis arcu. Etiam semper dictum est, quis placerat nisi consequat eu. Morbi id lacinia turpis. Curabitur fermentum arcu et elit lacinia rutrum. Mauris viverra mi sit amet nisi laoreet, nec luctus nulla scelerisque. Curabitur bibendum nec lacus at mattis. Ut vitae egestas tortor. Vivamus ex augue, tincidunt eu mauris in, semper molestie massa.
+
+Nunc nec auctor risus. Donec mollis mi a finibus fermentum. Suspendisse ac ornare turpis. Integer mollis eros a dapibus congue. Vestibulum eu vulputate magna. Nulla urna odio, tincidunt quis est et, mattis volutpat enim. Cras mollis orci massa, id pellentesque felis sodales at. Aenean risus est, rhoncus a enim sit amet, auctor cursus augue.',
+						'filter' => '1',
+						'info' =>
+							array (
+								'grid' => '1',
+								'cell' => '0',
+								'id' => '2',
+								'class' => 'WP_Widget_Text',
+							),
+					),
+				3 =>
+					array (
+						'image' => false,
+						'size' => 'large',
+						'title' => '',
+						'alt' => '',
+						'url' => '',
+						'bound' => '1',
+						'new_window' => '',
+						'info' =>
+							array (
+								'grid' => '1',
+								'cell' => '1',
+								'id' => '3',
+								'class' => 'SiteOrigin_Widget_Image_Widget',
+							),
+					),
+			),
+		'grids' =>
+			array (
+				0 =>
+					array (
+						'cells' => '1',
+					),
+				1 =>
+					array (
+						'cells' => '2',
+					),
+			),
+		'grid_cells' =>
+			array (
+				0 =>
+					array (
+						'weight' => '1',
+						'grid' => '0',
+					),
+				1 =>
+					array (
+						'weight' => '0.5',
+						'grid' => '1',
+					),
+				2 =>
+					array (
+						'weight' => '0.5',
+						'grid' => '1',
+					),
+			),
+	);
+
 	return $layouts;
 }
 add_filter('siteorigin_panels_prebuilt_layouts', 'influence_prebuilt_page_layouts');
-
-
-/**
- * Display the missing widgets
- *
- * @param $widget
- * @param $instance
- * @param $args
- *
- * @return string
- */
-function influence_render_missing_widget($code, $widget, $args, $instance){
-
-	if( preg_match('/SiteOrigin_Widget_([A-Za-z]+)_Widget/', $widget ) ) {
-		ob_start();
-
-		echo $args['before_widget'];
-
-
-		switch( $widget ) {
-			case 'SiteOrigin_Widget_Cta_Widget' :
-				wp_enqueue_style('influence-demo-widget-cta');
-				get_template_part('demo/widgets/cta');
-				break;
-		}
-
-
-		echo $args['after_widget'];
-
-		$code = ob_get_clean();
-	}
-
-	return $code;
-}
-add_filter('siteorigin_panels_missing_widget', 'influence_render_missing_widget', 10, 4);
 
 /**
  * Display a special form for missing widgets.
