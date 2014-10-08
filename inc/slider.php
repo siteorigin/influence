@@ -17,7 +17,7 @@ function influence_display_slider($code){
 				break;
 
 			case 'home_slider_widget' :
-				$widget = siteorigin_setting('home_sider_widget');
+				$widget = siteorigin_setting('home_slider');
 				if(!empty($widget['frames']) && class_exists( 'SiteOrigin_Widget_Slider_Widget' )) {
 					the_widget('SiteOrigin_Widget_Slider_Widget', $widget);
 				}
