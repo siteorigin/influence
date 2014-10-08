@@ -92,8 +92,11 @@ jQuery(function($){
 
             if( $('body').hasClass('menu-overlap') ) {
                 // Add a top margin to images in a SiteOrigin slider widget slides
-                $('#under-masthead-slider .sow-slider-base ul.sow-slider-images img').each(function () {
-                    $(this).css('padding-top', $('#masthead').outerHeight());
+                $('#under-masthead-slider ul.sow-slider-images li.sow-slider-image').each(function () {
+
+                    if( $(this).css('background-image') != 'none' ) {
+                        $(this).find('img').css('padding-top', $('#masthead').outerHeight());
+                    }
                 });
             }
 
