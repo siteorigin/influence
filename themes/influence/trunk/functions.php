@@ -24,6 +24,7 @@ include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
+include get_template_directory() . '/tour/tour.php';
 
 // Let users know about influence plus
 if( !defined('SITEORIGIN_IS_PREMIUM') ) {

@@ -1,18 +1,29 @@
 <?php
 
 function influence_display_slider($code){
-	if( !is_front_page() || siteorigin_setting('home_displays') != 'slider' ) return $code;
+	$slider_shortcode = siteorigin_setting('home_slider_shortcode_new');
+	if( !is_front_page() || empty($slider_shortcode) ) return $code;
+
+	preg_match_all('/\[(\[?)(home_slider_demo|home_slider_widget)(?![\w-])([^\]\/]*(?:\/(?!\])[^\]\/]*)*?)(?:(\/)\]|\](?:([^\[]*+(?:\[(?!\/\2\])[^\[]*+)*+)\[\/\2\])?)(\]?)/s', $slider_shortcode, $matches);
 
 	ob_start();
-
-	$slider = siteorigin_setting('home_slider');
-	if( !empty( $slider['frames'] ) && class_exists( 'SiteOrigin_Widget_Slider_Widget' ) ) {
-		the_widget('SiteOrigin_Widget_Slider_Widget', $slider);
+	if(empty($matches[2])) {
+		echo do_shortcode( $slider_shortcode );
 	}
 	else {
-		get_template_part('demo/slider');
-	}
+		switch($matches[2][0]) {
+			case 'home_slider_demo' :
+				get_template_part('demo/slider');
+				break;
 
+			case 'home_slider_widget' :
+				$widget = siteorigin_setting('home_sider_widget');
+				if(!empty($widget['frames']) && class_exists( 'SiteOrigin_Widget_Slider_Widget' )) {
+					the_widget('SiteOrigin_Widget_Slider_Widget', $widget);
+				}
+				break;
+		}
+	}
 	$ob_value = ob_get_clean();
 	if(!empty($ob_value)) $ob_value = '<div id="under-masthead-slider" ' . ( siteorigin_setting('home_slider_margin') ? '' : 'class="remove-bottom-margin"' ) . '>'.$ob_value.'</div>';
 
@@ -20,23 +31,15 @@ function influence_display_slider($code){
 }
 add_filter('influence_after_header', 'influence_display_slider');
 
-function influence_display_slider_demo($code) {
-	if( !is_front_page() || siteorigin_setting('home_displays') != 'demo' ) return $code;
-
-	ob_start();
-	get_template_part('demo/slider');
-	$ob_value = ob_get_clean();
-	if(!empty($ob_value)) $ob_value = '<div id="under-masthead-slider" ' . ( siteorigin_setting('home_slider_margin') ? '' : 'class="remove-bottom-margin"' ) . '>'.$ob_value.'</div>';
-
-	return $ob_value;
-}
-add_filter('influence_after_header', 'influence_display_slider_demo');
-
 /**
  * Enqueue scripts and styles for the demo slider if we're using it.
  */
 function influence_enqueue_slider_demo_scripts(){
-	if( !is_front_page() || siteorigin_setting('home_displays') != 'demo' ) return;
+	$slider = siteorigin_setting('home_slider_shortcode_new');
+	if( !is_front_page() && !empty($slider) ) return;
+
+	// Check if we're actually using the home page demo
+	if( strpos($slider, 'home_slider_demo') === false ) return;
 
 	if( wp_script_is('sow-slider-slider', 'registered') ) {
 		// Use the default scripts from the slider widget plugin
