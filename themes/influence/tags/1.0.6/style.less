@@ -1,0 +1,1284 @@
+/*
+Theme Name: Influence
+Author: SiteOrigin
+Author URI: http://siteorigin.com/
+Theme URI: http://siteorigin.com/theme/influence/
+Description: Influence is a free WordPress theme that gives you a canvas to share your videos, photography and content. It features a modern, responsive design and tight integration with our own Page Builder plugin to make sure your content is responsive too. The best feature of Influence is its huge home page slider - perfect if you're using Influence to build a business or portfolio website. This slider has support for video background images and, like the rest of Influence, is fully responsive. We offer free support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
+Version: trunk
+License: GNU General Public License
+License URI: http://www.gnu.org/copyleft/gpl.html
+Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
+*/
+
+@import "less/mixins";
+@import "less/reset";
+@import "less/fonts";
+
+/* =Global
+----------------------------------------------- */
+
+/* Consistent fonts across all elements */
+body,
+button,
+input,
+select,
+textarea {
+	color: #333;
+	font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	line-height: 1.5;
+	font-size: 14px;
+	word-wrap: break-word;
+}
+
+/* Links */
+
+a {
+	color: #2f5faa;
+
+	&:visited {
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+	}
+}
+
+/* Headings */
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: Montserrat;
+	font-weight: 400;
+	color: #545252;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+
+p {
+	margin-bottom: 1.5em;
+}
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b,
+strong {
+	font-weight: bold;
+}
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code,
+kbd,
+tt,
+var {
+	font-family: "Courier New", Courier, mono;
+}
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em 0;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+	/* Corrects font size not being inherited in all browsers */
+	font-size: 100%;
+
+	/* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	margin: 0;
+
+	/* Improves appearance and consistency in all browsers */
+	vertical-align: baseline;
+	*vertical-align: middle;
+	.box-sizing(border-box);
+
+}
+button,
+input {
+/* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	line-height: normal;
+/* Corrects inner spacing displayed oddly in IE6/7 */
+	*overflow: visible;
+
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: #262626;
+	.rounded(3px);
+	border: none;
+	color: #f5f5f5;
+	font-weight: 500;
+
+	/* Improves usability and consistency of cursor style between image-type 'input' and others */
+	cursor: pointer;
+
+	/* Corrects inability to style clickable 'input' types in iOS */
+	-webkit-appearance: button;
+
+	line-height: 1;
+	padding: 1em 1.75em;
+}
+
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+
+}
+
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	.box-sizing(border-box);
+	padding: 0;
+	/* Addresses excess padding in IE8/9 */
+}
+
+input[type="search"] {
+	/* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-appearance: textfield;
+
+	/* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	.box-sizing(border-box);
+}
+
+input[type="search"]::-webkit-search-decoration {
+	/* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	/* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+	padding: 10px;
+	color: #888888;
+	border: none;
+	outline: none;
+
+	.gradient(#F5F5F5, #F5F5F5, #F7F7F7);
+
+	border: 1px solid #E0E0E0;
+
+	.box-shadow(~"0 1px 2px rgba(0,0,0,0.05)");
+
+	&:focus {
+		color: #666666;
+		background: #F4F4F4;
+		border: 1px solid #D0D0D0;
+		.box-shadow(~"0 1px 2px rgba(0,0,0,0.1)");
+	}
+
+	.rounded(1px);
+}
+
+input[type=text],
+input[type=email],
+input[type=password]{
+	width: 100%;
+	max-width: 300px;
+}
+
+textarea {
+	/* Removes default vertical scrollbar in IE6/7/8/9 */
+	overflow: auto;
+	/* Improves readability and alignment in all browsers */
+	vertical-align: top;
+}
+
+/* Alignment */
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+
+.assistive-text {
+	clip: rect(1px 1px 1px 1px);
+/* IE6, IE7 */
+
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.page-links{
+	clear:both;
+}
+
+.site-title {
+	a{
+		color: inherit;
+	}
+}
+
+/* =General Layout
+----------------------------------------------- */
+
+/* Positioning, flow and layout of the theme */
+
+body {
+	background: #eceae6;
+}
+
+#page {
+	position: relative;
+}
+
+#main ,
+.container{
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+	.box-sizing(border-box);
+}
+
+#main{
+	margin-top: 40px;
+	.clearfix();
+}
+
+/* =Handle having a sidebar
+----------------------------------------------- */
+
+body.has-main-sidebar {
+	#main ,
+	.container{
+		max-width: 1200px;
+	}
+
+	#primary {
+		float: left;
+		width: 70%;
+	}
+
+	#secondary {
+		float: right;
+		width: 26.5%;
+		.box-sizing(border-box);
+	}
+
+	@media (max-width:800px) {
+		#primary, #secondary {
+			float: none;
+			width: 100%;
+		}
+
+		#secondary {
+			margin-top: 40px;
+		}
+	}
+
+	&.display-main-menu {
+		@media (max-width:1200px) {
+			#primary, #secondary {
+				float: none;
+				width: 100%;
+			}
+
+			#secondary {
+				margin-top: 40px;
+			}
+		}
+	}
+}
+
+/* =Masthead
+----------------------------------------------- */
+.site-header {
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: rgb(255,255,255);
+	background: rgba(255,255,255,0.86);
+	padding: 25px 0;
+	width: 100%;
+	z-index: 490;
+	.box-sizing(border-box);
+
+	.site-title {
+		.clearfix();
+
+		font-size: 24px;
+		color: #444444;
+		font-weight: 400;
+		line-height: 1em;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			display: block;
+			float: left;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+
+	.site-description {
+		color: #333333;
+	}
+
+	&.has-shadow {
+		.box-shadow(~"0 2px 0 rgba(0,0,0,0.15)");
+	}
+}
+
+.site-header.site-header-sentinel {
+	visibility: hidden;
+	position: static;
+}
+
+body.admin-bar #masthead {
+	top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+	body.admin-bar #masthead {
+		top: 46px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body.admin-bar #masthead {
+		top: 0;
+	}
+
+	#masthead {
+		position: absolute;
+		top: 0;
+	}
+}
+
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	position: absolute;
+	top: 50%;
+	right: 25px;
+
+	font-size: 15px;
+	line-height: 1em;
+	margin-top: -0.5em;
+	z-index: 10;
+
+	a.main-menu-button {
+		*[class^="influence-icon"] {
+			font-size: 17px;
+			display: inline-block;
+			margin-right: 0.55em;
+			color: #333230;
+
+			line-height: 15px;
+			vertical-align: bottom;
+			opacity: 0.85;
+		}
+
+		color: #333230;
+		font-weight: 500;
+		text-decoration: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.site-header {
+		.site-title {
+			a {
+				text-align: center;
+				float: none;
+
+				img {
+					display: inline-block;
+				}
+			}
+		}
+
+		.site-description {
+			text-align: center;
+		}
+	}
+
+	.main-navigation {
+		position: static;
+		margin-top: 25px;
+		text-align: center;
+		font-size: 18px;
+
+		a.main-menu-button {
+			*[class^="influence-icon"] {
+				display: inline-block;
+				line-height: 20px;
+				font-size: 22px;
+			}
+		}
+	}
+
+}
+
+#main-menu {
+	position: fixed;
+	top: 0;
+	right: -280px;
+	width: 280px;
+	max-width: 100%;
+	.box-sizing(border-box);
+	padding: 45px 30px 30px 30px;
+	background: #22211f;
+	z-index: 100000;
+	height: 100%;
+
+	overflow: auto;
+
+	.menu {
+		ul {
+			list-style: none;
+			margin: 0;
+
+			ul {
+				margin-left: 1em;
+			}
+
+			li {
+				line-height: 1.6em;
+				font-size: 15px;
+				font-weight: 500;
+
+				a {
+					color: #bab9b5;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.widgets {
+		margin-top: 40px;
+
+		aside.widget {
+			.box-sizing(border-box);
+			margin-bottom:40px;
+
+			color: #bab9b5;
+
+			.widget-title {
+				font-size: 1.25em;
+				margin-bottom: 20px;
+				color: #ebe9e5;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			a {
+				color: #c8c6c3;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+		}
+	}
+	
+	.main-menu-close {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		z-index: 10;
+		width: 1em;
+		height: 1em;
+		font-size: 28px;
+		line-height: 1em;
+		overflow: hidden;
+		text-decoration: none;
+		color: #bab9b5;
+
+		&:before {
+			content: "\e117";
+		}
+
+		&:hover {
+			color: #FFFFFF;
+		}
+	}
+}
+
+/* All the transitions we need for the animated menu */
+
+#main-menu {
+	.transition(0.5s, right);
+}
+
+#page {
+	&, > div, > section, > header {
+		.transition(0.5s);
+	}
+}
+
+body.display-main-menu {
+
+	#main-menu {
+		right: 0px;
+	}
+
+	#page, #masthead {
+		padding-right: 280px;
+	}
+
+}
+
+/* We don't want to squash the content on mobile */
+@media screen and (max-width: 782px) {
+
+	body.display-main-menu {
+
+		#page, #masthead {
+			padding-right: 0px;
+		}
+
+		#page {
+			> div, > section, > header {
+				.transform(~"translateX(-280px)");
+			}
+		}
+
+	}
+
+}
+
+/* =Archives
+----------------------------------------------- */
+
+header.page-header {
+
+	h1 {
+		color: #373435;
+		font-size: 24px;
+	}
+
+	@media screen and (max-width: 480px) {
+		h1 {
+			font-size: 20px;
+		}
+	}
+}
+
+article.sticky{
+/* Style a sticky post */
+}
+
+/* =Entry Content
+----------------------------------------------- */
+
+/* Styles for actual content */
+
+.entry-header {
+	.clearfix();
+}
+
+.entry-content{
+	.clearfix();
+
+	line-height: 1.6em;
+
+	a{
+
+	}
+
+	p,
+	& > ul,
+	& > li,
+	& > dl{
+		margin: 25px 0;
+		margin: 1em 0;
+	}
+
+	& > *:last-child{
+		margin-bottom: 0;
+	}
+
+	& > *:first-child{
+		margin-top: 0;
+	}
+
+	blockquote{
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-style: italic;
+		margin-left: 1.5em;
+
+		cite{
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: bold;
+		}
+
+		cite a{
+		}
+	}
+
+	pre{
+		background: white;
+		font-family: "Courier New", Courier, mono;
+		border: 1px solid #E0E0E0;
+		padding: 10px;
+
+		box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+
+		overflow-x: auto;
+	}
+
+	code{
+		font-family: "Courier New", Courier, mono;
+	}
+
+	sup,
+	sub{
+		height: 0;
+		line-height: 1;
+		vertical-align: baseline;
+		position: relative;
+	}
+
+	sup {
+		bottom: 1ex;
+	}
+
+	sub {
+		top: .5ex;
+	}
+
+	.gallery-caption{
+
+	}
+
+	.gallery{
+		margin: 25px 0 !important;
+
+		.gallery-item{
+			margin-bottom: 0 !important;
+			margin-top: 0 !important;
+		}
+
+		.gallery-icon{
+			line-height: 0;
+			margin-bottom: 0 !important;
+		}
+
+		img{
+			border: none !important;
+		}
+
+		.gallery-caption{
+			margin: 10px !important;
+			padding-left: 0 !important;
+		}
+	}
+
+	table {
+		border-bottom: 1px solid #ededed;
+		border-collapse: collapse;
+		border-spacing: 0;
+		line-height: 2;
+		margin: 0 0 20px;
+		width: 100%;
+
+		th,
+		td {
+			font-weight: normal;
+			text-align: left;
+		}
+
+		th {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		td {
+			border-top: 1px solid #ededed;
+			padding: 6px 10px 6px 0;
+		}
+	}
+
+	img{
+		max-width: 100%;
+		height: auto;
+	}
+
+	/* WordPress Images */
+
+	.wp-caption{
+		max-width: 100%;
+		margin: 5px 0 30px 0;
+		border: 1px solid #E0E0E0;
+		padding: 8px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+
+		.box-sizing(border-box);
+
+		text-align: center;
+
+		img {
+			display: block;
+		}
+
+		.wp-caption-text {
+			margin: 8px 0 0 0;
+			font-size: 0.85em;
+			line-height: 1.4em;
+		}
+
+		&:first-child{
+			margin-top: 25px;
+		}
+	}
+
+	.alignleft {
+		/* This is also styled on a global level */
+		margin: 0 1.5em 1.5em 0;
+	}
+
+	.alignright {
+		/* This is also styled on a global level */
+		margin: 0 0 1.5em 1.5em;
+	}
+
+	img.wp-smiley {
+		border: none;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: 0;
+	}
+
+	ul{
+		list-style-type: square;
+	}
+
+	ol{
+		list-style-type: decimal;
+	}
+
+	ol ol{
+		list-style-type: upper-alpha;
+	}
+
+	ol ol ol{
+		list-style-type: lower-roman;
+	}
+
+	ul li,
+	ol li{
+		margin-left: 1.5em;
+	}
+
+	dl dt{
+		margin-bottom: 5px;
+		font-weight: bold;
+	}
+
+	dl dd{
+		margin-bottom: 10px;
+		padding-left: 20px;
+	}
+
+	h1,h2,h3,h4,h5,h6{
+		margin: 1em 0;
+	}
+
+	h1 {
+		font-size: 1.8em;
+	}
+
+	h2 {
+		font-size: 1.65em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
+
+	h4 {
+		font-size: 1.35em;
+	}
+
+	h5 {
+		font-size: 1.2em;
+	}
+
+	h6 {
+		font-size: 0.9em;
+	}
+
+	embed,
+	iframe,
+	object {
+		max-width: 100%;
+	}
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content {
+
+	.site-navigation {
+		font-size: 0.9em;
+		font-weight: 500;
+
+		.nav-previous {
+			float: left;
+			width: 50%;
+		}
+
+		.nav-next {
+			float: right;
+			text-align: right;
+			width: 50%;
+		}
+
+		.meta-nav {
+			display: inline-block;
+			font-size: 0.85em;
+			line-height: 1.075em;
+			vertical-align: bottom;
+		}
+
+		.nav-previous .meta-nav{
+			margin-right: 0.2em;
+		}
+
+		.nav-next .meta-nav{
+			margin-left: 0.2em;
+		}
+
+		&.post-navigation,
+		&.paging-navigation {
+			.clearfix();
+			margin-top: 40px;
+			line-height: 1em;
+			color: #666666;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+
+		&.post-navigation {
+			a {
+				font-weight: 500;
+			}
+		}
+
+		&.paging-navigation {
+			.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
+			padding: 20px 5%;
+			background: #FFFFFF;
+		}
+	}
+
+}
+
+
+/* =Comments
+----------------------------------------------- */
+
+#comments-title, #reply-title {
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+#comments-title {
+	margin-bottom: 40px;
+}
+
+#reply-title {
+	margin-bottom: 20px;
+}
+
+#comments {
+	margin-top: 40px;
+
+	.commentlist {
+		margin: 0 0 40px 0;
+		list-style: none;
+
+		.children {
+			list-style: none;
+			margin-left: 75px;
+		}
+
+		article {
+			margin-bottom: 40px;
+
+			.avatar {
+				float: left;
+			}
+
+			.comment-author, .awaiting-moderation, .comment-meta, .comment-content {
+				margin-left: 75px;
+			}
+
+			.comment-author{
+				color: #666;
+				font-size: 0.9em;
+				font-weight: bold;
+				line-height: 1em;
+				margin-bottom: 5px;
+
+				a{
+					color: inherit;
+					text-decoration: none;
+				}
+
+				cite {
+					font-style: normal;
+				}
+			}
+
+			.comment-meta {
+				font-size: 0.875em;
+				color: #999;
+				line-height: 1em;
+				margin-bottom: 10px;
+
+				a{
+					color: inherit;
+					text-decoration: none;
+				}
+
+				.support {
+					display: inline-block;
+					margin-left: 15px;
+				}
+			}
+
+			.awaiting-moderation {
+				display: block;
+				margin-bottom: 10px;
+			}
+
+			.entry-content {
+				font-size: 0.95em
+			}
+		}
+
+		> li {
+			border-bottom: 1px solid #EEEEEE;
+			margin-bottom: 40px;
+		}
+
+		> li.pingback {
+			margin-top: -28px;
+			> p {
+				font-size: 0.9em;
+				margin-bottom: 12px;
+				color: #53524f;
+
+				a{
+					text-decoration: none;
+				}
+			}
+
+			&:first-child {
+				margin-top: 0px;
+			}
+		}
+
+		.bypostauthor{
+			/* Change the comment by the post author */
+		}
+
+		#commentform {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+#commentform{
+
+	label {
+		margin-top: 9px;
+		display:block;
+		float: right;
+		width: 30%;
+		.box-sizing(border-box);
+		padding-left: 20px;
+		color: #777777;
+		text-align: left;
+	}
+
+	input[type="text"] {
+		float: left;
+		width: 70%;
+		max-width: 100%;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	p {
+		.clearfix();
+		margin-bottom: 20px
+	}
+
+	p.form-submit {
+		margin-bottom: 0;
+	}
+
+	.form-allowed-tags, .form-allowed-tags code, .comment-notes {
+		font-size: 0.8em;
+		color: #999;
+	}
+
+	.logged-in-as{
+		font-size: 0.8em;
+		color: #999;
+		margin-bottom: 10px;
+		text-align: right;
+	}
+
+	.required {
+		color: #A40802;
+	}
+}
+
+/* =The Footer
+----------------------------------------------- */
+
+#colophon {
+	background: #2d2c2c;
+	margin-top: 40px;
+	padding: 40px 0;
+
+	.container {
+		padding: 0 20px;
+	}
+
+	#site-info {
+		margin-top: 40px;
+		font-size: 0.95em;
+		display: block;
+		text-align: center;
+		color: #bab9b5;
+
+		a {
+			color: #ebe9e5;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* =Sidebars and Asides
+----------------------------------------------- */
+
+#secondary {
+	background: #fbfbfb;
+	.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
+	padding: 25px;
+
+	.widget {
+		margin-bottom: 40px;
+		color: #716f6c;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.widget-title {
+			color: #373435;
+			font-size: 1.25em;
+			margin-bottom: 1em;
+		}
+
+	}
+}
+
+#footer-widgets {
+	.clearfix();
+
+	margin: 0 -15px;
+	max-width: 100%;
+
+	aside.widget {
+		.box-sizing(border-box);
+		float: right;
+		padding: 0 15px;
+		margin-bottom:0;
+
+		color: #bab9b5;
+
+		.widget-title {
+			font-size: 1.25em;
+			margin-bottom: 20px;
+			color: #ebe9e5;
+		}
+
+		a {
+			color: #c8c6c3;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		ul, ol {
+			list-style: none;
+			margin: 0;
+
+			ul, ol {
+				margin-left: 1em;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			&{
+				float: none;
+				width: 100%;
+				margin-bottom: 40px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+/* =Contact Form 7
+----------------------------------------------- */
+
+textarea.wpcf7-textarea {
+	width: 100%;
+}
+
+
+@import "less/post";
+@import "less/slider";
+@import "less/widgets";

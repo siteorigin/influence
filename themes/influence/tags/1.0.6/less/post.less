@@ -1,0 +1,147 @@
+article.entry {
+
+	background: #fbfbfb;
+	margin: 40px 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.box-shadow(~"0 1px 3px rgba(0,0,0,0.175)");
+
+	.post-thumbnail {
+
+		background: #F7F7F7;
+
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.post-text {
+		padding: 40px;
+
+		.entry-title {
+			color: #373435;
+			font-size: 1.75em;
+			font-weight: 500;
+			text-align: center;
+			margin-bottom: 40px;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@media (max-width:480px) {
+
+		.post-text {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.post-text .entry-title {
+			font-size: 1.5em;
+			margin-bottom: 30px;
+		}
+
+		.post-text {
+			padding: 40px 20px;
+		}
+	}
+
+	.entry-content {
+		color: #716f6c;
+		line-height: 1.75em;
+
+		strong {
+			color: #646360;
+			font-weight: 500;
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+			color: #545252;
+		}
+	}
+
+	.entry-meta {
+		color: #5e5d5a;
+		line-height: 1.75em;
+		margin-top: 40px;
+		.clearfix();
+		font-weight: 500;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+
+			&:hover {
+				text-decoration: underline;
+				color: #2f5faa;
+			}
+		}
+
+		.posted-on {
+			margin-left: 2em;
+			float: right;
+		}
+
+		.continue-reading {
+			float: left;
+		}
+
+		.taxonomy {
+			float: left;
+
+			> div {
+				display: inline-block;
+				margin-right: 2em;
+
+				> span[class^="influence-icon-"] {
+					display: block;
+					float: left;
+					font-size: 1.25em;
+					margin-right: 0.5em;
+					margin-top: 0.2em;
+					.transition(0.35s);
+				}
+
+				&:hover > span[class^="influence-icon-"]{
+					color: #3c3b38;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		@media screen and (max-width: 640px) {
+			.posted-on, .continue-reading, .taxonomy  {
+				margin: 0 0 0.5em 0;
+				text-align: center;
+				float: none;
+			}
+		}
+	}
+}
+
+/* =Page Templates
+----------------------------------------------- */
+
+body.page-template-templatestemplate-full-php,
+body.siteorigin-panels-home,
+body.page-template-templatestemplate-full-no-title-php{
+	#primary {
+		float: none;
+		width: 100%;
+	}
+}
