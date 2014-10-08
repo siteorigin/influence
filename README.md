@@ -54,6 +54,9 @@ Change Log
 
 **1.0.6**
 * Reduced font size slightly.
+* Framework updates to add tour and settings preview.
+* Added tour content.
+* Changed how the home page slider is displayed.
 
 **1.0.5**
 * Updated framework to fix theme settings.

@@ -59,15 +59,13 @@ function influence_theme_settings(){
 	 * Home Page
 	 */
 
-	siteorigin_settings_add_field( 'home', 'displays', 'select', __('Home Slider Area', 'influence'), array(
+	siteorigin_settings_add_field( 'home', 'slider_shortcode_new', 'text', __('Home Slider', 'influence'), array(
 		'options' => array(
 			'' => __('None', 'influence'),
-			'demo' => __('Demo Slider', 'influence'),
-			'slider' => __('Slider', 'influence'),
-			'shortcode' => __('Shortcode', 'influence'),
+			'[home_slider_demo]' => __('Demo Slider', 'influence'),
+			'[home_slider_widget]' => __('Slider Widget', 'influence'),
 		),
-		'default' => 'demo',
-		'description' => __('Choose what your home slider area displays.', 'influence'),
+		'description' => __('Enter the shortcode that displays the slider on the home page.', 'influence'),
 	) );
 
 	siteorigin_settings_add_field( 'home', 'menu_overlaps', 'checkbox', __('Menu Overlaps Slider', 'influence'), array(
@@ -106,7 +104,13 @@ function influence_theme_settings(){
 	) );
 	
 }
-add_action('admin_init', 'influence_theme_settings');
+add_action('siteorigin_settings_init', 'influence_theme_settings');
+
+
+function influence_theme_settings_fix(){
+	siteorigin_settings_remove_field('home', 'slider_shortcode');
+}
+add_action('siteorigin_settings_init', 'influence_theme_settings_fix', 20);
 
 /**
  * Setup theme default settings.
@@ -117,12 +121,14 @@ add_action('admin_init', 'influence_theme_settings');
  */
 function influence_theme_setting_defaults($defaults){
 	$defaults['logo_logo'] = false;
+	$defaults['logo_retina_logo'] = false;
 	$defaults['logo_scale'] = true;
 	$defaults['logo_site_description'] = false;
 
 	$defaults['general_attribution'] = true;
 	$defaults['general_menu_text'] = __('Menu', 'influence');
 
+	$defaults['home_slider_shortcode_new'] = '[home_slider_demo]';
 	$defaults['home_displays'] = 'demo';
 	$defaults['home_menu_overlaps'] = true;
 	$defaults['home_slider'] = false;
@@ -132,6 +138,14 @@ function influence_theme_setting_defaults($defaults){
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_viewport'] = 1200;
 
+	// Now, lets transfer the old settings into the defaults of the new settings
+	$settings = get_option('influence_theme_settings', array() );
+	if(!empty($settings['home_displays']) ) {
+		if( $settings['home_displays'] == 'demo' ) $defaults['home_slider_shortcode_new'] = '[home_slider_demo]';
+		else if( $settings['home_displays'] == 'slider' ) $defaults['home_slider_shortcode_new'] = '[home_slider_widget]';
+		else if( $settings['home_displays'] == 'shortcode' ) $defaults['home_slider_shortcode_new'] = isset( $settings['home_slider_shortcode'] ) ? $settings['home_slider_shortcode'] : '';
+	}
+
 	return $defaults;
 }
 add_filter('siteorigin_theme_default_settings', 'influence_theme_setting_defaults');
@@ -140,3 +154,6 @@ function influence_siteorigin_settings_page_icon($icon){
 	return get_template_directory_uri().'/images/settings-icon.png';
 }
 add_filter('siteorigin_settings_page_icon', 'influence_siteorigin_settings_page_icon');
+
+// Add a filter to add slider options
+add_filter('siteorigin_setting_options_home_slider_shortcode_new', 'siteorigin_settings_add_slider_options');
