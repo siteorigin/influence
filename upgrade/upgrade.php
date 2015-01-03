@@ -8,7 +8,7 @@ function influence_upgrade_content($content){
 
 	// We're offering the premium version as a free download.
 	$content['free_download'] = true;
-	$content['buy_url'] = 'http://siteorigin.com/theme/influence/?action=plus';
+	$content['buy_url'] = 'https://siteorigin.com/theme/influence/?action=plus';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
 	$content['premium_video_id'] = '102844186';
 
