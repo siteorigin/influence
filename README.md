@@ -52,6 +52,12 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+**1.0.7**
+* Fixed slider theme setting.
+* Framework updates.
+* Updated all links to HTTPS.
+* Fixed web font for HTTPS sites.
+
 **1.0.6**
 * Reduced font size slightly.
 * Framework updates to add tour and settings preview.
