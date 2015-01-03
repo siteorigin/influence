@@ -20,7 +20,7 @@
 				<?php dynamic_sidebar( 'sidebar-footer' ) ?>
 			</div><!-- #footer-widgets -->
 
-			<?php $credits = apply_filters( 'influence_credits_siteorigin', sprintf( __( 'Theme by %1$s.', 'influence' ), '<a href="http://siteorigin.com/" rel="designer">SiteOrigin</a>' ) ); ?>
+			<?php $credits = apply_filters( 'influence_credits_siteorigin', sprintf( __( 'Theme by %1$s.', 'influence' ), '<a href="https://siteorigin.com/" rel="designer">SiteOrigin</a>' ) ); ?>
 
 			<?php if( !empty($credits) ) : ?>
 				<div id="site-info">
