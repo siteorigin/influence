@@ -83,7 +83,7 @@ function influence_theme_settings(){
 	siteorigin_settings_add_teaser( 'home', 'slider_shortcode', __('Home Shortcode', 'influence'), array(
 		'description' => sprintf(
 			__('Use a shortcode for your home page slider. Allows you to use alternative sliders.', 'influence'),
-			'http://wordpress.org/plugins/ml-slider/'
+			'https://wordpress.org/plugins/ml-slider/'
 		),
 	) );
 

@@ -8,7 +8,6 @@
  */
 
 define('SITEORIGIN_THEME_VERSION', 'trunk');
-define('SITEORIGIN_THEME_ENDPOINT', 'http://siteorigin.localhost');
 
 // Include all the SiteOrigin extras
 include get_template_directory() . '/extras/settings/settings.php';
