@@ -72,9 +72,9 @@ function influence_setup() {
 	set_post_thumbnail_size( 1000, 1000, false );
 	add_image_size( 'thumbnail-retina', 1000, 1000, false);
 
-	if( !defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels') ){
+	if( !function_exists('siteorigin_panels_render') ) {
 		// Only include panels lite if the panels plugin doesn't exist
-		include get_template_directory() . '/extras/panels-lite/panels-lite.php';
+		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 
 	add_theme_support( 'siteorigin-premium-teaser', array(
@@ -140,26 +140,22 @@ function influence_widgets_init() {
 add_action( 'widgets_init', 'influence_widgets_init' );
 
 /**
- * Register all the bundled scripts
- */
-function influence_register_scripts(){
-	wp_register_script( 'influence-fitvids' , get_template_directory_uri().'/js/jquery.fitvids.js' , array('jquery'), '1.0' );
-}
-add_action( 'wp_enqueue_scripts', 'influence_register_scripts' , 5);
-
-/**
  * Enqueue scripts and styles
  */
 function influence_scripts() {
 	wp_enqueue_style( 'influence-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'influence-main' , get_template_directory_uri().'/js/jquery.theme-main.js' , array('jquery', 'influence-fitvids'), SITEORIGIN_THEME_VERSION );
+
+	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_script( 'influence-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . $js_suffix . '.js' , array('jquery'), '1.0' );
+	wp_enqueue_script( 'influence-main' , get_template_directory_uri().'/js/jquery.theme-main' . $js_suffix . '.js' , array('jquery'), SITEORIGIN_THEME_VERSION );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation' . $js_suffix . '.js', array( 'jquery' ), '20120202' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'influence_scripts' );
@@ -197,6 +193,7 @@ add_filter('body_class', 'influence_body_class');
  * Add scripts for some backwards compatibility with IE
  */
 function influence_wp_head(){
+
 	?>
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
