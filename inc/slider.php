@@ -49,11 +49,13 @@ function influence_enqueue_slider_demo_scripts(){
 		wp_enqueue_script('sow-slider-slider');
 	}
 	else {
+		$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
 		// Use the bundled scripts
 		wp_enqueue_style('influence-sow-slider-slider', get_template_directory_uri().'/demo/slider-css/slider.css', array(), SITEORIGIN_THEME_VERSION);
-		wp_enqueue_script('influence-sow-slider-slider-cycle2', get_template_directory_uri().'/demo/slider-js/jquery.cycle.js', array('jquery'), SITEORIGIN_THEME_VERSION);
-		if( wp_is_mobile() ) wp_enqueue_script('influence-sow-slider-slider-cycle2-swipe', get_template_directory_uri().'/slider-js/jquery.cycle.swipe.js', array('jquery'), SITEORIGIN_THEME_VERSION);
-		wp_enqueue_script('influence-sow-slider-slider', get_template_directory_uri().'/demo/slider-js/slider.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+		wp_enqueue_script('influence-sow-slider-slider-cycle2', get_template_directory_uri().'/demo/slider-js/jquery.cycle' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+		if( wp_is_mobile() ) wp_enqueue_script('influence-sow-slider-slider-cycle2-swipe', get_template_directory_uri().'/slider-js/jquery.cycle.swipe' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+		wp_enqueue_script('influence-sow-slider-slider', get_template_directory_uri().'/demo/slider-js/slider' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION);
 	}
 }
 add_action('wp_enqueue_scripts', 'influence_enqueue_slider_demo_scripts', 15);
