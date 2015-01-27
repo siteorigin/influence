@@ -56,6 +56,7 @@ Change Log
 * Changed how minified JS files are handled.
 * Switched to new Page Builder Lite.
 * Fixed issue with checkbox setting.
+* Fixed Google webfont enqueueing for https.
 
 **1.0.7**
 * Fixed slider theme setting.
