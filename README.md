@@ -52,6 +52,11 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+**1.1**
+* Changed how minified JS files are handled.
+* Switched to new Page Builder Lite.
+* Fixed issue with checkbox setting.
+
 **1.0.7**
 * Fixed slider theme setting.
 * Framework updates.
