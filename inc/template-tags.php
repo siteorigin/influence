@@ -216,6 +216,7 @@ function influence_category_transient_flusher() {
 add_action( 'edit_category', 'influence_category_transient_flusher' );
 add_action( 'save_post', 'influence_category_transient_flusher' );
 
+if ( ! function_exists( 'influence_get_archive_title' ) ) :
 /**
  * Return the archive title depending on which page is being displayed.
  * 
@@ -255,6 +256,7 @@ function influence_get_archive_title(){
 	
 	return apply_filters('influence_archive_title', $title);
 }
+endif;
 
 /**
  * Get the post meta.
