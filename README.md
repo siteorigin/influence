@@ -52,6 +52,15 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+**1.1.1**
+* Properly center meta slider in header
+* Updated to latest version of framework.
+* Optimized all images.
+* Added menu text escaping.
+* Fixed center alignment of images with captions.
+* Made influence_get_archive_title child themeable
+* Fixed image page
+
 **1.1**
 * Changed how minified JS files are handled.
 * Switched to new Page Builder Lite.
