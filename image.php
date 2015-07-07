@@ -15,53 +15,62 @@ get_header();
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
+
+			<div class="post-thumbnail">
+				<?php $next_attachment_url = influence_next_attachment_url(); ?>
+
+				<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment">
+					<?php
+					$attachment_size = apply_filters( 'influence_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
+					echo wp_get_attachment_image( $post->ID, $attachment_size );
+					?>
+				</a>
+			</div>
+
+			<div class="post-text">
+
+				<?php if( get_the_title() ) : ?>
+					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'influence' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<?php endif; ?>
+
+				<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+					<div class="entry-content">
+						<?php the_excerpt(); ?>
+					</div><!-- .entry-summary -->
+				<?php else : ?>
+					<div class="entry-content">
+						<?php the_content( '' ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'influence' ), 'after' => '</div>' ) ); ?>
+					</div><!-- .entry-content -->
+				<?php endif; ?>
 
 				<div class="entry-meta">
-					<?php echo influence_get_post_meta() ?>
-					<?php edit_post_link( __( 'Edit', 'influence' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
+					<?php if( !is_singular() && ( preg_match( '/<!--more(.*?)?-->/', $post->post_content ) || empty($post->post_title) ) ) : ?>
+						<div class="continue-reading"><a href="<?php the_permalink() ?>"><?php _e('Continue Reading <span class="meta-nav">&rarr;</span>', 'influence') ?></a></div>
+					<?php else : ?>
+						<div class="taxonomy">
+							<?php
+							the_tags( '<div class="tags"><span class="influence-icon-ribbon"></span>', ', ', '</div>' );
+							if( influence_categorized_blog() ) the_terms( get_the_ID(), 'category', '<div class="categories"><span class="influence-icon-layers"></span>', ', ', '</div>' );
+							?>
+						</div>
+					<?php endif; ?>
+
+					<div class="posted-on"><?php influence_posted_on(); ?></div>
 				</div><!-- .entry-meta -->
 
-				<nav id="image-navigation" class="site-navigation">
-					<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'influence' ) ); ?></span>
-					<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'influence' ) ); ?></span>
-				</nav><!-- #image-navigation -->
-			</header><!-- .entry-header -->
+				<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
 
-			<div class="entry-content">
+					<div id="single-comments-wrapper">
+						<?php comments_template( '', true ); ?>
+					</div><!-- #single-comments-wrapper -->
 
-				<div class="entry-attachment">
-					<div class="attachment">
-						<?php $next_attachment_url = influence_next_attachment_url(); ?>
+				<?php endif; ?>
 
-						<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment">
-							<?php
-							$attachment_size = apply_filters( 'influence_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
-							echo wp_get_attachment_image( $post->ID, $attachment_size );
-							?>
-						</a>
-					</div><!-- .attachment -->
+			</div>
 
-					<?php if ( ! empty( $post->post_excerpt ) ) : ?>
-					<div class="entry-caption">
-						<?php the_excerpt(); ?>
-					</div><!-- .entry-caption -->
-					<?php endif; ?>
-				</div><!-- .entry-attachment -->
-
-				<?php the_content(); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'influence' ), 'after' => '</div>' ) ); ?>
-
-			</div><!-- .entry-content -->
-
-			<footer class="entry-meta">
-				<?php edit_post_link( __( 'Edit', 'influence' ), ' <span class="edit-link">', '</span>' ); ?>
-			</footer><!-- .entry-meta -->
-		</article><!-- #post-<?php the_ID(); ?> -->
-
-		<?php comments_template(); ?>
+		</article>
 
 	<?php endwhile; // end of the loop. ?>
 
