@@ -894,7 +894,8 @@ article.sticky {
 }
 .entry-content .wp-caption {
   max-width: 100%;
-  margin: 5px 0 30px 0;
+  margin-top: 5px;
+  margin-bottom: 30px;
   border: 1px solid #E0E0E0;
   padding: 8px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.09);
@@ -1318,6 +1319,8 @@ article.entry .post-thumbnail img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 article.entry .post-text {
   padding: 40px;
@@ -1436,6 +1439,9 @@ body.page-template-templatestemplate-full-no-title-php #primary {
 }
 /* =The Slider
 ----------------------------------------------- */
+#under-masthead-slider > * {
+  margin: 0 auto;
+}
 #under-masthead-slider .widget {
   margin-bottom: 0;
 }
