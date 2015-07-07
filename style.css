@@ -1319,6 +1319,8 @@ article.entry .post-thumbnail img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 article.entry .post-text {
   padding: 40px;
