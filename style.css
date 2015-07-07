@@ -1436,6 +1436,9 @@ body.page-template-templatestemplate-full-no-title-php #primary {
 }
 /* =The Slider
 ----------------------------------------------- */
+#under-masthead-slider > * {
+  margin: 0 auto;
+}
 #under-masthead-slider .widget {
   margin-bottom: 0;
 }
