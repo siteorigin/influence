@@ -51,7 +51,7 @@
 
 					<a href="#" class="main-menu-button">
 						<i class="influence-icon-menu-icon"></i>
-						<?php echo siteorigin_setting('general_menu_text') ?>
+						<?php echo esc_html( siteorigin_setting('general_menu_text') ) ?>
 					</a>
 
 				</nav><!-- .site-navigation .main-navigation -->
