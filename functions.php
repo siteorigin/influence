@@ -7,14 +7,13 @@
  * @license GPL 2.0
  */
 
-define('SITEORIGIN_THEME_VERSION', 'trunk');
+define('SITEORIGIN_THEME_VERSION', 'dev');
+define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 // Include all the SiteOrigin extras
-include get_template_directory() . '/extras/settings/settings.php';
-include get_template_directory() . '/extras/adminbar/adminbar.php';
-include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
-include get_template_directory() . '/extras/premium/premium.php';
-include get_template_directory() . '/extras/webfonts/webfonts.php';
+include get_template_directory() . '/inc/webfonts/webfonts.php';
+include get_template_directory() . '/inc/settings/settings.php';
+include get_template_directory() . '/inc/customizer/customizer.php';
 
 // Load the theme specific files
 include get_template_directory() . '/inc/slider.php';
@@ -23,12 +22,9 @@ include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
-include get_template_directory() . '/tour/tour.php';
+include get_template_directory() . '/inc/customizer.php';
 
-// Let users know about influence plus
-if( !defined('SITEORIGIN_IS_PREMIUM') ) {
-	include get_template_directory() . '/upgrade/upgrade.php';
-}
+include get_template_directory() . '/inc/legacy.php';
 
 if ( ! function_exists( 'influence_setup' ) ) :
 /**
@@ -41,9 +37,6 @@ if ( ! function_exists( 'influence_setup' ) ) :
  * @since influence 1.0
  */
 function influence_setup() {
-	// Initialize SiteOrigin settings
-	siteorigin_settings_init();
-
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 900;
 	
@@ -82,7 +75,7 @@ function influence_setup() {
 		'settings' => true,
 	) );
 
-	// Lets add the default webfont
+	// Let's add the default webfont
 	siteorigin_webfonts_add_font('Montserrat');
 }
 endif; // influence_setup
