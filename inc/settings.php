@@ -89,7 +89,7 @@ function influence_theme_settings(){
 
 	$settings->add_field( 'home', 'slider', 'widget', __('Home Slider', 'influence'), array(
 		'widget_class' => 'SiteOrigin_Widget_Slider_Widget',
-		'bundle_widget' => 'so-slider-widget',
+		'bundle_widget' => 'slider',
 		'plugin' => 'so-widgets-bundle',
 		'plugin_name' => __('SiteOrigin Widgets Bundle', 'influence'),
 		'description' => __('Build a slider from your own images and videos.', 'influence'),
