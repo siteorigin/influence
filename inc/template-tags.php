@@ -142,6 +142,10 @@ if(!function_exists('influence_display_logo')):
 function influence_display_logo(){
 	$logo = siteorigin_setting('logo_logo');
 
+	if( ! is_numeric( $logo ) ) {
+		$logo = SiteOrigin_Settings::get_image_id( $logo );
+	}
+
 	if( empty($logo) ) {
 		// Just display the site title
 		bloginfo( 'name' );
@@ -166,6 +170,22 @@ function influence_display_logo(){
 			'height' => round($height),
 			'alt' => sprintf( __('%s Logo', 'influence'), get_bloginfo('name') ),
 		);
+
+		// Try adding the retina logo
+		$retina_logo = siteorigin_setting( 'logo_retina_logo' );
+		if( !empty($retina_logo) ) {
+			if( is_numeric( $retina_logo ) ) {
+				$retina_logo = apply_filters('influence_logo_retina_image_id', $retina_logo);
+				$retina_logo_image = wp_get_attachment_image_src($retina_logo, 'full');
+				if( !empty($retina_logo_image[0]) ) {
+					$retina_logo = $retina_logo_image[0];
+				}
+			}
+
+			if( !empty($retina_logo) ) {
+				$logo_attributes['srcset'] = $retina_logo . ' 2x';
+			}
+		}
 
 		if( siteorigin_setting('logo_scale') ) $logo_attributes['data-scale'] = '1';
 
