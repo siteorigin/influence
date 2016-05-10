@@ -95,13 +95,6 @@ function influence_theme_settings(){
 		'description' => __('Build a slider from your own images and videos.', 'influence'),
 	) );
 
-	$settings->add_field( 'home', 'slider_shortcode', 'text', __('Home Shortcode', 'influence'), array(
-		'description' => sprintf(
-			__('Use a shortcode for your home page slider. Allows you to use alternative sliders.', 'influence'),
-			'https://wordpress.org/plugins/ml-slider/'
-		),
-	) );
-
 	$settings->add_field( 'home', 'slider_margin', 'checkbox', __( 'Slider Margin', 'influence' ), array(
 		'description' => __('Add a margin below the home page slider', 'influence'),
 	) );
