@@ -146,28 +146,3 @@ add_filter('siteorigin_settings_defaults', 'influence_theme_setting_defaults');
 
 // Add a filter to add slider options
 add_filter('siteorigin_setting_options_home_slider_shortcode_new', 'siteorigin_settings_add_slider_options');
-
-if( !function_exists('influence_siteorigin_setting_update_image') ) :
-/**
- * Convert post ID based images into full URLs
- *
- * @param $mods
- *
- * @return mixed
- */
-function vantage_siteorigin_setting_update_image( $mods ) {
-	$convert = array( 'logo_logo', 'logo_retina_logo' );
-	$old_settings = get_option( 'vantage_theme_settings' );
-
-	foreach ( $convert as $key ) {
-		if( empty( $mods[ 'theme_settings_' . $key ] ) && !empty( $old_settings[$key] ) ) {
-			$image_src = wp_get_attachment_image_src( $old_settings[ $key ], 'full');
-			if( !empty( $image_src[0] ) ) {
-				$mods[ 'theme_settings_' . $key ] = $image_src[0];
-			}
-		}
-	}
-	return $mods;
-}
-endif;
-add_filter( 'option_theme_mods_vantage', 'influence_siteorigin_setting_update_image' );
