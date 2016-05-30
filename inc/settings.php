@@ -146,3 +146,20 @@ add_filter('siteorigin_settings_defaults', 'influence_theme_setting_defaults');
 
 // Add a filter to add slider options
 add_filter('siteorigin_setting_options_home_slider_shortcode_new', 'siteorigin_settings_add_slider_options');
+
+function influence_about_page_setup( $about ){
+	$about['title_image'] = get_template_directory_uri() . '/admin/about/influence-logo.png';
+	$about['title_image_2x'] = get_template_directory_uri() . '/admin/about/influence-logo-2x.png';
+
+	$about['description'] = __( 'Influence is an elegant blogging theme that focused on your content. It offers a whole new level of attention to detail.', 'influence' );
+
+	$about[ 'sections' ] = array(
+		'free',
+		'support',
+		'page-builder',
+		'github',
+	);
+
+	return $about;
+}
+add_filter( 'siteorigin_about_page', 'influence_about_page_setup' );
