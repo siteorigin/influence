@@ -4,10 +4,11 @@ Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/influence/
 Description: Influence is a free WordPress theme that gives you a canvas to share your videos, photography and content. It features a modern, responsive design and tight integration with our own Page Builder plugin to make sure your content is responsive too. The best feature of Influence is its huge home page slider - perfect if you're using Influence to build a business or portfolio website. This slider has support for video background images and, like the rest of Influence, is fully responsive. We offer free support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
-Version: trunk
+Version: dev
 License: GNU General Public License
 License URI: http://www.gnu.org/copyleft/gpl.html
 Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
+Text Domain: origami
 */
 /* =Reset
 -------------------------------------------------------------- */
@@ -390,11 +391,11 @@ textarea {
   color: #888888;
   border: none;
   outline: none;
-  background: #f5f5f5;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f5f5f5), color-stop(1, #f7f7f7));
-  background: -ms-linear-gradient(bottom, #f5f5f5, #f7f7f7);
-  background: -moz-linear-gradient(center bottom, #f5f5f5 0%, #f7f7f7 100%);
-  background: -o-linear-gradient(#f7f7f7, #f5f5f5);
+  background: #F5F5F5;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F5F5F5), color-stop(1, #F7F7F7));
+  background: -ms-linear-gradient(bottom, #F5F5F5, #F7F7F7);
+  background: -moz-linear-gradient(center bottom, #F5F5F5 0%, #F7F7F7 100%);
+  background: -o-linear-gradient(#F7F7F7, #F5F5F5);
   border: 1px solid #E0E0E0;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -1298,6 +1299,35 @@ article.sticky {
 ----------------------------------------------- */
 textarea.wpcf7-textarea {
   width: 100%;
+}
+/* =Accessibility
+----------------------------------------------- */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 article.entry {
   background: #fbfbfb;

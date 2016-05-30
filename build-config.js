@@ -35,16 +35,25 @@ module.exports = {
 		}
 	},
 	less: {
-		src: [],
-		include: [],
+		src: [
+			'style.less',
+		],
+		include:[
+			'less/*.less'
+		],
 		external: {
-			src: [],
-			include: [],
+			src: [
+				'inc/panels-lite/css/**/*.less',
+			],
+			include: [
+				'inc/panels-lite/css',
+			],
 		},
 	},
 	js: {
 		src: [
 			'js/**/*.js',
+			'demo/slider-js/*.js',
 			'inc/settings/js/**/*.js',
 			'inc/panels-lite/js/**/*.js',
 			'!{node_modules,node_modules/**}',  // Ignore node_modules/ and contents
