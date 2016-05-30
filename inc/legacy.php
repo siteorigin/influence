@@ -5,7 +5,7 @@ function influence_add_legacy_settings_page(){
 		__( 'Theme Settings', 'influence' ),
 		__( 'Theme Settings', 'influence' ),
 		'manage_options',
-		'origami-legacy-settings',
+		'influence-legacy-settings',
 		'influence_legacy_settings_page'
 	);
 }
@@ -21,4 +21,16 @@ function influence_legacy_settings_page(){
 		</p>
 	</div>
 	<?php
+}
+
+if( !function_exists( 'siteorigin_settings_add_field' ) ) {
+	function siteorigin_settings_add_field( $section, $id, $type, $label = null, $args = array(), $after = false ){
+		SiteOrigin_Settings::single()->add_field( $section, $id, $type, $label, $args, $after);
+	}
+}
+
+if( !function_exists( 'siteorigin_settings_add_section' ) ) {
+	function siteorigin_settings_add_section( $id, $title, $after = false ){
+		SiteOrigin_Settings::single()->add_section( $id, $title, $after );
+	}
 }

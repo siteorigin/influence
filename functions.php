@@ -13,7 +13,11 @@ define('SITEORIGIN_THEME_JS_PREFIX', '');
 // Include all the SiteOrigin extras
 include get_template_directory() . '/inc/webfonts/webfonts.php';
 include get_template_directory() . '/inc/settings/settings.php';
-include get_template_directory() . '/inc/customizer/customizer.php';
+
+if( ! function_exists( 'influence_plus_init' ) ) {
+	include get_template_directory() . '/inc/customizer/customizer.php';
+	include get_template_directory() . '/inc/customizer.php';
+}
 
 // Load the theme specific files
 include get_template_directory() . '/inc/slider.php';
@@ -22,7 +26,6 @@ include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
-include get_template_directory() . '/inc/customizer.php';
 
 include get_template_directory() . '/inc/legacy.php';
 
