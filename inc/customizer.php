@@ -3,27 +3,27 @@
 function influence_plus_customizer_init(){
 	$sections = apply_filters( 'influence_plus_customizer_sections', array(
 		'influence_general' => array(
-			'title' => __('General', 'plus-influence'),
+			'title' => __('General', 'influence'),
 			'priority' => 25,
 		),
 		'influence_fonts' => array(
-			'title' => __('Fonts', 'plus-influence'),
+			'title' => __('Fonts', 'influence'),
 			'priority' => 30,
 		),
 		'influence_menu' => array(
-			'title' => __('Menu Bar', 'plus-influence'),
+			'title' => __('Menu Bar', 'influence'),
 			'priority' => 40,
 		),
 		'influence_page' => array(
-			'title' => __('Page', 'plus-influence'),
+			'title' => __('Page', 'influence'),
 			'priority' => 45,
 		),
 		'influence_sidebar' => array(
-			'title' => __('Sidebar Menu', 'plus-influence'),
+			'title' => __('Sidebar Menu', 'influence'),
 			'priority' => 50,
 		),
 		'influence_footer' => array(
-			'title' => __('Footer', 'plus-influence'),
+			'title' => __('Footer', 'influence'),
 			'priority' => 100,
 		),
 	) );
@@ -31,13 +31,13 @@ function influence_plus_customizer_init(){
 		'influence_general' => array(
 			'site_width' => array(
 				'type' => 'measurement',
-				'title' => __('Site Max Width', 'plus-influence'),
+				'title' => __('Site Max Width', 'influence'),
 				'callback' => 'influence_plus_change_site_width',
 				'default' => 1000,
 			),
 			'site_width_sidebar' => array(
 				'type' => 'measurement',
-				'title' => __('Site Max Width With Sidebar', 'plus-influence'),
+				'title' => __('Site Max Width With Sidebar', 'influence'),
 				'callback' => 'influence_plus_change_site_width',
 				'default' => 1200,
 			),
@@ -45,13 +45,13 @@ function influence_plus_customizer_init(){
 		'influence_fonts' => array(
 			'body_font' => array(
 				'type' => 'font',
-				'title' => __('Body Font', 'plus-influence'),
+				'title' => __('Body Font', 'influence'),
 				'default' => 'Helvetica Neue',
 				'selector' => 'body,button,input,select,textarea',
 			),
 			'heading_font' => array(
 				'type' => 'font',
-				'title' => __('Heading Font', 'plus-influence'),
+				'title' => __('Heading Font', 'influence'),
 				'default' => 'Montserrat',
 				'selector' => 'h1,h2,h3,h4,h5,h6',
 			),
