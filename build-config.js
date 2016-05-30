@@ -35,11 +35,19 @@ module.exports = {
 		}
 	},
 	less: {
-		src: [],
-		include: [],
+		src: [
+			'style.less',
+		],
+		include:[
+			'less/*.less'
+		],
 		external: {
-			src: [],
-			include: [],
+			src: [
+				'inc/panels-lite/css/**/*.less',
+			],
+			include: [
+				'inc/panels-lite/css',
+			],
 		},
 	},
 	js: {
