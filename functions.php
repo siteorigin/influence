@@ -84,6 +84,25 @@ endif; // influence_setup
 add_action( 'after_setup_theme', 'influence_setup' );
 
 /**
+ * Add support for premium functionality
+ */
+function influence_siteorigin_premium_support(){
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter'  => 'influence_credits_siteorigin',
+		'enabled' => siteorigin_setting( 'display_attribution' ),
+		'siteorigin_setting' => 'display_attribution'
+	) );
+
+	// This theme supports the ajax comments addon
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'comments_ajax' ),
+		'siteorigin_setting' => 'comments_ajax'
+	) );
+}
+add_action( 'after_setup_theme', 'influence_siteorigin_premium_support' );
+
+/**
  * Setup the WordPress core custom background feature.
  * 
  * @since influence 1.0
