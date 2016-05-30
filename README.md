@@ -52,6 +52,9 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+####1.2.1 - 30 May 2016
+* Fixed compatibility with Influence Plus.
+
 ####1.2 - 30 May 2016
 * Updated to latest settings framework.
 * Moved settings into Customizer with legacy note.
