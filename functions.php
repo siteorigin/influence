@@ -7,14 +7,13 @@
  * @license GPL 2.0
  */
 
-define('SITEORIGIN_THEME_VERSION', 'trunk');
+define('SITEORIGIN_THEME_VERSION', 'dev');
+define('SITEORIGIN_THEME_JS_PREFIX', '');
 
 // Include all the SiteOrigin extras
-include get_template_directory() . '/extras/settings/settings.php';
-include get_template_directory() . '/extras/adminbar/adminbar.php';
-include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
-include get_template_directory() . '/extras/premium/premium.php';
-include get_template_directory() . '/extras/webfonts/webfonts.php';
+include get_template_directory() . '/inc/webfonts/webfonts.php';
+include get_template_directory() . '/inc/settings/settings.php';
+include get_template_directory() . '/inc/customizer/customizer.php';
 
 // Load the theme specific files
 include get_template_directory() . '/inc/slider.php';
@@ -23,12 +22,9 @@ include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
-include get_template_directory() . '/tour/tour.php';
+include get_template_directory() . '/inc/customizer.php';
 
-// Let users know about influence plus
-if( !defined('SITEORIGIN_IS_PREMIUM') ) {
-	include get_template_directory() . '/upgrade/upgrade.php';
-}
+include get_template_directory() . '/inc/legacy.php';
 
 if ( ! function_exists( 'influence_setup' ) ) :
 /**
@@ -41,9 +37,6 @@ if ( ! function_exists( 'influence_setup' ) ) :
  * @since influence 1.0
  */
 function influence_setup() {
-	// Initialize SiteOrigin settings
-	siteorigin_settings_init();
-
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 900;
 	
@@ -82,11 +75,32 @@ function influence_setup() {
 		'settings' => true,
 	) );
 
-	// Lets add the default webfont
+	add_theme_support( "title-tag" );
+
+	// Let's add the default webfont
 	siteorigin_webfonts_add_font('Montserrat');
 }
 endif; // influence_setup
 add_action( 'after_setup_theme', 'influence_setup' );
+
+/**
+ * Add support for premium functionality
+ */
+function influence_siteorigin_premium_support(){
+	// This theme supports the no attribution addon
+	add_theme_support( 'siteorigin-premium-no-attribution', array(
+		'filter'  => 'influence_credits_siteorigin',
+		'enabled' => siteorigin_setting( 'display_attribution' ),
+		'siteorigin_setting' => 'display_attribution'
+	) );
+
+	// This theme supports the ajax comments addon
+	add_theme_support( 'siteorigin-premium-ajax-comments', array(
+		'enabled' => siteorigin_setting( 'comments_ajax' ),
+		'siteorigin_setting' => 'comments_ajax'
+	) );
+}
+add_action( 'after_setup_theme', 'influence_siteorigin_premium_support' );
 
 /**
  * Setup the WordPress core custom background feature.
@@ -193,7 +207,6 @@ add_filter('body_class', 'influence_body_class');
  * Add scripts for some backwards compatibility with IE
  */
 function influence_wp_head(){
-
 	?>
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>

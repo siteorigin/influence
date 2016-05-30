@@ -52,7 +52,16 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
-**1.1.1**
+####1.2 - 30 May 2016
+* Updated to latest settings framework.
+* Moved settings into Customizer with legacy note.
+* Removed unused settings.
+* Added design customization settings.
+* Improved retina logo setting.
+* Use new WordPress title tag.
+* Removed extras folder and unsued libraries.
+
+####1.1.1
 * Properly center meta slider in header
 * Updated to latest version of framework.
 * Optimized all images.
@@ -61,45 +70,45 @@ Change Log
 * Made influence_get_archive_title child themeable
 * Fixed image page
 
-**1.1**
+####1.1
 * Changed how minified JS files are handled.
 * Switched to new Page Builder Lite.
 * Fixed issue with checkbox setting.
 * Fixed Google webfont enqueueing for https.
 
-**1.0.7**
+####1.0.7
 * Fixed slider theme setting.
 * Framework updates.
 * Updated all links to HTTPS.
 * Fixed web font for HTTPS sites.
 
-**1.0.6**
+####1.0.6
 * Reduced font size slightly.
 * Framework updates to add tour and settings preview.
 * Added tour content.
 * Changed how the home page slider is displayed.
 
-**1.0.5**
+####1.0.5
 * Updated framework to fix theme settings.
 * Added prebuilt layouts for Page Builder.
 
-**1.0.4**
+####1.0.4
 * Fixed iconic font
 
-**1.0.3**
+####1.0.3
 * Changed name of iconic fonts
 * Description and theme URI updated.
 * Updated license information.
 
-**1.0.2**
+####1.0.2
 * Updated Page Builder support.
 * Removed default logo.
 * Added more Influence Plus information.
 
-**1.0.1**
+####1.0.1
 * Integrated with more plugins.
 * Improved styling.
 * Added Influence Plus information.
 
-**1.0**
+####1.0
 * Initial release.
