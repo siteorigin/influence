@@ -75,6 +75,8 @@ function influence_setup() {
 		'settings' => true,
 	) );
 
+	add_theme_support( "title-tag" );
+
 	// Let's add the default webfont
 	siteorigin_webfonts_add_font('Montserrat');
 }
@@ -186,7 +188,6 @@ add_filter('body_class', 'influence_body_class');
  * Add scripts for some backwards compatibility with IE
  */
 function influence_wp_head(){
-
 	?>
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
