@@ -64,7 +64,7 @@ jQuery(function($){
         $(window).scroll(resizeSiteLogo).resize(resizeSiteLogo);
     }
 
-    if(typeof siteoriginSlider != 'undefined') {
+    if( typeof sowb != 'undefined' && typeof sowb.SiteOriginSlider != 'undefined' ) {
 
         var positionSliderNav = function(el, speed){
             if( !$('body').hasClass('menu-overlap') ) return;
