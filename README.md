@@ -52,6 +52,11 @@ Font created using Icomoon - http://icomoon.io
 Change Log
 ---------------
 
+####1.2.2 - 29 June 2017
+* Fixed slider menu overlap bug.
+* Updated Settings Framework.
+* Updated SiteOrigin Panels Lite.
+
 ####1.2.1 - 30 May 2016
 * Fixed compatibility with Influence Plus.
 
