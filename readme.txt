@@ -60,6 +60,10 @@ Font created using Icomoon - http://icomoon.io
 
 == Bundled Resources ==
 
+jQuery Cycle, Copyright (c) 2014 M. Alsup
+Dual licensed under the MIT or GPL Version 2 licenses
+Source: http://jquery.malsup.com/cycle2/
+
 FitVids, Copyright 2013 Chris Coyier
 Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 Source: http://fitvidsjs.com/
