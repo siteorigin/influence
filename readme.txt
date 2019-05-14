@@ -1,7 +1,8 @@
 === Influence ===
 
 Contributors: siteorigin
-Tags: one-column, two-columns, custom-background, custom-colors, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
+Tags: one-column, two-columns, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
+Requires at least: 4.7
 Tested up to: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +32,7 @@ Influence is a free WordPress theme that gives you a canvas to share your videos
 Influence includes integration support for the following plugins:
 
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
+* [WP-PageNavi](https://wordpress.org/plugins/wp-pagenavi/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
 
