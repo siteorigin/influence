@@ -490,14 +490,18 @@ body {
 /* =Handle having a sidebar
 ----------------------------------------------- */
 body.has-main-sidebar #main,
-body.has-main-sidebar .container {
+body.siteorigin-panels-home.page-template-default.has-main-sidebar #main,
+body.has-main-sidebar .container,
+body.siteorigin-panels-home.page-template-default.has-main-sidebar .container {
   max-width: 1200px;
 }
-body.has-main-sidebar #primary {
+body.has-main-sidebar #primary,
+body.siteorigin-panels-home.page-template-default.has-main-sidebar #primary {
   float: left;
   width: 70%;
 }
-body.has-main-sidebar #secondary {
+body.has-main-sidebar #secondary,
+body.siteorigin-panels-home.page-template-default.has-main-sidebar #secondary {
   float: right;
   width: 26.5%;
   -ms-box-sizing: border-box;
@@ -507,21 +511,27 @@ body.has-main-sidebar #secondary {
 }
 @media (max-width: 800px) {
   body.has-main-sidebar #primary,
-  body.has-main-sidebar #secondary {
+  body.siteorigin-panels-home.page-template-default.has-main-sidebar #primary,
+  body.has-main-sidebar #secondary,
+  body.siteorigin-panels-home.page-template-default.has-main-sidebar #secondary {
     float: none;
     width: 100%;
   }
-  body.has-main-sidebar #secondary {
+  body.has-main-sidebar #secondary,
+  body.siteorigin-panels-home.page-template-default.has-main-sidebar #secondary {
     margin-top: 40px;
   }
 }
 @media (max-width: 1200px) {
   body.has-main-sidebar.display-main-menu #primary,
-  body.has-main-sidebar.display-main-menu #secondary {
+  body.siteorigin-panels-home.page-template-default.has-main-sidebar.display-main-menu #primary,
+  body.has-main-sidebar.display-main-menu #secondary,
+  body.siteorigin-panels-home.page-template-default.has-main-sidebar.display-main-menu #secondary {
     float: none;
     width: 100%;
   }
-  body.has-main-sidebar.display-main-menu #secondary {
+  body.has-main-sidebar.display-main-menu #secondary,
+  body.siteorigin-panels-home.page-template-default.has-main-sidebar.display-main-menu #secondary {
     margin-top: 40px;
   }
 }
