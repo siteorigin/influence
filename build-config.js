@@ -54,6 +54,7 @@ module.exports = {
 		src: [
 			'js/**/*.js',
 			'demo/slider-js/*.js',
+			'inc/customizer/js/**/*.js',
 			'inc/settings/js/**/*.js',
 			'inc/panels-lite/js/**/*.js',
 			'!{node_modules,node_modules/**}',  // Ignore node_modules/ and contents
