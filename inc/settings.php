@@ -19,7 +19,7 @@ function influence_siteorigin_settings_localize( $loc ){
 		'subset' =>  __('Subset', 'influence'),
 
 		// For the premium upgrade modal
-		'modal_title' => __('Vantage Premium Upgrade', 'influence'),
+		'modal_title' => __('Influence Premium Upgrade', 'influence'),
 		'close' => __('Close', 'influence'),
 	);
 
