@@ -165,8 +165,8 @@ function influence_scripts() {
 
 	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_script( 'influence-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . $js_suffix . '.js' , array('jquery'), '1.0' );
-	wp_enqueue_script( 'influence-main' , get_template_directory_uri().'/js/jquery.theme-main' . $js_suffix . '.js' , array('jquery'), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_script( 'influence-fitvids', get_template_directory_uri().'/js/jquery.fitvids' . $js_suffix . '.js' , array('jquery'), '1.0' );
+	wp_enqueue_script( 'influence-main', get_template_directory_uri().'/js/jquery.theme-main' . $js_suffix . '.js' , array('jquery'), SITEORIGIN_THEME_VERSION );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
