@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays 
+ * Template part for displaying posts.
  * 
  * @package influence
  * @since influence 1.0
