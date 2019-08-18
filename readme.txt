@@ -89,6 +89,13 @@ This theme makes use of the SiteOrigin Settings Framework contained in the /inc 
 
 == Changelog ==
 
+== 1.2.3 - 18 August 2019 ==
+* Updated Settings Framework.
+* Updated SiteOrigin Panels Lite.
+* Allowed Default Template to be used for home page.
+* Added Skip to Content link.
+* Added `wp_body_open` hook.
+
 == 1.2.2 - 29 June 2017 ==
 * Fixed slider menu overlap bug.
 * Updated Settings Framework.
