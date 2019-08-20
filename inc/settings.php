@@ -7,20 +7,18 @@
  * @license GPL 2.0
  */
 
-function influence_siteorigin_settings_localize( $loc ){
+function influence_siteorigin_settings_localize( $loc ) {
 	$loc = array(
-		'section_title' => __('Theme Settings', 'influence'),
-		'section_description' => __('Settings for your theme', 'influence'),
-		'premium_only' =>  __('Premium Only', 'influence'),
-		'premium_url' => '#',
+		'section_title'       => esc_html__( 'Theme Settings', 'influence' ),
+		'section_description' => esc_html__( 'Change settings for your theme.', 'influence' ),
+		'premium_only'        => esc_html__( 'Available in Premium', 'influence' ),
 
-		// For the controls
-		'variant' =>  __('Variant', 'influence'),
-		'subset' =>  __('Subset', 'influence'),
+		// Controls.
+		'variant'             => esc_html__( 'Variant', 'influence' ),
+		'subset'              => esc_html__( 'Subset', 'influence' ),
 
-		// For the premium upgrade modal
-		'modal_title' => __('Influence Premium Upgrade', 'influence'),
-		'close' => __('Close', 'influence'),
+		// Settings metabox.
+		'meta_box'            => esc_html__( 'Page settings', 'influence' ),
 	);
 
 	return $loc;
@@ -35,84 +33,81 @@ add_filter( 'siteorigin_settings_localization', 'influence_siteorigin_settings_l
 function influence_theme_settings(){
 	$settings = SiteOrigin_Settings::single();
 
-	$settings->add_section( 'logo', __('Logo', 'influence') );
-	$settings->add_section( 'general', __('General', 'influence') );
-	$settings->add_section( 'home', __('Home Page', 'influence') );
-	$settings->add_section( 'layout', __('Layout', 'influence') );
+	$settings->add_section( 'logo', __( 'Logo', 'influence' ) );
+	$settings->add_section( 'general', __( 'General', 'influence' ) );
+	$settings->add_section( 'home', __( 'Home Page', 'influence' ) );
+	$settings->add_section( 'layout', __( 'Layout', 'influence' ) );
 
 	/**
-	 * Logo Settings
+	 * Logo Settings.
 	 */
-	$settings->add_field( 'logo', 'logo', 'media', __('Logo', 'influence'), array(
-		'choose' => __('Choose Image', 'influence'),
-		'update' => __('Set Logo', 'influence'),
+	$settings->add_field( 'logo', 'logo', 'media', __( 'Logo', 'influence' ), array(
+		'choose' => __( 'Choose Image', 'influence' ),
+		'update' => __( 'Set Logo', 'influence' ),
 	) );
 
-	$settings->add_field( 'logo', 'retina_logo', 'media', __('Retina Logo', 'influence'), array(
-		'choose' => __('Choose Image', 'influence'),
-		'update' => __('Set Logo', 'influence'),
-		'description' => __('A double sized logo used on retina devices.', 'influence'),
+	$settings->add_field( 'logo', 'retina_logo', 'media', __( 'Retina Logo', 'influence' ), array(
+		'choose' => __( 'Choose Image', 'influence' ),
+		'update' => __( 'Set Logo', 'influence' ),
+		'description' => __( 'A double sized logo used on retina devices.', 'influence' ),
 	) );
 
-	$settings->add_field( 'logo', 'scale', 'checkbox', __('Scale Logo on Scroll', 'influence'), array(
-		'description' => __('Scale down the logo when scrolling down the screen.', 'influence'),
+	$settings->add_field( 'logo', 'scale', 'checkbox', __( 'Scale Logo on Scroll', 'influence' ), array(
+		'description' => __( 'Scale down the logo when scrolling down the screen.', 'influence' ),
 	) );
 
-	$settings->add_field( 'logo', 'site_description', 'checkbox', __('Site Description', 'influence'), array(
-		'description' => __('Display your site description under your logo.', 'influence')
+	$settings->add_field( 'logo', 'site_description', 'checkbox', __( 'Site Description', 'influence' ), array(
+		'description' => __( 'Display your site description under your logo.', 'influence' )
 	) );
 
 	/**
-	 * General settings
+	 * General settings.
 	 */
-
-	$settings->add_field( 'general', 'menu_text', 'text', __('Menu Text', 'influence'), array(
-		'description' => __('The text displayed as your menu button.', 'influence')
+	$settings->add_field( 'general', 'menu_text', 'text', __( 'Menu Text', 'influence' ), array(
+		'description' => __( 'The text displayed as your menu button.', 'influence' )
 	) );
 	
 	/**
-	 * Home Page
+	 * Home page.
 	 */
-
-	$settings->add_field( 'home', 'slider_shortcode_new', 'text', __('Home Slider', 'influence'), array(
+	$settings->add_field( 'home', 'slider_shortcode_new', 'text', __( 'Home Slider', 'influence' ), array(
 		'options' => array(
-			'' => __('None', 'influence'),
-			'[home_slider_demo]' => __('Demo Slider', 'influence'),
-			'[home_slider_widget]' => __('Slider Widget', 'influence'),
+			'' => __( 'None', 'influence' ),
+			'[home_slider_demo]' => __( 'Demo Slider', 'influence' ),
+			'[home_slider_widget]' => __( 'Slider Widget', 'influence' ),
 		),
-		'description' => __('Enter the shortcode that displays the slider on the home page.', 'influence'),
+		'description' => __( 'Enter the shortcode that displays the slider on the home page.', 'influence' ),
 	) );
 
-	$settings->add_field( 'home', 'menu_overlaps', 'checkbox', __('Menu Overlaps Slider', 'influence'), array(
-		'description' => __('Should the menu overlap the home page slider.', 'influence')
+	$settings->add_field( 'home', 'menu_overlaps', 'checkbox', __( 'Menu Overlaps Slider', 'influence' ), array(
+		'description' => __( 'Should the menu overlap the home page slider.', 'influence' )
 	) );
 
 	$settings->add_field( 'home', 'slider', 'widget', __('Home Slider', 'influence'), array(
 		'widget_class' => 'SiteOrigin_Widget_Slider_Widget',
 		'bundle_widget' => 'slider',
 		'plugin' => 'so-widgets-bundle',
-		'plugin_name' => __('SiteOrigin Widgets Bundle', 'influence'),
-		'description' => __('Build a slider from your own images and videos.', 'influence'),
+		'plugin_name' => __( 'SiteOrigin Widgets Bundle', 'influence' ),
+		'description' => __( 'Build a slider from your own images and videos.', 'influence' ),
 	) );
 
 	$settings->add_field( 'home', 'slider_margin', 'checkbox', __( 'Slider Margin', 'influence' ), array(
-		'description' => __('Add a margin below the home page slider', 'influence'),
+		'description' => __( 'Add a margin below the home page slider', 'influence' ),
 	) );
 
 	/**
-	 * Layout Settings
+	 * Layout settings.
 	 */
-
-	$settings->add_field( 'layout', 'responsive', 'checkbox', __('Responsive Layout', 'influence'), array(
-		'description' => __('Scale your layout for small screen devices.', 'influence')
+	$settings->add_field( 'layout', 'responsive', 'checkbox', __( 'Responsive Layout', 'influence' ), array(
+		'description' => __( 'Scale your layout for small screen devices.', 'influence' ),
 	) );
 
 	$settings->add_field( 'layout', 'viewport', 'number', __('Mobile Viewport Size', 'influence'), array(
-		'description' => __('Choose the width of the viewport for mobile devices when responsive is disabled.', 'influence')
+		'description' => __( 'Choose the width of the viewport for mobile devices when responsive is disabled.', 'influence' )
 	) );
 	
 }
-add_action('siteorigin_settings_init', 'influence_theme_settings');
+add_action( 'siteorigin_settings_init', 'influence_theme_settings' );
 
 /**
  * Setup theme default settings.
@@ -121,39 +116,39 @@ add_action('siteorigin_settings_init', 'influence_theme_settings');
  * @return mixed
  * @since influence 1.0
  */
-function influence_theme_setting_defaults($defaults){
-	$defaults['logo_logo'] = false;
-	$defaults['logo_retina_logo'] = false;
-	$defaults['logo_scale'] = true;
-	$defaults['logo_site_description'] = false;
+function influence_theme_setting_defaults( $defaults ) {
+	$defaults['logo_logo']                 = false;
+	$defaults['logo_retina_logo']          = false;
+	$defaults['logo_scale']                = true;
+	$defaults['logo_site_description']     = false;
 
-	$defaults['general_attribution'] = true;
-	$defaults['general_menu_text'] = __('Menu', 'influence');
+	$defaults['general_attribution']       = true;
+	$defaults['general_menu_text']         = __( 'Menu', 'influence' );
 
 	$defaults['home_slider_shortcode_new'] = '[home_slider_demo]';
-	$defaults['home_displays'] = 'demo';
-	$defaults['home_menu_overlaps'] = true;
-	$defaults['home_slider'] = false;
-	$defaults['home_slider_shortcode'] = false;
-	$defaults['home_slider_margin'] = true;
+	$defaults['home_displays']             = 'demo';
+	$defaults['home_menu_overlaps']        = true;
+	$defaults['home_slider']               = false;
+	$defaults['home_slider_shortcode']     = false;
+	$defaults['home_slider_margin']        = true;
 
-	$defaults['layout_responsive'] = true;
-	$defaults['layout_viewport'] = 1200;
+	$defaults['layout_responsive']         = true;
+	$defaults['layout_viewport']           = 1200;
 
 	return $defaults;
 }
-add_filter('siteorigin_settings_defaults', 'influence_theme_setting_defaults');
+add_filter( 'siteorigin_settings_defaults', 'influence_theme_setting_defaults' );
 
-// Add a filter to add slider options
-add_filter('siteorigin_setting_options_home_slider_shortcode_new', 'siteorigin_settings_add_slider_options');
+// Add a filter to add slider options.
+add_filter( 'siteorigin_setting_options_home_slider_shortcode_new', 'siteorigin_settings_add_slider_options' );
 
-function influence_about_page_setup( $about ){
-	$about['title_image'] = get_template_directory_uri() . '/admin/about/influence-logo.png';
-	$about['title_image_2x'] = get_template_directory_uri() . '/admin/about/influence-logo-2x.png';
-
-	$about['description'] = __( 'Influence is an elegant blogging theme that focused on your content. It offers a whole new level of attention to detail.', 'influence' );
-
-	$about[ 'sections' ] = array(
+function influence_about_page_setup( $about ) {
+	$about['title_image']       = get_template_directory_uri() . '/admin/about/influence-logo.png';
+	$about['title_image_2x']    = get_template_directory_uri() . '/admin/about/influence-logo-2x.png';
+	$about['description']       = __( 'Influence is an elegant blogging theme that focused on your content. It offers a whole new level of attention to detail.', 'influence' );
+	$about['no_video']          = true;
+	$about['video_url']         = 'https://siteorigin.com/theme/influence/';
+	$about['sections']          = array(
 		'free',
 		'support',
 		'page-builder',
