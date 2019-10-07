@@ -64,7 +64,7 @@ function influence_theme_settings(){
 	 * General settings.
 	 */
 	$settings->add_field( 'general', 'menu_text', 'text', __( 'Menu Text', 'influence' ), array(
-		'description' => __( 'The text displayed as your menu button.', 'influence' )
+		'description' => __( 'The text displayed next to your menu button.', 'influence' )
 	) );
 	
 	/**
