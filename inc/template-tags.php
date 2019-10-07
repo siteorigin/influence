@@ -142,6 +142,10 @@ if ( ! function_exists( 'influence_display_logo' ) ) :
 function influence_display_logo() {
 	$logo = siteorigin_setting( 'logo_logo' );
 
+	if ( empty( $logo ) && function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$logo = get_theme_mod( 'custom_logo' );
+	}
+
 	if ( empty( $logo ) ) {
 		// Just display the site title.
 		bloginfo( 'name' );
@@ -175,7 +179,7 @@ function influence_display_logo() {
 			if ( ! empty( $retina_logo_image[0] ) ) {
 				$logo_attributes['srcset'] = $retina_logo_image[0] . ' 2x';
 			}
-		}
+		}	
 
 		if ( siteorigin_setting( 'logo_scale' ) ) $logo_attributes['data-scale'] = '1';
 

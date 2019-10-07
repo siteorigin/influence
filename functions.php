@@ -70,6 +70,8 @@ function influence_setup() {
 	set_post_thumbnail_size( 1000, 1000, false );
 	add_image_size( 'thumbnail-retina', 1000, 1000, false);
 
+	add_theme_support( 'custom-logo' );
+
 	if ( ! function_exists( 'siteorigin_panels_render' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
