@@ -89,6 +89,10 @@ This theme makes use of the SiteOrigin Settings Framework contained in the /inc 
 
 == Changelog ==
 
+== 1.3 - 13 October 2019 ==
+* Added Custom Logo support.
+* Minor code style fixes.
+
 == 1.2.3 - 18 August 2019 ==
 * Updated Settings Framework.
 * Updated SiteOrigin Panels Lite.
