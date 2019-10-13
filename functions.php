@@ -60,8 +60,8 @@ function influence_setup() {
 
 	add_theme_support( 'siteorigin-panels', array(
 		'home-page' => true,
-		'home-template' => 'templates/template-full-no-title.php',
 		'home-page-default' => 'basic-home-page',
+		'home-template' => 'templates/template-full-no-title.php',
 	) );
 
 	// Enable support for Post Formats
@@ -70,7 +70,9 @@ function influence_setup() {
 	set_post_thumbnail_size( 1000, 1000, false );
 	add_image_size( 'thumbnail-retina', 1000, 1000, false);
 
-	if( !function_exists('siteorigin_panels_render') ) {
+	add_theme_support( 'custom-logo' );
+
+	if ( ! function_exists( 'siteorigin_panels_render' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
@@ -82,24 +84,24 @@ function influence_setup() {
 
 	add_theme_support( "title-tag" );
 
-	// Let's add the default webfont
-	siteorigin_webfonts_add_font('Montserrat');
+	// Let's add the default webfont.
+	siteorigin_webfonts_add_font( 'Montserrat' );
 }
 endif; // influence_setup
 add_action( 'after_setup_theme', 'influence_setup' );
 
 /**
- * Add support for premium functionality
+ * Add support for SiteOrigin Premium functionality.
  */
-function influence_siteorigin_premium_support(){
-	// This theme supports the no attribution addon
+function influence_siteorigin_premium_support() {
+	// This theme supports the no attribution addon.
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter'  => 'influence_credits_siteorigin',
 		'enabled' => siteorigin_setting( 'display_attribution' ),
 		'siteorigin_setting' => 'display_attribution'
 	) );
 
-	// This theme supports the ajax comments addon
+	// This theme supports the ajax comments addon.
 	add_theme_support( 'siteorigin-premium-ajax-comments', array(
 		'enabled' => siteorigin_setting( 'comments_ajax' ),
 		'siteorigin_setting' => 'comments_ajax'
@@ -185,7 +187,7 @@ add_action( 'wp_enqueue_scripts', 'influence_scripts' );
 function influence_gravity_forms_enqueue(){
 	wp_enqueue_style( 'influence-gravity', get_template_directory_uri() . '/css/gravity.css', array( ), SITEORIGIN_THEME_VERSION );
 }
-add_action('gform_register_init_scripts', 'influence_gravity_forms_enqueue');
+add_action( 'gform_register_init_scripts', 'influence_gravity_forms_enqueue' );
 
 /**
  * Add custom body classes.
@@ -196,22 +198,22 @@ add_action('gform_register_init_scripts', 'influence_gravity_forms_enqueue');
  * @package influence
  * @since 1.0
  */
-function influence_body_class($classes){
-	if( siteorigin_setting('layout_responsive') ) $classes[] = 'responsive';
-	if( wp_is_mobile() ) $classes[] = 'mobile-device';
-	if( is_front_page() && siteorigin_setting('home_menu_overlaps') ) $classes[] = 'menu-overlap';
+function influence_body_class( $classes ) {
+	if ( siteorigin_setting( 'layout_responsive' ) ) $classes[] = 'responsive';
+	if ( wp_is_mobile() ) $classes[] = 'mobile-device';
+	if ( is_front_page() && siteorigin_setting( 'home_menu_overlaps' ) ) $classes[] = 'menu-overlap';
 
-	if( is_active_sidebar('sidebar-main') ) $classes[] = 'has-main-sidebar';
+	if ( is_active_sidebar( 'sidebar-main' ) ) $classes[] = 'has-main-sidebar';
 
 
 	return $classes;
 }
-add_filter('body_class', 'influence_body_class');
+add_filter( 'body_class', 'influence_body_class' );
 
 /**
  * Add scripts for some backwards compatibility with IE
  */
-function influence_wp_head(){
+function influence_wp_head() {
 	?>
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -221,7 +223,7 @@ function influence_wp_head(){
 	<![endif]-->
 	<?php
 }
-add_action('wp_head', 'influence_wp_head');
+add_action( 'wp_head', 'influence_wp_head' );
 
 /**
  * Remove the label from the comment form text field
@@ -230,24 +232,24 @@ add_action('wp_head', 'influence_wp_head');
  *
  * @return mixed
  */
-function influence_filter_comment_form($form){
+function influence_filter_comment_form( $form ) {
 	$form['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true"></textarea></p>' ;
 	return $form;
 }
 add_filter( 'comment_form_defaults', 'influence_filter_comment_form' );
 
 /**
- * Add the viewport header for mobile devices
+ * Add the viewport header for mobile devices.
  */
-function influence_viewport_header(){
-	if( siteorigin_setting( 'layout_responsive' ) ) {
+function influence_viewport_header() {
+	if ( siteorigin_setting( 'layout_responsive' ) ) {
 		?><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /><?php
 	}
 	else {
-		?><meta name="viewport" content="width=<?php echo intval( siteorigin_setting('layout_viewport') ) ?>px" /><?php
+		?><meta name="viewport" content="width=<?php echo intval( siteorigin_setting( 'layout_viewport' ) ) ?>px" /><?php
 	}
 }
-add_action('wp_head', 'influence_viewport_header');
+add_action( 'wp_head', 'influence_viewport_header' );
 
 /**
  * Change the name of Influence Premium.
@@ -255,6 +257,6 @@ add_action('wp_head', 'influence_viewport_header');
  * @return string
  */
 function influence_premium_version_name() {
-	return __('Influence Plus', 'influence');
+	return __( 'Influence Plus', 'influence' );
 }
 add_filter( 'siteorigin_premium_theme_name', 'influence_premium_version_name' );

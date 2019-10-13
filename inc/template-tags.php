@@ -135,68 +135,72 @@ function influence_posted_on() {
 }
 endif;
 
-if(!function_exists('influence_display_logo')):
+if ( ! function_exists( 'influence_display_logo' ) ) :
 /**
  * Display the logo 
  */
-function influence_display_logo(){
-	$logo = siteorigin_setting('logo_logo');
+function influence_display_logo() {
+	$logo = siteorigin_setting( 'logo_logo' );
 
-	if( empty($logo) ) {
-		// Just display the site title
+	if ( empty( $logo ) && function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$logo = get_theme_mod( 'custom_logo' );
+	}
+
+	if ( empty( $logo ) ) {
+		// Just display the site title.
 		bloginfo( 'name' );
 		return;
 	}
 	else {
-		// load the logo image
-		if(is_array($logo)) {
-			list ($src, $height, $width) = $logo;
+		// Load the logo image.
+		if ( is_array( $logo ) ) {
+			list( $src, $height, $width ) = $logo;
 		}
 		else {
-			$image = wp_get_attachment_image_src($logo, 'full');
+			$image = wp_get_attachment_image_src( $logo, 'full' );
 			$src = $image[0];
 			$height = $image[2];
 			$width = $image[1];
 		}
 
-		// Add all the logo attributes
+		// Add all the logo attributes.
 		$logo_attributes = array(
 			'src' => $src,
 			'width' => round($width),
 			'height' => round($height),
-			'alt' => sprintf( __('%s Logo', 'influence'), get_bloginfo('name') ),
+			'alt' => sprintf( __( '%s Logo', 'influence' ), get_bloginfo( 'name' ) ),
 		);
 
-		// Try adding the retina logo
+		// Try adding the Retina logo.
 		$retina_logo = siteorigin_setting( 'logo_retina_logo' );
-		if( !empty($retina_logo) ) {
-			$retina_logo = apply_filters('influence_logo_retina_image_id', $retina_logo);
-			$retina_logo_image = wp_get_attachment_image_src($retina_logo, 'full');
-			if( !empty($retina_logo_image[0]) ) {
+		if ( ! empty( $retina_logo ) ) {
+			$retina_logo = apply_filters( 'influence_logo_retina_image_id', $retina_logo );
+			$retina_logo_image = wp_get_attachment_image_src( $retina_logo, 'full' );
+			if ( ! empty( $retina_logo_image[0] ) ) {
 				$logo_attributes['srcset'] = $retina_logo_image[0] . ' 2x';
 			}
-		}
+		}	
 
-		if( siteorigin_setting('logo_scale') ) $logo_attributes['data-scale'] = '1';
+		if ( siteorigin_setting( 'logo_scale' ) ) $logo_attributes['data-scale'] = '1';
 
-		$logo_attributes = apply_filters('influence_logo_image_attributes', $logo_attributes );
+		$logo_attributes = apply_filters( 'influence_logo_image_attributes', $logo_attributes );
 
 		$logo_attributes_str = array();
-		if( !empty( $logo_attributes ) ) {
-			foreach($logo_attributes as $name => $val) {
-				if( empty($val) ) continue;
-				$logo_attributes_str[] = $name.'="'.esc_attr($val).'" ';
+		if ( ! empty( $logo_attributes ) ) {
+			foreach ( $logo_attributes as $name => $val ) {
+				if ( empty($val) ) continue;
+				$logo_attributes_str[] = $name.'="'.esc_attr( $val ).'" ';
 			}
 		}
 
-		$logo_html = apply_filters('influence_logo_image', '<img '.implode( ' ', $logo_attributes_str ).' />');
+		$logo_html = apply_filters( 'influence_logo_image', '<img '.implode( ' ', $logo_attributes_str ).' />' );
 		echo $logo_html;
 	}
 }
 endif;
 
 /**
- * Returns true if a blog has more than 1 category
+ * Returns true if a blog has more than 1 category.
  *
  * @since influence 1.0
  */
@@ -232,7 +236,7 @@ if ( ! function_exists( 'influence_get_archive_title' ) ) :
  * 
  * @since influence 1.0
  */
-function influence_get_archive_title(){
+function influence_get_archive_title() {
 	$title = '';
 	if ( is_category() ) {
 		$title = sprintf( __( 'Category Archives: %s', 'influence' ), '<span>' . single_cat_title( '', false ) . '</span>' );
@@ -264,7 +268,7 @@ function influence_get_archive_title(){
 		$title = __( 'Archives', 'influence' );
 	}
 	
-	return apply_filters('influence_archive_title', $title);
+	return apply_filters( 'influence_archive_title', $title );
 }
 endif;
 
@@ -273,7 +277,7 @@ endif;
  * 
  * @since influence 1.0
  */
-function influence_get_post_meta(){
+function influence_get_post_meta() {
 	/* translators: used between list items, there is a space after the comma */
 	$category_list = get_the_category_list( __( ', ', 'influence' ) );
 
@@ -315,8 +319,8 @@ function influence_get_post_meta(){
  * @param null $post
  * @return string
  */
-function influence_next_attachment_url($post = null){
-	if(empty($post)){
+function influence_next_attachment_url( $post = null ){
+	if( empty( $post ) ){
 		global $post;
 	}
 	
@@ -357,7 +361,7 @@ function influence_next_attachment_url($post = null){
 	return $next_attachment_url;
 }
 
-function influence_site_header_sentinel(){
+function influence_site_header_sentinel() {
 	?>
 	<div class="site-header has-shadow site-header-sentinel">
 
@@ -369,13 +373,13 @@ function influence_site_header_sentinel(){
 					<?php influence_display_logo(); ?>
 				</h1>
 
-				<?php if(siteorigin_setting('general_site_description')) : ?>
+				<?php if ( siteorigin_setting( 'general_site_description' ) ) : ?>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				<?php endif ?>
 
 			</div>
 
-			<?php if( siteorigin_setting('general_menu_text') ) : ?>
+			<?php if ( siteorigin_setting( 'general_menu_text' ) ) : ?>
 
 				<div role="navigation" class="site-navigation main-navigation primary">
 
@@ -383,7 +387,7 @@ function influence_site_header_sentinel(){
 
 					<a href="#" class="main-menu-button">
 						<i class="influence-icon-menu-icon"></i>
-						<?php _e('Menu', 'influence') ?>
+						<?php _e( 'Menu', 'influence' ) ?>
 					</a>
 
 				</div><!-- .site-navigation .main-navigation -->

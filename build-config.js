@@ -37,6 +37,7 @@ module.exports = {
 	less: {
 		src: [
 			'style.less',
+			'less/**/css/*.less'
 		],
 		include:[
 			'less/*.less'

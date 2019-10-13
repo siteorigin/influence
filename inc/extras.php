@@ -84,11 +84,11 @@ add_filter( 'wp_title', 'influence_wp_title', 10, 2 );
  * 
  * @todo generate responsive code
  */
-function influence_footer_widget_style(){
+function influence_footer_widget_style() {
 	$widgets = wp_get_sidebars_widgets();
-	if(empty($widgets['sidebar-footer'])) return;
+	if ( empty( $widgets['sidebar-footer'] ) ) return;
 
-	$count = count($widgets['sidebar-footer']);
+	$count = count( $widgets['sidebar-footer'] );
 	?><style type="text/css" id="influence-footer-widgets">#footer-widgets aside { width : <?php echo round(100/$count,3) ?>%; } </style> <?php
 }
-add_action('wp_head', 'influence_footer_widget_style', 15);
+add_action( 'wp_head', 'influence_footer_widget_style', 15 );
