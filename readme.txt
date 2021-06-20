@@ -2,8 +2,9 @@
 
 Contributors: siteorigin
 Tags: one-column, two-columns, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
+Tested up to: 5.8
 Requires at least: 4.7
-Tested up to: 5.2
+Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +89,10 @@ Source: https://github.com/bgrins/TinyColor
 This theme makes use of the SiteOrigin Settings Framework contained in the /inc folder. All code is licensed under GPL 2.0 and copyright 2013 SiteOrigin unless otherwise stated in the file header.
 
 == Changelog ==
+
+== 1.3.1 - 20 June 2021 ==
+* Set Google font display to block.
+* Updated SiteOrigin Settings framework.
 
 == 1.3 - 13 October 2019 ==
 * Added Custom Logo support.

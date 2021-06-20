@@ -216,10 +216,10 @@ add_filter( 'body_class', 'influence_body_class' );
 function influence_wp_head() {
 	?>
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+		<script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 	<!--[if (gte IE 6)&(lte IE 8)]>
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.js"></script>
+		<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/selectivizr.js"></script>
 	<![endif]-->
 	<?php
 }

@@ -19,7 +19,8 @@ module.exports = {
 	},
 	version: {
 		src: [
-			'functions.php'
+			'functions.php',
+			'readme.txt'
 		]
 	},
 	sass: {
