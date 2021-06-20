@@ -1,11 +1,11 @@
 <div class="sow-slider-base" style="display: none">
 
 	<ul class="sow-slider-images" data-settings="{&quot;pagination&quot;:true,&quot;speed&quot;:850,&quot;timeout&quot;:5000}">
-		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url(<?php echo get_template_directory_uri() ?>/demo/assets/slide-2.jpg);">
+		<li class="sow-slider-image sow-slider-image-cover" style="background-image: url(<?php echo esc_url( get_template_directory_uri() ) ?>/demo/assets/slide-2.jpg);">
 
 			<div class="sow-slider-image-container">
 				<div class="sow-slider-image-wrapper" style="max-width: 720px;">
-					<img width="720" height="500" src="<?php echo get_template_directory_uri() ?>/demo/assets/slider-badge.png" class="attachment-full" alt="slider-badge">
+					<img width="720" height="500" src="<?php echo esc_url( get_template_directory_uri() ) ?>/demo/assets/slider-badge.png" class="attachment-full" alt="slider-badge">
 				</div>
 			</div>
 
@@ -15,13 +15,13 @@
 
 			<div class="sow-slider-image-container">
 				<div class="sow-slider-image-wrapper" style="max-width: 700px;">
-					<img width="700" height="500" src="<?php echo get_template_directory_uri() ?>/demo/assets/slider-badge-2.png" class="attachment-full" alt="slider-badge-2">
+					<img width="700" height="500" src="<?php echo esc_url( get_template_directory_uri() ) ?>/demo/assets/slider-badge-2.png" class="attachment-full" alt="slider-badge-2">
 				</div>
 			</div>
 
 			<video class="sow-background-element" autoplay="" loop="" muted="">
-				<source src="<?php echo get_template_directory_uri() ?>/demo/assets/writing-video.mp4" type="video/mp4">
-				<source src="<?php echo get_template_directory_uri() ?>/demo/assets/writing-video.ogv" type="video/ogg">
+				<source src="<?php echo esc_url( get_template_directory_uri() ) ?>/demo/assets/writing-video.mp4" type="video/mp4">
+				<source src="<?php echo esc_url( get_template_directory_uri() ) ?>/demo/assets/writing-video.ogv" type="video/ogg">
 			</video>
 
 		</li>
