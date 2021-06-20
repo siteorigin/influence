@@ -5,8 +5,11 @@ Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/influence/
 Description: Influence is a free WordPress theme that gives you a canvas to share your videos, photography and content. It features a modern, responsive design and tight integration with our own Page Builder plugin to make sure your content is responsive too. The best feature of Influence is its huge home page slider - perfect if you're using Influence to build a business or portfolio website. This slider has support for video background images and, like the rest of Influence, is fully responsive. We offer free support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 Version: dev
-License: GNU General Public License
-License URI: http://www.gnu.org/copyleft/gpl.html
+Tested up to: 5.8
+Requires at least: 4.7
+Requires PHP: 5.6.20
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Text Domain: influence
 */
@@ -298,7 +301,7 @@ sup {
   bottom: 1ex;
 }
 sub {
-  top: .5ex;
+  top: 0.5ex;
 }
 small {
   font-size: 75%;
@@ -858,7 +861,7 @@ article.sticky {
   bottom: 1ex;
 }
 .entry-content sub {
-  top: .5ex;
+  top: 0.5ex;
 }
 .entry-content .gallery {
   margin: 25px 0 !important;
