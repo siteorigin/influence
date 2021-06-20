@@ -90,6 +90,10 @@ This theme makes use of the SiteOrigin Settings Framework contained in the /inc 
 
 == Changelog ==
 
+== 1.3.1 - 20 June 2021 ==
+* Set Google font display to block.
+* Updated SiteOrigin Settings framework.
+
 == 1.3 - 13 October 2019 ==
 * Added Custom Logo support.
 * Minor code style fixes.
